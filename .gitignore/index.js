@@ -201,7 +201,7 @@ if(!message.content.startsWith(prefix)) return;
     var embed = new Discord.RichEmbed()
     .setColor("#FF0000")
     .setTitle(":warning: ALERTE MAINTENANCE")
-    .addField("Vous serez informez dès que la maintenance prendra fin.", "Pour savoir les nouveautées ajoutées, exécutez la commande **.skymaj** juste après la fin de la maintenance !")
+    .addField("Vous serez informez dès que la maintenance prendra fin.", "Pour savoir les nouveautés ajoutés, exécutez la commande **.skymaj** juste après la fin de la maintenance !")
     .setTimestamp()
     message.guild.channels.find("name", "🛃maintenances").sendEmbed(embed)
   }
@@ -212,9 +212,20 @@ if(!message.content.startsWith(prefix)) return;
     var embed = new Discord.RichEmbed()
     .setColor("#04B404")
     .setTitle(":white_check_mark: MAINTENANCE TERMINÉE")
-    .addField("La maintenance est terminée.", "Exécutez la commande **.skymaj** pour savoir les nouveautées apportées lors cette maintenance !")
+    .addField("La maintenance est terminée.", "Exécutez la commande **.skymaj** pour savoir les nouveautés apportés lors cette maintenance !")
     .setTimestamp()
     message.guild.channels.find("name", "🛃maintenances").sendEmbed(embed)
+  }
+  
+   ///Commande .nouveautés
+  if(message.content === prefix + "nouveautés") {
+    let args = message.content.split(" ").slice(1);
+    var embed = new Discord.RichEmbed()
+    .setColor("#B45F04")
+    .setTitle("📯 DU NOUVEAU SUR SKY")
+    .addField("Des nouveautés ont été ajoutés sur **Sky** !", "Exécutez la commande **.skymaj** pour savoir les nouveautés !")
+    .setTimestamp()
+    message.guild.channels.find("name", "📯nouveautés").sendEmbed(embed)
   }
   
   
