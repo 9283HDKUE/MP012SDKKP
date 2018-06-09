@@ -11,7 +11,7 @@ client.login(process.env.TOKEN)
 ///Avertissement en marche
 client.on("ready", () => {
   console.log("SKY: Je suis prêt")
-  client.user.setGame(`.shelp | SkyBOT`);
+  client.user.setGame(`.help | SkyBOT`);
 });
   
 ///La version du BOT
@@ -26,7 +26,7 @@ client.on('message', message => {
    }
 
 ///Commande .skycommandes
-   if(message.content === prefix + "shelp"){
+   if(message.content === prefix + "help"){
     var helpok_embed = new Discord.RichEmbed()
     .addField(":white_check_mark: Succès", `La liste des commandes est envoyée par message privé !`)
     .setColor("#00FF00")
