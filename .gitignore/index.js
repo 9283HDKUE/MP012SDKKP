@@ -5,6 +5,9 @@ const client = new Discord.Client();
 ///Le préfixe
 var prefix = '.';
 
+///Heure
+const moment = require('moment');
+
 ///Connexion du bot
 client.login(process.env.TOKEN)
 
@@ -50,6 +53,8 @@ client.on('message', message => {
     .addField(".statistiques", "Voir les statistiques de ton compte")
     .addField(".systsondage", "Permet d'activer le système de sondage")
     .addField(".sondage", "Permet de crée des sondages **(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des sondages)**")
+    .addField(".heure", "Savoir l'heure en temps réel")
+    .addField(".date", "Savoir la date d'aujourd'hui")
     .addField("Modération - .kick", "Kick l'utilisateur séléctionné")
     .addField("Modération - .ban", "Banne l'utilisateur séléctionné")
     .addField("Modération - .clear", "Supprime un nombre de messages")
@@ -265,6 +270,23 @@ if(!message.content.startsWith(prefix)) return;
    ///Commande .skydiscord
   if(message.content === prefix + "skydiscord"){
     message.channel.sendMessage('Heureux que tu souhaites rejoindre mon serveur Discord :robot: ! Tu seras au courant des **maintenances** et autres. Clique sur ce lien: https://discord.gg/YuX9yWD');
+  }
+
+  ///Commande .heure
+  if(message.content === prefix + "heure"){
+    var heure_embed = new Discord.RichEmbed()
+    .addField(":clock6: Heure", `Il est actuellement ${moment().format('LT')}`)
+    .setFooter("PM = Soir | AM = Matin")
+    .setColor("#6E6E6E")
+  message.channel.sendMessage(heure_embed)
+  }
+
+  ///Commande .date
+  if(message.content === prefix + "date"){
+    var date_embed = new Discord.RichEmbed()
+    .addField(":calendar_spiral: Date", `Aujourd'hui, nous sommes le ${moment().format('DD-MM-YYYY')}`)
+    .setColor("#6E6E6E")
+  message.channel.sendMessage(date_embed)
   }
   
   ///Commande .skydiscord
