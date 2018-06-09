@@ -5,9 +5,6 @@ const client = new Discord.Client();
 ///Le préfixe
 var prefix = '.';
 
-///Heure
-const moment = require('moment');
-
 ///Connexion du bot
 client.login(process.env.TOKEN)
 
