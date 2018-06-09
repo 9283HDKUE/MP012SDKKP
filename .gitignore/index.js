@@ -268,23 +268,6 @@ if(!message.content.startsWith(prefix)) return;
   if(message.content === prefix + "skydiscord"){
     message.channel.sendMessage('Heureux que tu souhaites rejoindre mon serveur Discord :robot: ! Tu seras au courant des **maintenances** et autres. Clique sur ce lien: https://discord.gg/YuX9yWD');
   }
-
-  ///Commande .heure
-  if(message.content === prefix + "heure"){
-    var heure_embed = new Discord.RichEmbed()
-    .addField(":clock6: Heure", `Il est actuellement ${moment().format('LT')}`)
-    .setFooter("PM = Soir | AM = Matin")
-    .setColor("#6E6E6E")
-  message.channel.sendMessage(heure_embed)
-  }
-
-  ///Commande .date
-  if(message.content === prefix + "date"){
-    var date_embed = new Discord.RichEmbed()
-    .addField(":calendar_spiral: Date", `Aujourd'hui, nous sommes le ${moment().format('DD-MM-YYYY')}`)
-    .setColor("#6E6E6E")
-  message.channel.sendMessage(date_embed)
-  }
   
   ///Commande .skydiscord
   if(message.content === prefix + "skyservers"){
