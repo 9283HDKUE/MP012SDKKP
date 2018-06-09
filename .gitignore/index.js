@@ -11,13 +11,13 @@ client.login(process.env.TOKEN)
 ///Avertissement en marche
 client.on("ready", () => {
   console.log("SKY: Je suis prêt")
-  client.user.setGame(`.skyh | SkyBOT`);
+  client.user.setGame(`.shelp | SkyBOT`);
 });
   
 ///La version du BOT
 client.on('message', message => {
 
-  if(message.content === prefix + "skyversion"){
+  if(message.content === prefix + "version"){
     var version_embed = new Discord.RichEmbed()
     .setThumbnail(client.user.avatarURL)
     .addField(":gear: Version", `Ma version est actuellement: 1.1.0`)
@@ -26,7 +26,7 @@ client.on('message', message => {
    }
 
 ///Commande .skycommandes
-   if(message.content === prefix + "skyh"){
+   if(message.content === prefix + "shelp"){
     var helpok_embed = new Discord.RichEmbed()
     .addField(":white_check_mark: Succès", `La liste des commandes est envoyée par message privé !`)
     .setColor("#00FF00")
@@ -36,20 +36,20 @@ client.on('message', message => {
     .setTitle("Les commandes de Sky")
     .setThumbnail(client.user.avatarURL)
     .setDescription("Voici les commandes disponibles:")
-    .addField(".skyh", "Affiche les commandes")
-    .addField(".skyinfo", "Affiche les informations sur Sky")
-    .addField(".skyversion", "Voir la version de Sky")
-    .addField(".skyadd", "Pour ajouter Sky sur ton serveur Discord")
-    .addField(".skymaj", "Voir les mises à jour effectuées sur Sky")
+    .addField(".shelp", "Affiche les commandes")
+    .addField(".info", "Affiche les informations sur Sky")
+    .addField(".version", "Voir la version de Sky")
+    .addField(".add", "Pour ajouter Sky sur ton serveur Discord")
+    .addField(".maj", "Voir les mises à jour effectuées sur Sky")
     .addField(".myavatar", "Demander le lien de son avatar")
-    .addField(".skyping", "Voir le temps de latence entre Sky et le serveur")
-    .addField(".skydon", "Faire un don pour Sky")
+    .addField(".ping", "Voir le temps de latence entre Sky et le serveur")
+    .addField(".don", "Faire un don pour Sky")
     .addField(".say", "Faire dire quelque chose à Sky")
     .addField(".bvn", "Permet de souhaiter la bienvenue à un utilisateur")
-    .addField(".skyservers", "Savoir le nombre de serveur dans lequel est Sky")
-    .addField(".skydiscord", "Obtenir le lien du serveur Discord de Sky")
-    .addField(".infodiscord", "Voir les informations du serveur Discord")
-    .addField(".statistiques", "Voir les statistiques de ton compte")
+    .addField(".servers", "Savoir le nombre de serveur dans lequel est Sky")
+    .addField(".discord", "Obtenir le lien du serveur Discord de Sky")
+    .addField(".infods", "Voir les informations du serveur Discord")
+    .addField(".stats", "Voir les statistiques de ton compte")
     .addField(".systsondage", "Permet d'activer le système de sondage")
     .addField(".sondage", "Permet de crée des sondages **(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des sondages)**")
     .addField("Modération - .kick", "Kick l'utilisateur séléctionné")
@@ -60,7 +60,7 @@ client.on('message', message => {
   }
 
  ///Commande .skyinfo
-  if(message.content === prefix + "skyinfo") {
+  if(message.content === prefix + "info") {
     var info_embed = new Discord.RichEmbed()
     .setColor("#04B404")
     .setTitle("Informations sur Sky")
@@ -74,7 +74,7 @@ client.on('message', message => {
   }
 
   ///Commande .skymaj
-  if(message.content === prefix + "skymaj"){
+  if(message.content === prefix + "maj"){
     var helpok_embed = new Discord.RichEmbed()
     .addField(":white_check_mark: Succès", `La fiche **MAJ** est envoyée par message privé !`)
     .setColor("#00FF00")
@@ -83,6 +83,7 @@ client.on('message', message => {
     .setColor("#FFFFFF")
     .setTitle("Les mises à jour de Sky")
     .setDescription("Voici les MAJ effectuées jusqu'à maintenant:")
+    .addField("MAJ 09.06.2018 (2)", "Modification du nom de quasiment toutes les commmandes, enlèvement du mot **Sky** des commandes, optimisation de Sky. Désormais la nouvelle commande pour voir la liste des commandes est **.shelp**.")
     .addField("MAJ 09.06.2018", "Mise en place de l'embed dans tous les commandes, changement des îcones de la commande **.sondage**, ajout des commandes **.say** et **.bvn**, ajout également des messages d'erreur en cas de problème")
     .addField("MAJ 07.06.2018", "Ajout de la commande .systsondage et .sondage (il faut d'abord exécuter la commande .systsondage), suppression de la commande .systbienvenue, le système de bienvenue sera de retour prochainement")
     .addField("MAJ 06.06.2018 (2)", "Amélioration du design des commandes et automatisation totale de la commande .systbienvenue et du système bienvenue")
@@ -176,7 +177,7 @@ if(!message.content.startsWith(prefix)) return;
   var args = message.content.substring(prefix.length).split(" ");
    
   switch (args[0].toLowerCase()) {
-      case "statistiques":
+      case "stats":
   
       var userCreateDate = message.author.createdAt.toString().split(" ");
       var msgauthor = message.author.id;
@@ -230,7 +231,7 @@ if(!message.content.startsWith(prefix)) return;
   
   
   ///Commande .infodiscord
-  if(message.content === prefix + "infodiscord") {
+  if(message.content === prefix + "infods") {
        var embed = new Discord.RichEmbed()
       .setDescription(":information_source: Information du serveur Discord")
       .addField("Nom du serveur:", message.guild.name)
@@ -244,7 +245,7 @@ if(!message.content.startsWith(prefix)) return;
     }
 
   ///Commande .skyping
-  if(message.content === prefix + "skyping"){
+  if(message.content === prefix + "ping"){
     var ping_embed = new Discord.RichEmbed()
     .addField(":satellite_orbital: Ping", 'Temps de latence avec le serveur: `' + `${message.createdTimestamp - Date.now()}` + ' ms`')
     .setColor("#0404B4")
@@ -294,7 +295,7 @@ if(!message.content.startsWith(prefix)) return;
 
   
   ///Commande .skydon
-  if(message.content === prefix + "skydon"){
+  if(message.content === prefix + "don"){
     var skydon_embed = new Discord.RichEmbed()
     .addField(":gift_heart: Don pour Sky", "Si tu souhaites me faire un don (même des petits), clique ici: https://paypal.me/skybotdiscord ! En me fesant un don, tu as directement le rang: **Sky Donator**, stylé non ? ")
     .setColor("#FFFFFF")
@@ -302,7 +303,7 @@ if(!message.content.startsWith(prefix)) return;
   }
   
   ///Commande .skyadd
-  if(message.content === prefix + "skyadd"){
+  if(message.content === prefix + "add"){
     var skyadd_embed = new Discord.RichEmbed()
     .addField(":globe_with_meridians: Ajouter Sky", "Heureux que tu me veux sur ton serveur Discord :robot: ! Clique sur ce lien: https://discordapp.com/oauth2/authorize?client_id=450323683840491530&scope=bot&permissions=1878522951")
     .setColor("#0404B4")
@@ -310,7 +311,7 @@ if(!message.content.startsWith(prefix)) return;
   }
   
    ///Commande .skydiscord
-  if(message.content === prefix + "skydiscord"){
+  if(message.content === prefix + "discord"){
     var skydiscord_embed = new Discord.RichEmbed()
     .addField(":thought_balloon: Serveur Discord de Sky", 'Heureux que tu souhaites rejoindre mon serveur Discord :robot: ! Tu seras au courant des **maintenances** et autres. Clique sur ce lien: https://discord.gg/YuX9yWD')
     .setColor("#0404B4")
@@ -318,7 +319,7 @@ if(!message.content.startsWith(prefix)) return;
   }
   
   ///Commande .skyservers
-  if(message.content === prefix + "skyservers"){
+  if(message.content === prefix + "servers"){
     var statsok_embed = new Discord.RichEmbed()
       .addField(":file_cabinet: Serveurs", `Pfiou, je suis actuellement en marche dans ${client.guilds.size} serveurs !`)
       .setColor("#FFFFFF")
