@@ -1,5 +1,6 @@
 ///Connexion à Discord.js
 const Discord = require('discord.js');
+const client = new Discord.Client();
 
 ///Le préfixe
 var prefix = '.';
