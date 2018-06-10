@@ -1,6 +1,5 @@
 ///Connexion à Discord.js
 const Discord = require('discord.js');
-const client = new Discord.Client();
 
 ///Le préfixe
 var prefix = '.';
@@ -26,48 +25,50 @@ client.on('message', message => {
    }
 
 ///Commande .skycommandes
-   if(message.content === prefix + "help"){
-    var helpok_embed = new Discord.RichEmbed()
-    .addField(":white_check_mark: Succès", `La liste des commandes est envoyée par message privé !`)
-    .setColor("#00FF00")
-    message.channel.sendMessage(helpok_embed)
-     var help_embed = new Discord.RichEmbed()
-    .setColor("#0174DF")
-    .setTitle("Les commandes de Sky")
-    .setThumbnail(client.user.avatarURL)
-    .setDescription("Voici les commandes disponibles:")
-    .addField(".help", "Affiche les commandes")
-    .addField(".info", "Affiche les informations sur Sky")
-    .addField(".version", "Voir la version de Sky")
-    .addField(".add", "Pour ajouter Sky sur ton serveur Discord")
-    .addField(".maj", "Voir les mises à jour effectuées sur Sky")
-    .addField(".myavatar", "Demander le lien de son avatar")
-    .addField(".ping", "Voir le temps de latence entre Sky et le serveur")
-    .addField(".don", "Faire un don pour Sky")
-    .addField(".say", "Faire dire quelque chose à Sky")
-    .addField(".bvn", "Permet de souhaiter la bienvenue à un utilisateur")
-    .addField(".servers", "Savoir le nombre de serveur dans lequel est Sky")
-    .addField(".discord", "Obtenir le lien du serveur Discord de Sky")
-    .addField(".infods", "Voir les informations du serveur Discord")
-    .addField(".mystats", "Voir les statistiques de ton compte")
-    .addField(".systsondage", "Permet d'activer le système de sondage")
-    .addField(".sondage", "Permet de crée des sondages **(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des sondages)**")
-    .addField("Modération - .kick", "Kick l'utilisateur séléctionné")
-    .addField("Modération - .ban", "Banne l'utilisateur séléctionné")
-    .addField("Modération - .clear", "Supprime un nombre de messages")
-    .setFooter("Fiche commande - SkyBOT")
-    message.author.send(help_embed);
-  }
+if(message.content === prefix + "help"){
+  var helpok_embed = new Discord.RichEmbed()
+  .addField(":white_check_mark: Succès", `La liste des commandes est envoyée par message privé !`)
+  .setColor("#00FF00")
+  message.channel.sendMessage(helpok_embed)
+   var help_embed = new Discord.RichEmbed()
+  .setColor("#0174DF")
+  .setTitle("Les commandes de Sky")
+  .setThumbnail(client.user.avatarURL)
+  .setDescription("Voici les commandes disponibles:")
+  .addField(".help", "Affiche les commandes")
+  .addField(".info", "Affiche les informations sur Sky")
+  .addField(".version", "Voir la version de Sky")
+  .addField(".add", "Pour ajouter Sky sur ton serveur Discord")
+  .addField(".maj", "Voir les mises à jour effectuées sur Sky")
+  .addField(".myavatar", "Demander le lien de son avatar")
+  .addField(".ping", "Voir le temps de latence entre Sky et le serveur")
+  .addField(".don", "Faire un don pour Sky")
+  .addField(".say", "Faire dire quelque chose à Sky")
+  .addField(".bvn", "Permet de souhaiter la bienvenue à un utilisateur")
+  .addField(".servers", "Savoir le nombre de serveur dans lequel est Sky")
+  .addField(".discord", "Obtenir le lien du serveur Discord de Sky")
+  .addField(".infods", "Voir les informations du serveur Discord")
+  .addField(".mystats", "Voir les statistiques de ton compte")
+  .addField(".systsondage", "Permet d'activer le système de sondage")
+  .addField(".sondage", "Permet de crée des sondages **(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des sondages)**")
+  .addField("Modération - .kick", "Kick l'utilisateur séléctionné")
+  .addField("Modération - .ban", "Banne l'utilisateur séléctionné")
+  .addField("Modération - .clear", "Supprime un nombre de messages")
+  .addField("Administration - .alerteadm", "Permet d'envoyer des informations pour les membres")
+  .setFooter("Fiche commande - SkyBOT")
+  message.author.send(help_embed);
+}
+
 
  ///Commande .skyinfo
   if(message.content === prefix + "info") {
     var info_embed = new Discord.RichEmbed()
-    .setColor("#04B404")
     .setTitle("Informations sur Sky")
-    .addField(":robot: Mon nom :", `${client.user.tag}`, true)
-    .addField(":robot: Discriminateur:", `#${client.user.discriminator}`)
-    .addField(":robot: Mon ID:", `${client.user.id}`)
-    .addField(":robot: Mon créateur:", "Runyard#2305")
+    .addField(":small_blue_diamond: Nom :", `${client.user.username}`, true)
+    .addField(":small_blue_diamond: Discriminateur:", `#${client.user.discriminator}`)
+    .addField(":small_blue_diamond: ID:", `${client.user.id}`)
+    .addField(":small_blue_diamond: Créateur:", "Runyard#2305")
+    .setColor("#04B404")
     message.channel.sendMessage(info_embed)
     console.log(`SKY: L'utilisateur ${message.author.username} a demander les informations du BOT et du serveur actuel`)
 
@@ -83,6 +84,7 @@ client.on('message', message => {
     .setColor("#FFFFFF")
     .setTitle("Les mises à jour de Sky")
     .setDescription("Voici les MAJ effectuées jusqu'à maintenant:")
+    .addField("MAJ 09.06.2018 (2)", "Ajout de la commande *.alerteadm*, amélioration des commandes **.infods** et **.info**")
     .addField("MAJ 09.06.2018 (2)", "Modification du nom de quasiment toutes les commmandes, enlèvement du mot **Sky** des commandes, optimisation de Sky. Désormais la nouvelle commande pour voir la liste des commandes est **.help**.")
     .addField("MAJ 09.06.2018", "Mise en place de l'embed dans tous les commandes, changement des îcones de la commande **.sondage**, ajout des commandes **.say** et **.bvn**, ajout également des messages d'erreur en cas de problème")
     .addField("MAJ 07.06.2018", "Ajout de la commande .systsondage et .sondage (il faut d'abord exécuter la commande .systsondage), suppression de la commande .systbienvenue, le système de bienvenue sera de retour prochainement")
@@ -177,16 +179,19 @@ if(!message.content.startsWith(prefix)) return;
   var args = message.content.substring(prefix.length).split(" ");
    
   switch (args[0].toLowerCase()) {
-      case "stats":
+      case "mystats":
   
       var userCreateDate = message.author.createdAt.toString().split(" ");
       var msgauthor = message.author.id;
   
       var stats_embed = new Discord.RichEmbed ()
       .setColor("#FF0000")
-      .setTitle(`Statistiques de l'utilisateur: ${message.author.username}`)
+      .addField("Statistiques de l'utilisateur:", `${message.author.username}`)
       .addField(`ID:`, msgauthor, true)
-      .addField("Date de création du compte:", userCreateDate[1] + ' ' + userCreateDate[2] + ' ' + userCreateDate[3])
+      .addField("Ton discriminateur:", message.author.discriminator)
+      .addField("Date de création du compte:", userCreateDate[1] + ' ' + userCreateDate[2] + ' ' + userCreateDate[3] + ' ')
+      .addField("Ton dernier message:", message.author.lastMessage)
+      .addField("Est-tu un bot ?", message.author.bot)
       .setThumbnail(message.author.avatarURL)
       var statsok_embed = new Discord.RichEmbed()
       .addField(":white_check_mark: Succès", "Les statistiques de ton compte ont été envoyés par message privé.")
@@ -234,11 +239,16 @@ if(!message.content.startsWith(prefix)) return;
   if(message.content === prefix + "infods") {
        var embed = new Discord.RichEmbed()
       .setDescription(":information_source: Information du serveur Discord")
+      .setThumbnail(message.guild.iconURL)
       .addField("Nom du serveur:", message.guild.name)
       .addField("Créateur du serveur:", message.guild.owner)
+      .addField("Région du serveur:", message.guild.region)
       .addField("Crée le:", message.guild.createdAt)
-      .addField("Tu as rejoin le serveur le:", message.member.joinedAt)
-      .addField("Nombre d'utilisateurs dans le serveur:", message.guild.memberCount)
+      .addField("Tu as rejoins le:", message.member.joinedAt)
+      .addField("Salon AFK:", message.guild.afkChannel)
+      .addField("Nombre d'utilisateurs:", message.guild.memberCount)
+      .addField("Nombre de salons et catégories:", message.guild.channels.size)
+
       .setColor("0x0000FF")
     message.channel.sendEmbed(embed)
 
@@ -253,113 +263,130 @@ if(!message.content.startsWith(prefix)) return;
   }
 
  
-   ///Commande .systsondage
-   if (message.content === '.systsondage'){
-    if(!message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'éxecuter cette commande. (commande éxecutée: .systsondage)");
-    var systbvn_embed = new Discord.RichEmbed()
-    .addField(":white_check_mark: Succès", "Le salon **📊sondages** a été crée et le système a été activé.")
-    .setColor("#00FF00")
-    message.channel.guild.createChannel("📊sondages");
-    message.channel.sendMessage(systbvn_embed).then(msg => msg.delete(5000))
-
-   }
-
-   ///Commande .say
-    if (message.content.startsWith(prefix + "say")) {
-      if(message.content === '.say') return message.channel.sendMessage(":x: **Erreur** ! Merci d'ajouter un message.").then(msg => msg.delete(7000))
-      message.delete()
-          let args = message.content.split(" ").slice(1);
-          let thingtoEcho = args.join(" ")
-          var sayembed = new Discord.RichEmbed()
-                .addField(message.author.username + " dit:", thingtoEcho)
-                .setColor("#0B3B39")
-                message.channel.sendMessage(sayembed)
-
-    }
-
-
-    ///Commande bvn
-    if (message.content.startsWith(prefix + "bvn")) {
-      if(message.content === '.bvn') return message.channel.sendMessage(":x: **Erreur** ! Merci de mentionner un utilisateur pour souhaiter la bienvenue.").then(msg => msg.delete(7000))
-      message.delete()
-      let args = message.content.split(" ").slice(1);
-      let thingtoEcho = args.join(" ")
-      var bvnembed = new Discord.RichEmbed()
-            .setTitle(":trident: BIENVENUE")
-            .addField(message.author.username + " souhaite la bienvenue à:", thingtoEcho)
-            .setFooter(message.guild.name)
-            .setColor("#0A0A2A")
-            message.channel.sendMessage(bvnembed)
-
-}
-
-  
-  ///Commande .skydon
-  if(message.content === prefix + "don"){
-    var skydon_embed = new Discord.RichEmbed()
-    .addField(":gift_heart: Don pour Sky", "Si tu souhaites me faire un don (même des petits), clique ici: https://paypal.me/skybotdiscord ! En me fesant un don, tu as directement le rang: **Sky Donator**, stylé non ? ")
-    .setColor("#FFFFFF")
-    message.channel.sendMessage(skydon_embed)
-  }
-  
-  ///Commande .skyadd
-  if(message.content === prefix + "add"){
-    var skyadd_embed = new Discord.RichEmbed()
-    .addField(":globe_with_meridians: Ajouter Sky", "Heureux que tu me veux sur ton serveur Discord :robot: ! Clique sur ce lien: https://discordapp.com/oauth2/authorize?client_id=450323683840491530&scope=bot&permissions=2146958551")
-    .setColor("#0404B4")
-    message.channel.sendMessage(skyadd_embed)
-  }
-  
-   ///Commande .skydiscord
-  if(message.content === prefix + "discord"){
-    var skydiscord_embed = new Discord.RichEmbed()
-    .addField(":thought_balloon: Serveur Discord de Sky", 'Heureux que tu souhaites rejoindre mon serveur Discord :robot: ! Tu seras au courant des **maintenances** et autres. Clique sur ce lien: https://discord.gg/YuX9yWD')
-    .setColor("#0404B4")
-    message.channel.sendMessage(skydiscord_embed)
-  }
-  
-  ///Commande .skyservers
-  if(message.content === prefix + "servers"){
-    var statsok_embed = new Discord.RichEmbed()
-      .addField(":file_cabinet: Serveurs", `Pfiou, je suis actuellement en marche dans ${client.guilds.size} serveurs !`)
-      .setColor("#FFFFFF")
-      message.channel.sendMessage(statsok_embed)
-   }
-              
-
-  ///Commande .myavatar
-    if (message.content === '.myavatar'){
-      var OKMyavatar_embed = new Discord.RichEmbed()
-      .addField(":white_check_mark: Succès", "Le lien de ton avatar a été envoyé par message privé !")
+    ///Commande .systsondage
+    if (message.content === '.systsondage'){
+      if(!message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'éxecuter cette commande. (commande éxecutée: .systsondage)");
+      var systbvn_embed = new Discord.RichEmbed()
+      .addField(":white_check_mark: Succès", "Le salon **📊sondages** a été crée et le système a été activé.")
       .setColor("#00FF00")
-      message.channel.sendMessage(OKMyavatar_embed);
-      message.author.send('Voici le lien de ton avatar :arrow_down_small:')
-      message.author.send(message.author.avatarURL)
+      message.channel.guild.createChannel("📊sondages");
+      message.channel.sendMessage(systbvn_embed).then(msg => msg.delete(5000))
+  
+     }
+  
+     ///Commande .say
+      if (message.content.startsWith(prefix + "say")) {
+        if(message.content === '.say') return message.channel.sendMessage(":x: **Erreur** ! Merci d'ajouter un message.").then(msg => msg.delete(7000))
+        message.delete()
+            let args = message.content.split(" ").slice(1);
+            let thingtoEcho = args.join(" ")
+            var sayembed = new Discord.RichEmbed()
+                  .addField(message.author.username + " dit:", thingtoEcho)
+                  .setColor("#0B3B39")
+                  message.channel.sendMessage(sayembed)
+  
+      }
+
+      ///Commande .say
+      if (message.content.startsWith(prefix + "alerteadm")) {
+        if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'éxecuter cette commande. (commande éxecutée: .alerteadm)");
+        if(message.content === '.alerteadm') return message.channel.sendMessage(":x: **Erreur** ! Merci d'ajouter un message.").then(msg => msg.delete(7000))
+        message.channel.sendMessage("@everyone :loudspeaker: **INFORMATION POUR LES MEMBRES**")
+        message.delete()
+            let args = message.content.split(" ").slice(1);
+            let thingtoEcho = args.join(" ")
+            var alerteadmembed = new Discord.RichEmbed()
+                  .setTitle(":warning: MESSAGE DES ADMINISTRATEURS:")
+                  .setDescription(thingtoEcho)
+                  .setFooter(message.guild.name)
+                  .setColor("#FF4000")
+                  message.channel.sendMessage(alerteadmembed)
+  
+      }
+  
+  
+      ///Commande bvn
+      if (message.content.startsWith(prefix + "bvn")) {
+        if(message.content === '.bvn') return message.channel.sendMessage(":x: **Erreur** ! Merci de mentionner un utilisateur pour souhaiter la bienvenue.").then(msg => msg.delete(7000))
+        message.delete()
+        let args = message.content.split(" ").slice(1);
+        let thingtoEcho = args.join(" ")
+        var bvnembed = new Discord.RichEmbed()
+              .setTitle(":trident: BIENVENUE")
+              .addField(message.author.username + " souhaite la bienvenue à:", thingtoEcho)
+              .setFooter(message.guild.name)
+              .setColor("#0A0A2A")
+              message.channel.sendMessage(bvnembed)
+  
+  }
+  
+    
+    ///Commande .skydon
+    if(message.content === prefix + "don"){
+      var skydon_embed = new Discord.RichEmbed()
+      .addField(":gift_heart: Don pour Sky", "Si tu souhaites me faire un don (même des petits), clique ici: https://paypal.me/skybotdiscord ! En me fesant un don, tu as directement le rang: **Sky Donator**, stylé non ? ")
+      .setColor("#FFFFFF")
+      message.channel.sendMessage(skydon_embed)
     }
-
-    ///Commande .sondage
-    if (message.content.startsWith(prefix + "sondage")) {
-      if(message.content === '.sondage') return message.channel.sendMessage(":x: **Erreur** ! Merci d'ajouter la question.").then(msg => msg.delete(7000))
-      if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'éxecuter cette commande. (commande éxecutée: .sondage)");
-          let args = message.content.split(" ").slice(1);
-          let thingtoEcho = args.join(" ")
-          var sondageok_embed = new Discord.RichEmbed()
-          .addField(":white_check_mark: Succès", 'Le sondage a été crée.')
-          .setColor("#0404B4")
-          message.channel.sendMessage(sondageok_embed).then(msg => msg.delete(5000))
-          message.guild.channels.find("name", "📊sondages").sendMessage("@everyone **Allez ! Votez juste en-dessous** :small_red_triangle_down:")
-          var sondageembed = new Discord.RichEmbed()
-                .setTitle("📊 Un sondage est lancé:")
-                .addField(thingtoEcho, "Répondre avec ✅ ou ❌")
-                .setColor("#00FFFF")
-                .setTimestamp()
-                message.guild.channels.find("name", "📊sondages").sendEmbed(sondageembed)
-               .then(function (message) {
-                 message.react("✅")
-                 message.react("❌")
-               }).catch(function() {
-
-               })
+    
+    ///Commande .add
+    if(message.content === prefix + "add"){
+      var skyadd_embed = new Discord.RichEmbed()
+      .addField(":globe_with_meridians: Ajouter Sky", "Heureux que tu me veux sur ton serveur Discord :robot: ! Clique sur ce lien: https://discordapp.com/oauth2/authorize?client_id=450323683840491530&scope=bot&permissions=2146958551")
+      .setColor("#0404B4")
+      message.channel.sendMessage(skyadd_embed)
+    }
+    
+     ///Commande .discord
+    if(message.content === prefix + "discord"){
+      var skydiscord_embed = new Discord.RichEmbed()
+      .addField(":thought_balloon: Serveur Discord de Sky", 'Heureux que tu souhaites rejoindre mon serveur Discord :robot: ! Tu seras au courant des **maintenances** et autres. Clique sur ce lien: https://discord.gg/YuX9yWD')
+      .setColor("#0404B4")
+      message.channel.sendMessage(skydiscord_embed)
+    }
+    
+    ///Commande .servers
+    if(message.content === prefix + "servers"){
+      var statsok_embed = new Discord.RichEmbed()
+        .addField(":file_cabinet: Serveurs", `Pfiou, je suis actuellement en marche dans ${client.guilds.size} serveurs !`)
+        .setColor("#FFFFFF")
+        message.channel.sendMessage(statsok_embed)
+     }   
+  
+    ///Commande .myavatar
+      if (message.content === '.myavatar'){
+        var OKMyavatar_embed = new Discord.RichEmbed()
+        .addField(":white_check_mark: Succès", "Le lien de ton avatar a été envoyé par message privé !")
+        .setColor("#00FF00")
+        message.channel.sendMessage(OKMyavatar_embed);
+        message.author.send('Voici le lien de ton avatar :arrow_down_small:')
+        message.author.send(message.author.avatarURL)
+      }
+  
+      ///Commande .sondage
+      if (message.content.startsWith(prefix + "sondage")) {
+        if(message.content === '.sondage') return message.channel.sendMessage(":x: **Erreur** ! Merci d'ajouter la question.").then(msg => msg.delete(7000))
+        if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'éxecuter cette commande. (commande éxecutée: .sondage)");
+            let args = message.content.split(" ").slice(1);
+            let thingtoEcho = args.join(" ")
+            var sondageok_embed = new Discord.RichEmbed()
+            .addField(":white_check_mark: Succès", 'Le sondage a été crée.')
+            .setColor("#0404B4")
+            message.channel.sendMessage(sondageok_embed).then(msg => msg.delete(5000))
+            message.guild.channels.find("name", "📊sondages").sendMessage("@everyone **Allez ! Votez juste en-dessous** :small_red_triangle_down:")
+            var sondageembed = new Discord.RichEmbed()
+                  .setTitle("📊 Un sondage est lancé:")
+                  .addField(thingtoEcho, "Répondre avec ✅ ou ❌")
+                  .setColor("#00FFFF")
+                  .setTimestamp()
+                  message.guild.channels.find("name", "📊sondages").sendEmbed(sondageembed)
+                 .then(function (message) {
+                   message.react("✅")
+                   message.react("❌")
+                 }).catch(function() {
+  
+                 })
+  
 
           
 }});
