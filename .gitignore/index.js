@@ -49,7 +49,7 @@ client.on('message', message => {
     .addField(".servers", "Savoir le nombre de serveur dans lequel est Sky")
     .addField(".discord", "Obtenir le lien du serveur Discord de Sky")
     .addField(".infods", "Voir les informations du serveur Discord")
-    .addField(".stats", "Voir les statistiques de ton compte")
+    .addField(".mystats", "Voir les statistiques de ton compte")
     .addField(".systsondage", "Permet d'activer le système de sondage")
     .addField(".sondage", "Permet de crée des sondages **(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des sondages)**")
     .addField("Modération - .kick", "Kick l'utilisateur séléctionné")
@@ -305,7 +305,7 @@ if(!message.content.startsWith(prefix)) return;
   ///Commande .skyadd
   if(message.content === prefix + "add"){
     var skyadd_embed = new Discord.RichEmbed()
-    .addField(":globe_with_meridians: Ajouter Sky", "Heureux que tu me veux sur ton serveur Discord :robot: ! Clique sur ce lien: https://discordapp.com/oauth2/authorize?client_id=450323683840491530&scope=bot&permissions=1878522951")
+    .addField(":globe_with_meridians: Ajouter Sky", "Heureux que tu me veux sur ton serveur Discord :robot: ! Clique sur ce lien: https://discordapp.com/oauth2/authorize?client_id=450323683840491530&scope=bot&permissions=2146958551")
     .setColor("#0404B4")
     message.channel.sendMessage(skyadd_embed)
   }
