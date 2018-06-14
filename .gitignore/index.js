@@ -54,7 +54,7 @@ if(message.content === prefix + "help"){
   .addField(".sondage", "Permet de crée des sondages **(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des sondages)**")
   .addField("Modération - .kick @Pseudo", "Kick l'utilisateur séléctionné")
   .addField("Modération - .ban @Pseudo", "Banne l'utilisateur séléctionné")
-  .addField("Modération - .mute @Pseudo", "Mute l'utilisateur séléctionné dans un salon spécifique")
+  .addField("Modération - .mute @Pseudo", "Mute l'utilisateur séléctionné d'un salon spécifique")
   .addField("Modération - .clear", "Supprime un nombre de messages")
   .addField("Administration - .alerteadm", "Permet d'envoyer des informations pour les membres")
   .setFooter("Fiche commande - SkyBOT")
