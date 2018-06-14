@@ -11,7 +11,7 @@ client.login(process.env.TOKEN)
 ///Avertissement en marche
 client.on("ready", () => {
   console.log("SKY: Je suis prêt")
-  client.user.setGame(`.help | SkyBOT ❤);
+  client.user.setGame(`.help | SkyBOT <3);
 });
   
 ///La version du BOT
