@@ -52,8 +52,9 @@ if(message.content === prefix + "help"){
   .addField(".mystats", "Voir les statistiques de ton compte")
   .addField(".systsondage", "Permet d'activer le système de sondage")
   .addField(".sondage", "Permet de crée des sondages **(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des sondages)**")
-  .addField("Modération - .kick", "Kick l'utilisateur séléctionné")
-  .addField("Modération - .ban", "Banne l'utilisateur séléctionné")
+  .addField("Modération - .kick @Pseudo", "Kick l'utilisateur séléctionné")
+  .addField("Modération - .ban @Pseudo", "Banne l'utilisateur séléctionné")
+  .addField("Modération - .mute @Pseudo", "Mute l'utilisateur séléctionné dans un salon spécifique")
   .addField("Modération - .clear", "Supprime un nombre de messages")
   .addField("Administration - .alerteadm", "Permet d'envoyer des informations pour les membres")
   .setFooter("Fiche commande - SkyBOT")
@@ -85,6 +86,7 @@ if(message.content === prefix + "help"){
     .setColor("#FFFFFF")
     .setTitle("Les mises à jour de Sky")
     .setDescription("Voici les MAJ effectuées jusqu'à maintenant:")
+    .addField("MAJ 14.06.2018", "Ajout de la commande **.mute**, optimisation de **Sky**")
     .addField("MAJ 10.06.2018", "Ajout de la commande **.alerteadm**, amélioration des commandes **.infods** et **.info**")
     .addField("MAJ 09.06.2018 (2)", "Modification du nom de quasiment toutes les commmandes, enlèvement du mot **Sky** des commandes, optimisation de Sky. Désormais la nouvelle commande pour voir la liste des commandes est **.help**.")
     .addField("MAJ 09.06.2018 (1)", "Mise en place de l'embed dans tous les commandes, changement des îcones de la commande **.sondage**, ajout des commandes **.say** et **.bvn**, ajout également des messages d'erreur en cas de problème")
@@ -304,6 +306,25 @@ if(!message.content.startsWith(prefix)) return;
                   message.channel.sendMessage(alerteadmembed)
   
       }
+  
+       ///Commande Mute
+     if(message.content.startsWith(prefix + "mute")) {
+        if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'exécuter cette commande (commande exécutée: .mute)!");
+ 
+        if(message.mentions.users.size === 0) {
+            return message.channel.send(':x: OOPS Vous devez mentionner un utilisateur à mute !');
+        }
+ 
+        var mute = message.guild.member(message.mentions.users.first());
+        if(!mute) {
+            return message.channel.send(":x: **OOPS** Je n'ai pas trouvé l'utilisateur.");
+        }
+ 
+        if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) return message.channel.send("Je n'ai pas la permission ! Merci de le mettre..");
+        message.channel.overwritePermissions(mute, { SEND_MESSAGES: false}).then(member => {
+            message.channel.send(`${mute.user.username} à été mute !`);
+        })
+    }
   
   
       ///Commande bvn
