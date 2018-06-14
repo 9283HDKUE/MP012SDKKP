@@ -312,7 +312,7 @@ if(!message.content.startsWith(prefix)) return;
         if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'exécuter cette commande (commande exécutée: .mute)!");
  
         if(message.mentions.users.size === 0) {
-            return message.channel.send(':x: OOPS Vous devez mentionner un utilisateur à mute !');
+            return message.channel.send(':x: **OOPS** Vous devez mentionner un utilisateur à mute !');
         }
  
         var mute = message.guild.member(message.mentions.users.first());
