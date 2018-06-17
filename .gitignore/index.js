@@ -46,7 +46,7 @@ if(message.content === prefix + "help"){
   .addField(".don", "Faire un don pour Sky")
   .addField(".recru", "Permet de savoir l'état des recrutements")
   .addField(".equipe", "Permet de voir l'équipe de Sky")
-  .addField(".siteweb", "Permet de voir le site-web de Sky")
+  .addField(".siteweb", "Permet d'obtenir le lien du site web de Sky")
   .addField(".say", "Faire dire quelque chose à Sky")
   .addField(".bvn", "Permet de souhaiter la bienvenue à un utilisateur")
   .addField(".servers", "Savoir le nombre de serveur dans lequel est Sky")
@@ -397,8 +397,8 @@ if(!message.content.startsWith(prefix)) return;
   ///Commande .siteweb
     if(message.content === prefix + "siteweb"){
       var skydiscord_embed = new Discord.RichEmbed()
-      .setTitle(":bookmark_tabs: Site-web de Sky")
-      .addField("Notre site-web est en cours de création...", "Il sera disponible prochainement")
+      .setTitle(":bookmark_tabs: Site web de Sky")
+      .addField("Site web est en cours de création...", "Il sera disponible prochainement")
       .setColor("#0404B4")
       message.channel.sendMessage(skydiscord_embed)
     }
