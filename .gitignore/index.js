@@ -44,6 +44,7 @@ if(message.content === prefix + "help"){
   .addField(".myavatar", "Demander le lien de son avatar")
   .addField(".ping", "Voir le temps de latence entre Sky et le serveur")
   .addField(".don", "Faire un don pour Sky")
+  .addField(".recru", "Permet de savoir l'état des recrutements")
   .addField(".equipe", "Permet de voir l'équipe de Sky")
   .addField(".siteweb", "Permet de voir le Site Web de Sky")
   .addField(".say", "Faire dire quelque chose à Sky")
@@ -88,7 +89,7 @@ if(message.content === prefix + "help"){
     .setColor("#FFFFFF")
     .setTitle("Les mises à jour de Sky")
     .setDescription("Voici les MAJ effectuées jusqu'à maintenant:")
-    .addField("MAJ 17.06.2018", "Amélioration de la commande **.mute**, ajout des commandes: **.equipe** et **.siteweb**.")
+    .addField("MAJ 17.06.2018", "Amélioration de la commande **.mute**, ajout des commandes: **.equipe**, **.siteweb** et **recru**.")
     .addField("MAJ 14.06.2018", "Ajout de la commande **.mute**, optimisation de **Sky**")
     .addField("MAJ 10.06.2018", "Ajout de la commande **.alerteadm**, amélioration des commandes **.infods** et **.info**")
     .addField("MAJ 09.06.2018 (2)", "Modification du nom de quasiment toutes les commmandes, enlèvement du mot **Sky** des commandes, optimisation de Sky. Désormais la nouvelle commande pour voir la liste des commandes est **.help**.")
@@ -378,18 +379,26 @@ if(!message.content.startsWith(prefix)) return;
     if(message.content === prefix + "equipe"){
       var skydiscord_embed = new Discord.RichEmbed()
       .setTitle(":necktie: Équipe de Sky")
-      .addField("Runyard", "Fondateur et Développeur")
-      .addField("Swarwerth", "Administrateur")
-      .addField("Recrutements", "**Bientôt...**")
+      .addField("Runyard (Runyard#2305)", "Fondateur et Développeur")
+      .addField("Swarwerth (Swarwerth#2943)", "Administrateur")
       .setColor("#0404B4")
       message.channel.sendMessage(skydiscord_embed)
     }
   
-  ///Commande .equipe
+   ///Commande .recru
+    if(message.content === prefix + "recru"){
+      var skydiscord_embed = new Discord.RichEmbed()
+      .setTitle(":pushpin: Recrutements")
+      .addField("Les recrutements sont actuellement:", "OFF")
+      .setColor("#0404B4")
+      message.channel.sendMessage(skydiscord_embed)
+    }
+  
+  ///Commande .siteweb
     if(message.content === prefix + "siteweb"){
       var skydiscord_embed = new Discord.RichEmbed()
-      .setTitle(":bookmark_tabs: Site Web de Sky")
-      .addField("Notre Site Web est en cours de création...", "Il sera disponible prochainement")
+      .setTitle(":bookmark_tabs: Site-web de Sky")
+      .addField("Notre site-web est en cours de création...", "Il sera disponible prochainement")
       .setColor("#0404B4")
       message.channel.sendMessage(skydiscord_embed)
     }
