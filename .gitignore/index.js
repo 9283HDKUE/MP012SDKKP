@@ -89,7 +89,7 @@ if(message.content === prefix + "help"){
     .setColor("#FFFFFF")
     .setTitle("Les mises à jour de Sky")
     .setDescription("Voici les MAJ effectuées jusqu'à maintenant:")
-    .addField("MAJ 17.06.2018", "Amélioration de la commande **.mute**, ajout des commandes: **.equipe**, **.siteweb** et **recru**.")
+    .addField("MAJ 17.06.2018", "Amélioration de la commande **.mute**, ajout des commandes: **.equipe**, **.siteweb** et **.recru**.")
     .addField("MAJ 14.06.2018", "Ajout de la commande **.mute**, optimisation de **Sky**")
     .addField("MAJ 10.06.2018", "Ajout de la commande **.alerteadm**, amélioration des commandes **.infods** et **.info**")
     .addField("MAJ 09.06.2018 (2)", "Modification du nom de quasiment toutes les commmandes, enlèvement du mot **Sky** des commandes, optimisation de Sky. Désormais la nouvelle commande pour voir la liste des commandes est **.help**.")
