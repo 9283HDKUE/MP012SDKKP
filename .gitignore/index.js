@@ -52,11 +52,11 @@ if(message.content === prefix + "help"){
   .addField(".mystats", "Voir les statistiques de ton compte")
   .addField(".systsondage", "Permet d'activer le système de sondage")
   .addField(".sondage", "Permet de crée des sondages **(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des sondages)**")
-  .addField("Modération - .kick", "Kick l'utilisateur séléctionné")
-  .addField("Modération - .ban", "Banne l'utilisateur séléctionné")
-  .addField("Modération - .mute", "Mute l'utilisateur séléctionné d'un salon spécifique")
-  .addField("Modération - .clear", "Supprime un nombre de messages")
-  .addField("Administration - .alerteadm", "Permet d'envoyer des informations pour les membres")
+  .addField("**Modération** - .kick", "Kick l'utilisateur séléctionné")
+  .addField("**Modération** - .ban", "Banne l'utilisateur séléctionné")
+  .addField("**Modération** - .mute", "Mute l'utilisateur séléctionné d'un salon spécifique")
+  .addField("**Modération** - .clear", "Supprime un nombre de messages")
+  .addField("**Administration** - .alerteadm", "Permet d'envoyer des informations pour les membres")
   .setFooter("Fiche commande - SkyBOT")
   message.author.send(help_embed);
 }
@@ -86,6 +86,7 @@ if(message.content === prefix + "help"){
     .setColor("#FFFFFF")
     .setTitle("Les mises à jour de Sky")
     .setDescription("Voici les MAJ effectuées jusqu'à maintenant:")
+    .addField("MAJ 17.06.2018", "Amélioration de la commande **.mute**")
     .addField("MAJ 14.06.2018", "Ajout de la commande **.mute**, optimisation de **Sky**")
     .addField("MAJ 10.06.2018", "Ajout de la commande **.alerteadm**, amélioration des commandes **.infods** et **.info**")
     .addField("MAJ 09.06.2018 (2)", "Modification du nom de quasiment toutes les commmandes, enlèvement du mot **Sky** des commandes, optimisation de Sky. Désormais la nouvelle commande pour voir la liste des commandes est **.help**.")
@@ -290,7 +291,7 @@ if(!message.content.startsWith(prefix)) return;
   
       }
 
-      ///Commande .say
+      ///Commande .alerteadm
       if (message.content.startsWith(prefix + "alerteadm")) {
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'éxecuter cette commande. (commande éxecutée: .alerteadm)");
         if(message.content === '.alerteadm') return message.channel.sendMessage(":x: **Erreur** ! Merci d'ajouter un message.").then(msg => msg.delete(7000))
@@ -299,7 +300,7 @@ if(!message.content.startsWith(prefix)) return;
             let args = message.content.split(" ").slice(1);
             let thingtoEcho = args.join(" ")
             var alerteadmembed = new Discord.RichEmbed()
-                  .setTitle(":warning: MESSAGE DES ADMINISTRATEURS:")
+                  .setTitle(":warning: MESSAGE DE L'ÉQUIPE:")
                   .setDescription(thingtoEcho)
                   .setFooter(message.guild.name)
                   .setColor("#FF4000")
@@ -308,7 +309,7 @@ if(!message.content.startsWith(prefix)) return;
       }
   
        ///Commande Mute
-     if(message.content.startsWith(prefix + "mute")) {
+       if(message.content.startsWith(prefix + "mute")) {
         if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'exécuter cette commande (commande exécutée: .mute)!");
  
         if(message.mentions.users.size === 0) {
@@ -322,7 +323,11 @@ if(!message.content.startsWith(prefix)) return;
  
         if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) return message.channel.send("Je n'ai pas la permission ! Merci de le mettre..");
         message.channel.overwritePermissions(mute, { SEND_MESSAGES: false}).then(member => {
-            message.channel.send(`${mute.user.username} à été mute !`);
+          var muteok = new Discord.RichEmbed()
+          .setTitle(":octagonal_sign: Mute")
+          .setDescription(`L'utilisateur ${mute.user.username} a été mute de ce salon par ${message.author.username}`)
+          .setColor("#DF0101")
+            message.channel.send(muteok)
         })
     }
   
