@@ -46,7 +46,7 @@ if(message.content === prefix + "help"){
   .addField(".don", "Faire un don pour Sky")
   .addField(".recru", "Permet de savoir l'état des recrutements")
   .addField(".equipe", "Permet de voir l'équipe de Sky")
-  .addField(".siteweb", "Permet de voir le Site Web de Sky")
+  .addField(".siteweb", "Permet de voir le site-web de Sky")
   .addField(".say", "Faire dire quelque chose à Sky")
   .addField(".bvn", "Permet de souhaiter la bienvenue à un utilisateur")
   .addField(".servers", "Savoir le nombre de serveur dans lequel est Sky")
