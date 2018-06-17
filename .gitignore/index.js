@@ -325,7 +325,7 @@ if(!message.content.startsWith(prefix)) return;
         message.channel.overwritePermissions(mute, { SEND_MESSAGES: false}).then(member => {
           var muteok = new Discord.RichEmbed()
           .setTitle(":octagonal_sign: Mute")
-          .setDescription(`L'utilisateur ${mute.user.username} a été mute de ce salon par ${message.author.username}`)
+          .setDescription(`L'utilisateur ${mute.user.username} a été mute de ce salon par ${message.author.username}.`)
           .setColor("#DF0101")
             message.channel.send(muteok)
         })
