@@ -385,11 +385,6 @@ if(!message.content.startsWith(prefix)) return;
       message.channel.sendMessage(skydiscord_embed)
     }
   
-  ///Commande .equipe
-    if(message.content === "Comment vas-tu Sky ?"){
-     message.reply("Toujours aussi dynamique ! Merci !")
-    }
-  
    ///Commande .recru
     if(message.content === prefix + "recru"){
       var skydiscord_embed = new Discord.RichEmbed()
