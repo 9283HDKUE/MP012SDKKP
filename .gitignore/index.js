@@ -11,7 +11,7 @@ client.login(process.env.TOKEN)
 ///Avertissement en marche
 client.on("ready", () => {
   console.log("SKY: Je suis prêt")
-  client.user.setGame(`.help | ${client.users.size} users`);
+  client.user.setGame(`.help | ${client.users.size} utilisateurs`);
 });
   
 ///La version du BOT
@@ -411,7 +411,7 @@ if(!message.content.startsWith(prefix)) return;
     ///Commande .servers
     if(message.content === prefix + "servers"){
       var statsok_embed = new Discord.RichEmbed()
-        .addField(":file_cabinet: Serveurs", `Pfiou, je suis actuellement en marche dans ${client.guilds.size} serveurs !`)
+        .addField(":file_cabinet: Serveurs", `Pfiou, je suis actuellement en marche dans ${client.guilds.size} serveurs avec ${client.users.size} utilisateurs !`)
         .setColor("#FFFFFF")
         message.channel.sendMessage(statsok_embed)
      }   
