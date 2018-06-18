@@ -398,7 +398,7 @@ if(!message.content.startsWith(prefix)) return;
     if(message.content === prefix + "siteweb"){
       var skydiscord_embed = new Discord.RichEmbed()
       .setTitle(":bookmark_tabs: Site web de Sky")
-      .addField("Site web est en cours de création...", "Il sera disponible prochainement")
+      .addField("Site web en cours de création...", "Il sera disponible prochainement")
       .setColor("#0404B4")
       message.channel.sendMessage(skydiscord_embed)
     }
