@@ -35,7 +35,6 @@ if(message.content === prefix + "help"){
    .setColor("#0174DF")
    .setTitle("Les commandes de Sky")
    .setThumbnail(client.user.avatarURL)
-   .setDescription("Voici les commandes disponibles:")
    .addField(".help", "Affiche les commandes")
    .addField(".info", "Affiche les informations sur Sky")
    .addField(".version", "Voir la version de Sky")
