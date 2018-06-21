@@ -11,7 +11,7 @@ client.login(process.env.TOKEN)
 ///Avertissement en marche
 client.on("ready", () => {
   console.log("SKY: Je suis prêt")
-  client.user.setGame(`.help | ${client.users.size} utilisateurs`);
+   client.user.setGame(".help | " + `${client.users.size} utilisateurs`, "http://twitch.tv/bot");
 });
   
 ///La version du BOT
@@ -32,35 +32,38 @@ if(message.content === prefix + "help"){
   .setColor("#00FF00")
   message.channel.sendMessage(helpok_embed)
    var help_embed = new Discord.RichEmbed()
-  .setColor("#0174DF")
-  .setTitle("Les commandes de Sky")
-  .setThumbnail(client.user.avatarURL)
-  .setDescription("Voici les commandes disponibles:")
-  .addField(".help", "Affiche les commandes")
-  .addField(".info", "Affiche les informations sur Sky")
-  .addField(".version", "Voir la version de Sky")
-  .addField(".add", "Pour ajouter Sky sur ton serveur Discord")
-  .addField(".maj", "Voir les mises à jour effectuées sur Sky")
-  .addField(".myavatar", "Demander le lien de son avatar")
-  .addField(".ping", "Voir le temps de latence entre Sky et le serveur")
-  .addField(".don", "Faire un don pour Sky")
-  .addField(".recru", "Permet de savoir l'état des recrutements")
-  .addField(".equipe", "Permet de voir l'équipe de Sky")
-  .addField(".siteweb", "Permet d'obtenir le lien du site web de Sky")
-  .addField(".say", "Faire dire quelque chose à Sky")
-  .addField(".bvn", "Permet de souhaiter la bienvenue à un utilisateur")
-  .addField(".servers", "Savoir le nombre de serveur dans lequel est Sky")
-  .addField(".discord", "Obtenir le lien du serveur Discord de Sky")
-  .addField(".infods", "Voir les informations du serveur Discord")
-  .addField(".mystats", "Voir les statistiques de ton compte")
-  .addField(".systsondage", "Permet d'activer le système de sondage")
-  .addField(".sondage", "Permet de crée des sondages **(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des sondages)**")
-  .addField("**Modération** - .kick", "Kick l'utilisateur séléctionné")
-  .addField("**Modération** - .ban", "Banne l'utilisateur séléctionné")
-  .addField("**Modération** - .mute", "Mute l'utilisateur séléctionné d'un salon spécifique")
-  .addField("**Modération** - .clear", "Supprime un nombre de messages")
-  .addField("**Administration** - .alerteadm", "Permet d'envoyer des informations pour les membres")
-  .setFooter("Fiche commande - SkyBOT")
+   .setColor("#0174DF")
+   .setTitle("Les commandes de Sky")
+   .setThumbnail(client.user.avatarURL)
+   .setDescription("Voici les commandes disponibles:")
+   .addField(".help", "Affiche les commandes")
+   .addField(".info", "Affiche les informations sur Sky")
+   .addField(".version", "Voir la version de Sky")
+   .addField(".add", "Pour ajouter Sky sur ton serveur Discord")
+   .addField(".maj", "Voir les mises à jour effectuées sur Sky")
+   .addField(".myavatar", "Demander le lien de son avatar")
+   .addField(".ping", "Voir le temps de latence entre Sky et le serveur")
+   .addField(".don", "Faire un don pour Sky")
+   .addField(".equipe", "Permet de voir l'équipe de Sky")
+   .addField(".siteweb", "Permet d'obtenir le lien du site web de Sky")
+   .addField(".say", "Faire dire quelque chose à Sky")
+   .addField(".bvn", "Permet de souhaiter la bienvenue à un utilisateur")
+   .addField(".servers", "Savoir le nombre de serveur dans lequel est Sky")
+   .addField(".datecrea", "Savoir la date de création de Sky")
+   .addField(".discord", "Obtenir le lien du serveur Discord de Sky")
+   .addField(".infods", "Voir les informations du serveur Discord")
+   .addField(".mystats", "Voir les statistiques de ton compte")
+   .addField(".systsondage", "Permet d'activer le système de sondage")
+   .addField(".sondage", "Permet de crée des sondages **(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des sondages)**")
+   .addField(".systvraioufaux", "Permet d'activer le système de Vrai ou Faux")
+   .addField(".vraioufaux", "Permet de crée des Vrai ou Faux **(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des sondages)**")
+   .addField("**Modération** - .kick", "Kick l'utilisateur séléctionné")
+   .addField("**Modération** - .ban", "Banne l'utilisateur séléctionné")
+   .addField("**Modération** - .mute", "Mute l'utilisateur séléctionné d'un salon spécifique")
+   .addField("**Modération** - .unmute", "Démute l'utilisateur séléctionné d'un salon spécifique")
+   .addField("**Modération** - .clear", "Supprime un nombre de messages")
+   .addField("**Administration** - .alerteadm", "Permet d'envoyer des informations pour les membres")
+   .setFooter("Fiche commande - SkyBOT")
   message.author.send(help_embed);
 }
 
@@ -89,6 +92,8 @@ if(message.content === prefix + "help"){
     .setColor("#FFFFFF")
     .setTitle("Les mises à jour de Sky")
     .setDescription("Voici les MAJ effectuées jusqu'à maintenant:")
+
+    .addField("MAJ 21.06.2018", "Ajout de la commande: **.unmute** et **.datecrea** suppression de la commande **.recru** car aucune utilité, ajout de la commande **systvraioufaux** pour pouvoir activer le système de vraioufaux, et dernièrement ajout de la commande **.vraioufaux** pour pouvoir crée des Vrai ou Faux.")
     .addField("MAJ 17.06.2018", "Amélioration de la commande **.mute**, ajout des commandes: **.equipe**, **.siteweb** et **.recru**.")
     .addField("MAJ 14.06.2018", "Ajout de la commande **.mute**, optimisation de **Sky**")
     .addField("MAJ 10.06.2018", "Ajout de la commande **.alerteadm**, amélioration des commandes **.infods** et **.info**")
@@ -280,21 +285,34 @@ if(!message.content.startsWith(prefix)) return;
       message.channel.sendMessage(systbvn_embed).then(msg => msg.delete(5000))
   
      }
+
+      ///Commande .systsondage
+    if (message.content === '.systvraioufaux'){
+      if(!message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'éxecuter cette commande. (commande éxecutée: .systvraioufaux)");
+      var systbvn_embed = new Discord.RichEmbed()
+      .addField(":white_check_mark: Succès", "Le salon **❓vraioufaux** a été crée et le système a été activé.")
+      .setColor("#00FF00")
+      message.channel.guild.createChannel("❓vraioufaux");
+      message.channel.sendMessage(systbvn_embed).then(msg => msg.delete(5000))
+  
+     }
   
      ///Commande .say
-      if (message.content.startsWith(prefix + "say")) {
-        if(message.content === '.say') return message.channel.sendMessage(":x: **Erreur** ! Merci d'ajouter un message.").then(msg => msg.delete(7000))
-        message.delete()
-            let args = message.content.split(" ").slice(1);
-            let thingtoEcho = args.join(" ")
-            var sayembed = new Discord.RichEmbed()
-                  .addField(message.author.username + " dit:", thingtoEcho)
-                  .setColor("#0B3B39")
-                  message.channel.sendMessage(sayembed)
-  
-      }
+     if (message.content.startsWith(prefix + "say")) {
+      if(message.content === '.say') return message.channel.sendMessage(":x: **Erreur** ! Merci d'ajouter un message.").then(msg => msg.delete(7000))
+      message.delete()
+          let args = message.content.split(" ").slice(1);
+          let thingtoEcho = args.join(" ")
+          var sayembed = new Discord.RichEmbed()
+                .setDescription(thingtoEcho)
+                .setColor(0x0B3B39)
+                .setFooter("By " + message.author.username);
+                message.channel.sendMessage(sayembed);
 
-      ///Commande .alerteadm
+     }
+
+
+     ///Commande .alerteadm
       if (message.content.startsWith(prefix + "alerteadm")) {
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'éxecuter cette commande. (commande éxecutée: .alerteadm)");
         if(message.content === '.alerteadm') return message.channel.sendMessage(":x: **Erreur** ! Merci d'ajouter un message.").then(msg => msg.delete(7000))
@@ -327,12 +345,35 @@ if(!message.content.startsWith(prefix)) return;
         if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) return message.channel.send("Je n'ai pas la permission ! Merci de le mettre..");
         message.channel.overwritePermissions(mute, { SEND_MESSAGES: false}).then(member => {
           var muteok = new Discord.RichEmbed()
-          .setTitle(":octagonal_sign: Mute")
+          .setTitle(":mute:  Mute")
           .setDescription(`L'utilisateur ${mute.user.username} a été mute de ce salon par ${message.author.username}.`)
           .setColor("#DF0101")
             message.channel.send(muteok)
         })
     }
+
+    ///Commande UnMute
+    if(message.content.startsWith(prefix + "unmute")) {
+      if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'exécuter cette commande (commande exécutée: .unmute)!");
+
+      if(message.mentions.users.size === 0) {
+          return message.channel.send(':x: **OOPS** Vous devez mentionner un utilisateur à mute !');
+      }
+
+      var mute = message.guild.member(message.mentions.users.first());
+      if(!mute) {
+          return message.channel.send(":x: **OOPS** Je n'ai pas trouvé l'utilisateur.");
+      }
+
+      if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) return message.channel.send("Je n'ai pas la permission ! Merci de le mettre..");
+      message.channel.overwritePermissions(mute, { SEND_MESSAGES: true}).then(member => {
+        var muteoff = new Discord.RichEmbed()
+        .setTitle(":loud_sound: Démute")
+        .setDescription(`L'utilisateur ${mute.user.username} a été démute de ce salon par ${message.author.username}`)
+        .setColor("#04B404")
+          message.channel.send(muteoff)
+      })
+  }
   
   
       ///Commande bvn
@@ -384,6 +425,16 @@ if(!message.content.startsWith(prefix)) return;
       .setColor("#0404B4")
       message.channel.sendMessage(skydiscord_embed)
     }
+
+    ///Commande .datecrea
+    if(message.content === prefix + "datecrea"){
+      var datecrea_embed = new Discord.RichEmbed()
+      .setTitle(":calendar_spiral: Date de création de Sky")
+      .addField("Sky a été crée le:", "Jeudi 31 mai à **14h34** (heure de Paris)")
+      .setColor("#0404B4")
+      message.channel.sendMessage(datecrea_embed)
+    }
+  
   
    ///Commande .recru
     if(message.content === prefix + "recru"){
@@ -420,6 +471,32 @@ if(!message.content.startsWith(prefix)) return;
         message.author.send('Voici le lien de ton avatar :arrow_down_small:')
         message.author.send(message.author.avatarURL)
       }
+
+      ///Commande .sondage
+      if (message.content.startsWith(prefix + "vraioufaux")) {
+        if(message.content === '.vraioufaux') return message.channel.sendMessage(":x: **Erreur** ! Merci d'ajouter la question.").then(msg => msg.delete(7000))
+        if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'éxecuter cette commande. (commande éxecutée: .vraioufaux)");
+            let args = message.content.split(" ").slice(1);
+            let thingtoEcho = args.join(" ")
+            var vraioufaux_embed = new Discord.RichEmbed()
+            .addField(":white_check_mark: Succès", 'Le vraioufaux a été crée.')
+            .setColor("#0404B4")
+            message.channel.sendMessage(vraioufaux_embed).then(msg => msg.delete(5000))
+            message.guild.channels.find("name", "❓vraioufaux").sendMessage("@everyone **Allez ! Est-ce vrai ou bien faux ?** :small_red_triangle_down:")
+            var vraioufauxokembed = new Discord.RichEmbed()
+                  .setTitle("❓ VRAI OU FAUX:")
+                  .addField(thingtoEcho, "Répondre avec ✅ ou ❌")
+                  .setColor("#0A2A29")
+                  .setTimestamp()
+                  message.guild.channels.find("name", "❓vraioufaux").sendEmbed(vraioufauxokembed)
+                 .then(function (message) {
+                   message.react("✅")
+                   message.react("❌")
+                 }).catch(function() {
+  
+                 })
+
+                }
   
       ///Commande .sondage
       if (message.content.startsWith(prefix + "sondage")) {
@@ -433,18 +510,18 @@ if(!message.content.startsWith(prefix)) return;
             message.channel.sendMessage(sondageok_embed).then(msg => msg.delete(5000))
             message.guild.channels.find("name", "📊sondages").sendMessage("@everyone **Allez ! Votez juste en-dessous** :small_red_triangle_down:")
             var sondageembed = new Discord.RichEmbed()
-                  .setTitle("📊 Un sondage est lancé:")
-                  .addField(thingtoEcho, "Répondre avec ✅ ou ❌")
+                  .setTitle("📊 SONDAGE:")
+                  .addField(thingtoEcho, "Répondre avec 👍 ou 👎")
                   .setColor("#00FFFF")
                   .setTimestamp()
                   message.guild.channels.find("name", "📊sondages").sendEmbed(sondageembed)
                  .then(function (message) {
-                   message.react("✅")
-                   message.react("❌")
+                   message.react("👍")
+                   message.react("👎")
                  }).catch(function() {
   
                  })
-  
 
+                }
           
-}});
+});
