@@ -11,7 +11,7 @@ client.login(process.env.TOKEN)
 ///Avertissement en marche
 client.on("ready", () => {
   console.log("SKY: Je suis prêt")
-   client.user.setGame(".help | " + `${client.users.size} utilisateurs`, "http://twitch.tv/bot");
+   client.user.setGame(".help | " + `${client.users.size} users`, "http://twitch.tv/bot");
 });
   
 ///La version du BOT
