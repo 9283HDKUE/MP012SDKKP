@@ -408,16 +408,6 @@ if(!message.content.startsWith(prefix)) return;
       message.channel.sendMessage(datecrea_embed)
     }
   
-  
-   ///Commande .recru
-    if(message.content === prefix + "recru"){
-      var skydiscord_embed = new Discord.RichEmbed()
-      .setTitle(":pushpin: Recrutements")
-      .addField("Les recrutements sont actuellement:", "OFF")
-      .setColor("#0404B4")
-      message.channel.sendMessage(skydiscord_embed)
-    }
-  
   ///Commande .siteweb
     if(message.content === prefix + "siteweb"){
       var skydiscord_embed = new Discord.RichEmbed()
