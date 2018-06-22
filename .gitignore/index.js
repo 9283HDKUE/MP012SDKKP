@@ -20,7 +20,7 @@ client.on('message', message => {
   if(message.content === prefix + "version"){
     var version_embed = new Discord.RichEmbed()
     .setThumbnail(client.user.avatarURL)
-    .addField(":gear: Version", `Ma version est actuellement: 1.1.0`)
+    .addField(":gear: Version", `Ma version est actuellement: 1.1.1 **BÊTA**`)
     .setColor("#0404B4")
     message.channel.sendMessage(version_embed)
    }
@@ -394,7 +394,7 @@ if(!message.content.startsWith(prefix)) return;
       .setTitle(":necktie: Équipe de Sky")
       .addField("Runyard (Runyard#2305)", "Fondateur et Développeur")
       .addField("Swarwerth (Swarwerth#2943)", "Administrateur")
-      .addField("Sumonil (Sumonil#5612)", "Modérateur SD")
+      .addField("Sumonil (Sumonil#5612)", "Modérateur - Serveur Discord")
       .setColor("#0404B4")
       message.channel.sendMessage(skydiscord_embed)
     }
