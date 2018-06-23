@@ -367,7 +367,7 @@ if(!message.content.startsWith(prefix)) return;
     ///Commande .skydon
     if(message.content === prefix + "don"){
       var skydon_embed = new Discord.RichEmbed()
-      .addField(":gift_heart: Don pour Sky", "Si tu souhaites me faire un don (même des petits), clique ici: https://paypal.me/skybotdiscord ! En me fesant un don, tu as directement le rang: **Sky Donator**, stylé non ? ")
+      .addField(":gift_heart: Don pour Sky", "Si tu souhaites me faire un don (même des petits), clique ici: https://hebergnity.com/manager/financer?cible=O7RK7DPR ! En me fesant un don, tu as directement le rang: **Sky Donator**, stylé non ? ")
       .setColor("#FFFFFF")
       message.channel.sendMessage(skydon_embed)
     }
