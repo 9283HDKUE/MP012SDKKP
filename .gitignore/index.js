@@ -11,7 +11,7 @@ client.login(process.env.TOKEN)
 ///Avertissement en marche
 client.on("ready", () => {
   console.log("SKY: Je suis prêt")
-   client.user.setGame(".help | " + `${client.users.size} users`, "http://twitch.tv/bot");
+  client.user.setGame(".help | " + `${client.users.size} utilisateurs`, "http://twitch.tv/bot");
 });
   
 ///La version du BOT
@@ -20,7 +20,7 @@ client.on('message', message => {
   if(message.content === prefix + "version"){
     var version_embed = new Discord.RichEmbed()
     .setThumbnail(client.user.avatarURL)
-    .addField(":gear: Version", `Ma version est actuellement: 1.1.1 **BÊTA**`)
+    .addField(":gear: Version", `Ma version est actuellement: 1.2.0 BETA`)
     .setColor("#0404B4")
     message.channel.sendMessage(version_embed)
    }
@@ -35,11 +35,10 @@ if(message.content === prefix + "help"){
    .setColor("#0174DF")
    .setTitle("Les commandes de Sky")
    .setThumbnail(client.user.avatarURL)
-   .setDescription("\n**________________________________________________**\n**UTILES:**\n\n**.help**\nPermet de voir la liste des commandes\n**.info**\nAffiche les informations sur Sky\n**.version**\nPermet de savoir la version de Sky\n**.add**\nPour ajouter Sky sur ton serveur Discord\n**.maj**\nVoir les mises à jour effectuées sur Sky\n**.datecrea**\nSavoir la date de création de Sky\n**.myavatar**\nDemander le lien de son avatar\n**.ping**\nVoir le temps de latence entre Sky et le serveur\n**.don**\nFaire un don pour Sky\n**.equipe**\nPermet de voir l'équipe de Sky\n**.siteweb**\nPermet d'obtenir le lien du site web de Sky\n**.say**\nFaire dire quelque chose à Sky\n**.bvn**\nPermet de souhaiter la bienvenue à un utilisateur\n**.servers**\nPermet de voir la liste des commandes\n**.discord**\nSavoir le nombre de serveur dans lequel est Sky\n**.infods**\nVoir les informations du serveur Discord\n**.mystats**\nPermet de voir la liste des commandes\n\n**________________________________________________**\n**SYSTEMES:**\n\n**.systsondage**\nPermet d'activer le système de sondage\n**.sondage**\nPermet de crée des sondages __(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des sondages)__\n**.systvraioufaux**\nPermet d'activer le système de Vrai ou Faux\n**.vraioufaux**\nPermet de crée des Vrai ou Faux __(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des Vrai ou Faux)__\n\n**________________________________________________**\n**MODERATION:**\n\n**.kick**\nKick l'utilisateur séléctionné\n**.ban**\nBanne l'utilisateur séléctionné\n**.mute**\nMute l'utilisateur séléctionné d'un salon spécifique\n**.unmute**\nDémute l'utilisateur séléctionné d'un salon spécifique\n**.clear**\nSupprime un nombre de messages\n\n**________________________________________________**\n**ADMINISTRATION:**\n\n**.alerteadm**\nPermet d'envoyer des informations pour les membres\n")
-   .setFooter("Fiche commande - Sky")
+   .setDescription("\n**________________________________________________**\n**UTILES:**\n\n**.help**\nPermet de voir la liste des commandes\n**.info**\nAffiche les informations sur Sky\n**.version**\nPermet de savoir la version de Sky\n**.add**\nPour ajouter Sky sur ton serveur Discord\n**.maj**\nVoir les mises à jour effectuées sur Sky\n**.datecrea**\nSavoir la date de création de Sky\n**.myavatar**\nDemander le lien de son avatar\n**.ping**\nVoir le temps de latence entre Sky et le serveur\n**.don**\nFaire un don pour Sky\n**.equipe**\nPermet de voir l'équipe de Sky\n**.siteweb**\nPermet d'obtenir le lien du site web de Sky\n**.say**\nFaire dire quelque chose à Sky\n**.bvn**\nPermet de souhaiter la bienvenue à un utilisateur\n**.servers**\nPermet de voir le nombre de servers ou est Sky\n**.discord**\nSavoir le nombre de serveur dans lequel est Sky\n**.infods**\nVoir les informations du serveur Discord\n**.mystats**\nPermet de voir la liste des commandes\n**.online**\nPermet de savoir depuis combien de temps est en ligne Sky\n**________________________________________________**\n**SYSTEMES:**\n\n**.systsondage**\nPermet d'activer le système de sondage\n**.sondage**\nPermet de crée des sondages __(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des sondages)__\n**.systvraioufaux**\nPermet d'activer le système de Vrai ou Faux\n**.vraioufaux**\nPermet de crée des Vrai ou Faux __(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des Vrai ou Faux)__\n\n**________________________________________________**\n**MODERATION:**\n\n**.kick**\nKick l'utilisateur séléctionné\n**.ban**\nBanne l'utilisateur séléctionné\n**.mute**\nMute l'utilisateur séléctionné d'un salon spécifique\n**.unmute**\nDémute l'utilisateur séléctionné d'un salon spécifique\n**.clear**\nSupprime un nombre de messages\n**.warn**\nPermet d'avertir un utilisateur par MP\n**________________________________________________**\n**ADMINISTRATION:**\n\n**.alerteadm**\nPermet d'envoyer des informations pour les membres\n")
+   .setFooter("Fiche commande - SkyBOT")
   message.author.send(help_embed);
 }
-
 
  ///Commande .skyinfo
   if(message.content === prefix + "info") {
@@ -65,7 +64,8 @@ if(message.content === prefix + "help"){
     .setColor("#FFFFFF")
     .setTitle("Les mises à jour de Sky")
     .setDescription("Voici les MAJ effectuées jusqu'à maintenant:")
-    .addField("MAJ 21.06.2018", "Amélioration du visuel de la commande **.help**, ajout de la commande: **.unmute** et **.datecrea** suppression de la commande **.recru** car aucune utilité, ajout de la commande **systvraioufaux** pour pouvoir activer le système de vraioufaux, et dernièrement ajout de la commande **.vraioufaux** pour pouvoir crée des Vrai ou Faux puis légère modification de la commande **.sondage**. ")
+    .addField("MAJ 24.06.2018", "Ajout de la commande **.warn**, **.online** et dernièrement, corrections de quelques problèmes techniques")
+    .addField("MAJ 21.06.2018", "Ajout de la commande: **.unmute** et **.datecrea** suppression de la commande **.recru** car aucune utilité, ajout de la commande **systvraioufaux** pour pouvoir activer le système de vraioufaux, et dernièrement ajout de la commande **.vraioufaux** pour pouvoir crée des Vrai ou Faux.")
     .addField("MAJ 17.06.2018", "Amélioration de la commande **.mute**, ajout des commandes: **.equipe**, **.siteweb** et **.recru**.")
     .addField("MAJ 14.06.2018", "Ajout de la commande **.mute**, optimisation de **Sky**")
     .addField("MAJ 10.06.2018", "Ajout de la commande **.alerteadm**, amélioration des commandes **.infods** et **.info**")
@@ -79,7 +79,7 @@ if(message.content === prefix + "help"){
     .addField("MAJ 03.06.2018", "Ajout d'une commande pour la modération: .ban")
     .addField("MAJ 02.06.2018", "Ajout des commandes: .skyversion et .statistiques")
     .addField("MAJ 01.06.2018", "Changement du préfixe * en .")
-    .setFooter("Fiche MAJ - Sky")
+    .setFooter("Fiche MAJ - SkyBOT")
     message.author.send(help_embed);
     console.log("SKY: Un utilisateur a demander la fiche de MAJ")
   }
@@ -175,7 +175,7 @@ if(!message.content.startsWith(prefix)) return;
       .addField("Ton discriminateur:", message.author.discriminator)
       .addField("Date de création du compte:", userCreateDate[1] + ' ' + userCreateDate[2] + ' ' + userCreateDate[3] + ' ')
       .addField("Ton dernier message:", message.author.lastMessage)
-      .addField("Est-tu un bot ?", message.author.bot)
+      .addField("Es-tu un bot ?", message.author.bot)
       .setThumbnail(message.author.avatarURL)
       var statsok_embed = new Discord.RichEmbed()
       .addField(":white_check_mark: Succès", "Les statistiques de ton compte ont été envoyés par message privé.")
@@ -230,7 +230,7 @@ if(!message.content.startsWith(prefix)) return;
       .addField("Crée le:", message.guild.createdAt)
       .addField("Tu as rejoins le:", message.member.joinedAt)
       .addField("Salon AFK:", message.guild.afkChannel)
-      .addField("Nombre d'utilisateurs:", message.guild.memberCount)
+      .addField("Nombre de bots:", message.guild.memberCount)
       .addField("Nombre de salons et catégories:", message.guild.channels.size)
 
       .setColor("0x0000FF")
@@ -367,7 +367,7 @@ if(!message.content.startsWith(prefix)) return;
     ///Commande .skydon
     if(message.content === prefix + "don"){
       var skydon_embed = new Discord.RichEmbed()
-      .addField(":gift_heart: Don pour Sky", "Si tu souhaites me faire un don (même des petits), clique ici: https://hebergnity.com/manager/financer?cible=O7RK7DPR ! En me fesant un don, tu as directement le rang: **Sky Donator**, stylé non ? ")
+      .addField(":gift_heart: Don pour Sky", "Si tu souhaites me faire un don (même des petits), clique ici: https://paypal.me/skybotdiscord ! En me fesant un don, tu as directement le rang: **Sky Donator**, stylé non ? ")
       .setColor("#FFFFFF")
       message.channel.sendMessage(skydon_embed)
     }
@@ -394,7 +394,6 @@ if(!message.content.startsWith(prefix)) return;
       .setTitle(":necktie: Équipe de Sky")
       .addField("Runyard (Runyard#2305)", "Fondateur et Développeur")
       .addField("Swarwerth (Swarwerth#2943)", "Administrateur")
-      .addField("Sumonil (Sumonil#5612)", "Modérateur - Serveur Discord")
       .setColor("#0404B4")
       message.channel.sendMessage(skydiscord_embed)
     }
@@ -416,6 +415,89 @@ if(!message.content.startsWith(prefix)) return;
       .setColor("#0404B4")
       message.channel.sendMessage(skydiscord_embed)
     }
+
+    if (message.content.startsWith(prefix + "warn")){
+ 
+if (message.channel.type === "dm") return;
+ 
+var mentionned = message.mentions.users.first();
+ 
+if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'éxecuter cette commande. (commande éxecutée: .warn)");
+ 
+if(message.mentions.users.size === 0) {
+ 
+  return message.channel.send(":x: **ERREUR** Merci de mentionner l'utilisateur à avertir");
+ 
+}else{
+ 
+    const args = message.content.split(' ').slice(1);
+ 
+    const mentioned = message.mentions.users.first();
+ 
+    if (message.member.hasPermission('KICK_MEMBERS')){
+ 
+      if (message.mentions.users.size != 0) {
+ 
+        if (args[0] === "<@!"+mentioned.id+">"||args[0] === "<@"+mentioned.id+">") {
+ 
+          if (args.slice(1).length != 0) {
+            message.delete()
+ 
+            var warned_embed = new Discord.RichEmbed()
+            .setTitle(":warning: AVERTISSEMENT")
+            .setColor("#DF0101")
+            .addField('**'+mentionned.tag+' a été averti par message privé**', message.guild.name)
+            message.channel.sendMessage(warned_embed)
+
+            var warnedprivate_embed = new Discord.RichEmbed()
+           .setTitle(":warning: AVERTISSEMENT REÇU")
+           .setColor("#DF0101")
+           .addField(`Depuis le serveur **${message.guild.name}**`, `Donné par **${message.author.username}**\n\n**Raison:** ` + args.slice(1).join(' '))
+           message.mentions.users.first().send(warnedprivate_embed)
+          
+
+          } else {
+ 
+            message.channel.send(":x: **ERREUR** Merci de respecter: "+prefix+"warn **user** **raison**");
+ 
+          }
+ 
+        } else {
+ 
+          message.channel.send(":x: **ERREUR** Merci de respecter: "+prefix+"warn **user** **raison**");
+ 
+        }
+ 
+      } else {
+ 
+        message.channel.send(":x: **ERREUR** Merci de respecter: "+prefix+"warn **user** **raison**");
+ 
+      }
+ 
+    } else {
+ 
+      message.channel.send("**:x: **ERREUR** Vous n'avez pas la permission `Bannir membre` ou bien `Exclure membre` dans ce serveur**");
+ 
+    }
+ 
+  }
+ 
+}
+
+///Commande .online
+if (message.content === '.online'){
+  message.delete();
+  const sicon = client.user.displayAvatarURL
+  
+            var online_embed = new Discord.RichEmbed()
+            
+                .setTitle(":clock9: TOUJOURS EN LIGNE")
+                .setThumbnail(client.user.avatarURL)
+                .addField("Je suis là depuis", (Math.round(client.uptime / (1000 * 60 * 60))) + ' heures ' + (Math.round(client.uptime / (1000 * 60)) % 60) + ' minutes et ' + (Math.round(client.uptime / 1000) % 60) + ' secondes')
+                .setColor("#389aea")
+                .setFooter("Sky")
+                message.channel.send(online_embed)
+        }
     
     ///Commande .servers
     if(message.content === prefix + "servers"){
