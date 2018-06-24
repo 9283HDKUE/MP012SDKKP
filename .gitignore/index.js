@@ -450,7 +450,7 @@ if(message.mentions.users.size === 0) {
             message.channel.sendMessage(warned_embed)
 
             var warnedprivate_embed = new Discord.RichEmbed()
-           .setTitle(":warning: AVERTISSEMENT REÇU")
+           .setTitle(":warning: TU AS REÇUS UN AVERTISSEMENT")
            .setColor("#DF0101")
            .addField(`Depuis le serveur **${message.guild.name}**`, `Donné par **${message.author.username}**\n\n**Raison:** ` + args.slice(1).join(' '))
            message.mentions.users.first().send(warnedprivate_embed)
