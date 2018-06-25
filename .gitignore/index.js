@@ -11,7 +11,7 @@ client.login(process.env.TOKEN)
 ///Avertissement en marche
 client.on("ready", () => {
   console.log("SKY: Je suis prêt")
-  client.user.setActivity(".help | " + `${client.users.size} users | .invite`);
+ client.user.setActivity(".help | .invite" + `${client.users.size} users`);
 });
   
 ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .VERSION//////////////////////////////////////////////////////////
@@ -502,7 +502,7 @@ if(!message.content.startsWith(prefix)) return;
 ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .DISCORD//////////////////////////////////////////////////////////
     if(message.content === prefix + "discord"){
       var skydiscord_embed = new Discord.RichEmbed()
-      .addField(":thought_balloon: Serveur Discord de Sky", 'Heureux que tu souhaites rejoindre mon serveur Discord :robot: ! Tu seras au courant des **maintenances** et autres. Clique sur ce lien: https://discord.gg/YuX9yWD')
+      .addField(":thought_balloon: Serveur Discord", 'Heureux que tu souhaites rejoindre mon serveur Discord :robot: ! Pleins de surprises dans le serveur Discord, rejoins-nous ! https://discord.gg/YuX9yWD ')
       .setColor("#0404B4")
       message.channel.sendMessage(skydiscord_embed)
     }
