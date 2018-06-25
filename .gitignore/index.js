@@ -669,13 +669,13 @@ if (message.content.startsWith(prefix + "calin")) {
   message.delete()
   let args = message.content.split(" ").slice(1);
   let thingtoEcho = args.join(" ")
-  var bvnembed = new Discord.RichEmbed()
+  var calinembed = new Discord.RichEmbed()
         .setTitle("OH, UN CALIN !")
         .addField(message.author.username + " fait un câlin à", thingtoEcho)
         .setFooter("Que c'est beau !")
         .setThumbnail("http://www.hey.fr/tools/emoji/fr/ios_emoji_emoticone_coeur_bleu.png")
         .setColor("#8A0868")
-        message.channel.sendMessage(bvnembed)
+        message.channel.sendMessage(calinembed)
       }
 ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .TUE//////////////////////////////////////////////////////////
 if (message.content.startsWith(prefix + "tue")) {
