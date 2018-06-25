@@ -42,27 +42,21 @@ if(message.content === prefix + "help"){
    .setDescription("\n**________________________________________________**\n**UTILES:**\n\n**.help**\nPermet de voir la liste des commandes\n**.info**\nAffiche les informations sur Sky\n**.version**\nPermet de savoir la version de Sky\n**.invite**\nPour ajouter Sky sur ton serveur Discord\n**.maj**\nVoir les mises à jour effectuées sur Sky\n**.datecrea**\nSavoir la date de création de Sky\n**.myavatar**\nDemander le lien de son avatar\n**.ping**\nVoir le temps de latence entre Sky et le serveur\n**.don**\nFaire un don pour Sky\n**.equipe**\nPermet de voir l'équipe de Sky\n**.siteweb**\nPermet d'obtenir le lien du site web de Sky\n**.servers**\nPermet de voir le nombre de servers ou est Sky\n**.discord**\nSavoir le nombre de serveur dans lequel est Sky\n**.infods**\nVoir les informations du serveur Discord\n**.mystats**\nPermet de voir la liste des commandes\n**.online**\nPermet de savoir depuis combien de temps est en ligne Sky\n**________________________________________________**\n**SYSTEMES:**\n\n**.systsondage**\nPermet d'activer le système de sondage\n**.sondage**\nPermet de crée des sondages __(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des sondages)__\n**.systvraioufaux**\nPermet d'activer le système de Vrai ou Faux\n**.vraioufaux**\nPermet de crée des Vrai ou Faux __(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des Vrai ou Faux)__\n")
    .setFooter("Fiche commande - SkyBOT")
   message.author.send(help_embed);
-}
-
-  {
+  
   var help1_embed = new Discord.RichEmbed()
   .setColor("#0174DF")
   .setTitle("Commandes Fun")
   .setDescription("\n**________________________________________________**\n**FUN:**\n\n**.calin**\nPermet de faire un câlin à un utilisateur\n**.bisou**\nPermet de faire un bisou à un utilisateur\n**.tue**\nPermet de tuer un utilisateur\n**.bvn**\nPermet de souhaiter la bienvenue à un utilisateur\n**.say**\nFaire dire quelque chose à Sky")
   .setFooter("Fiche commande - SkyBOT")
  message.author.send(help1_embed);
-}
 
-{
 var help2_embed = new Discord.RichEmbed()
 .setColor("#0174DF")
 .setTitle("Commandes Modération")
 .setDescription("\n**________________________________________________**\n**MODERATION:**\n\n**.kick**\nKick l'utilisateur séléctionné\n**.ban**\nBanne l'utilisateur séléctionné\n**.mute**\nMute l'utilisateur séléctionné d'un salon spécifique\n**.unmute**\nDémute l'utilisateur séléctionné d'un salon spécifique\n**.clear**\nSupprime un nombre de messages\n**.warn**\nPermet d'avertir un utilisateur par MP")
 .setFooter("Fiche commande - SkyBOT")
 message.author.send(help2_embed);
-}
 
-{
 var help3_embed = new Discord.RichEmbed()
 .setColor("#0174DF")
 .setTitle("Commandes Administration")
