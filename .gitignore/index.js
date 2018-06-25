@@ -388,10 +388,6 @@ if(!message.content.startsWith(prefix)) return;
       message.channel.sendMessage(skydiscord_embed)
     }
   
-  client.on("guildMemberAdd", member => {
-    member.guild.channels.find("name", "🌐bienvenue").send(`Bienvenue à ${member} dans le serveur ${member.guild.name} ! 📯`)
-})
-  
   ///Commande .equipe
     if(message.content === prefix + "equipe"){
       var skydiscord_embed = new Discord.RichEmbed()
