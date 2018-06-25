@@ -11,10 +11,10 @@ client.login(process.env.TOKEN)
 ///Avertissement en marche
 client.on("ready", () => {
   console.log("SKY: Je suis prêt")
-  client.user.setGame(".help | " + `${client.users.size} utilisateurs`, "http://twitch.tv/bot");
+  client.user.setActivity(".help | " + `${client.users.size} users | .invite`);
 });
   
-///La version du BOT
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .VERSION//////////////////////////////////////////////////////////
 client.on('message', message => {
 
   if(message.content === prefix + "version"){
@@ -24,8 +24,13 @@ client.on('message', message => {
     .setColor("#0404B4")
     message.channel.sendMessage(version_embed)
    }
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .VERSION//////////////////////////////////////////////////////////
 
-///Commande .skycommandes
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
+
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .HELP////////////////////////////////////////////////////////// 
 if(message.content === prefix + "help"){
   var helpok_embed = new Discord.RichEmbed()
   .addField(":white_check_mark: Succès", `La liste des commandes est envoyée par message privé !`)
@@ -35,12 +40,17 @@ if(message.content === prefix + "help"){
    .setColor("#0174DF")
    .setTitle("Les commandes de Sky")
    .setThumbnail(client.user.avatarURL)
-   .setDescription("\n**________________________________________________**\n**UTILES:**\n\n**.help**\nPermet de voir la liste des commandes\n**.info**\nAffiche les informations sur Sky\n**.version**\nPermet de savoir la version de Sky\n**.add**\nPour ajouter Sky sur ton serveur Discord\n**.maj**\nVoir les mises à jour effectuées sur Sky\n**.datecrea**\nSavoir la date de création de Sky\n**.myavatar**\nDemander le lien de son avatar\n**.ping**\nVoir le temps de latence entre Sky et le serveur\n**.don**\nFaire un don pour Sky\n**.equipe**\nPermet de voir l'équipe de Sky\n**.siteweb**\nPermet d'obtenir le lien du site web de Sky\n**.say**\nFaire dire quelque chose à Sky\n**.bvn**\nPermet de souhaiter la bienvenue à un utilisateur\n**.servers**\nPermet de voir le nombre de servers ou est Sky\n**.discord**\nObtenir le lien du serveur Discord de Sky\n**.infods**\nVoir les informations du serveur Discord\n**.mystats**\nPermet d'obtenir les statistiques de son compte\n**.online**\nPermet de savoir depuis combien de temps est en ligne Sky\n**________________________________________________**\n**SYSTEMES:**\n\n**.systsondage**\nPermet d'activer le système de sondage\n**.sondage**\nPermet de crée des sondages __(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des sondages)__\n**.systvraioufaux**\nPermet d'activer le système de Vrai ou Faux\n**.vraioufaux**\nPermet de crée des Vrai ou Faux __(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des Vrai ou Faux)__\n\n**________________________________________________**\n**MODERATION:**\n\n**.kick**\nKick l'utilisateur séléctionné\n**.ban**\nBanne l'utilisateur séléctionné\n**.mute**\nMute l'utilisateur séléctionné d'un salon spécifique\n**.unmute**\nDémute l'utilisateur séléctionné d'un salon spécifique\n**.clear**\nSupprime un nombre de messages\n**.warn**\nPermet d'avertir un utilisateur par MP\n**________________________________________________**\n**ADMINISTRATION:**\n\n**.alerteadm**\nPermet d'envoyer des informations pour les membres\n")
+   .setDescription("\n**________________________________________________**\n**UTILES:**\n\n**.help**\nPermet de voir la liste des commandes\n**.info**\nAffiche les informations sur Sky\n**.version**\nPermet de savoir la version de Sky\n**.invite**\nPour ajouter Sky sur ton serveur Discord\n**.maj**\nVoir les mises à jour effectuées sur Sky\n**.datecrea**\nSavoir la date de création de Sky\n**.myavatar**\nDemander le lien de son avatar\n**.ping**\nVoir le temps de latence entre Sky et le serveur\n**.don**\nFaire un don pour Sky\n**.equipe**\nPermet de voir l'équipe de Sky\n**.siteweb**\nPermet d'obtenir le lien du site web de Sky\n**.say**\nFaire dire quelque chose à Sky\n**.bvn**\nPermet de souhaiter la bienvenue à un utilisateur\n**.servers**\nPermet de voir le nombre de servers ou est Sky\n**.discord**\nSavoir le nombre de serveur dans lequel est Sky\n**.infods**\nVoir les informations du serveur Discord\n**.mystats**\nPermet de voir la liste des commandes\n**.online**\nPermet de savoir depuis combien de temps est en ligne Sky\n**________________________________________________**\n**SYSTEMES:**\n\n**.systsondage**\nPermet d'activer le système de sondage\n**.sondage**\nPermet de crée des sondages __(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des sondages)__\n**.systvraioufaux**\nPermet d'activer le système de Vrai ou Faux\n**.vraioufaux**\nPermet de crée des Vrai ou Faux __(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des Vrai ou Faux)__\n\n**________________________________________________**\n**MODERATION:**\n\n**.kick**\nKick l'utilisateur séléctionné\n**.ban**\nBanne l'utilisateur séléctionné\n**.mute**\nMute l'utilisateur séléctionné d'un salon spécifique\n**.unmute**\nDémute l'utilisateur séléctionné d'un salon spécifique\n**.clear**\nSupprime un nombre de messages\n**.warn**\nPermet d'avertir un utilisateur par MP\n**________________________________________________**\n**ADMINISTRATION:**\n\n**.alerteadm**\nPermet d'envoyer des informations pour les membres\n")
    .setFooter("Fiche commande - SkyBOT")
   message.author.send(help_embed);
 }
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .HELP//////////////////////////////////////////////////////////
 
- ///Commande .skyinfo
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
+
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .SKYINFO//////////////////////////////////////////////////////////
   if(message.content === prefix + "info") {
     var info_embed = new Discord.RichEmbed()
     .setTitle("Informations sur Sky")
@@ -53,8 +63,13 @@ if(message.content === prefix + "help"){
     console.log(`SKY: L'utilisateur ${message.author.username} a demander les informations du BOT et du serveur actuel`)
 
   }
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .SKYINFO//////////////////////////////////////////////////////////
 
-  ///Commande .skymaj
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
+
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .MAJ//////////////////////////////////////////////////////////
   if(message.content === prefix + "maj"){
     var helpok_embed = new Discord.RichEmbed()
     .addField(":white_check_mark: Succès", `La fiche **MAJ** est envoyée par message privé !`)
@@ -64,6 +79,7 @@ if(message.content === prefix + "help"){
     .setColor("#FFFFFF")
     .setTitle("Les mises à jour de Sky")
     .setDescription("Voici les MAJ effectuées jusqu'à maintenant:")
+    .addField("MAJ 25.06.2018", "Amélioration de la vitesse de réponse de Sky, modification du nom de la commande .**add** en **.invite**")
     .addField("MAJ 24.06.2018", "Ajout de la commande **.warn**, **.online** et dernièrement, corrections de quelques problèmes techniques")
     .addField("MAJ 21.06.2018", "Ajout de la commande: **.unmute** et **.datecrea** suppression de la commande **.recru** car aucune utilité, ajout de la commande **systvraioufaux** pour pouvoir activer le système de vraioufaux, et dernièrement ajout de la commande **.vraioufaux** pour pouvoir crée des Vrai ou Faux.")
     .addField("MAJ 17.06.2018", "Amélioration de la commande **.mute**, ajout des commandes: **.equipe**, **.siteweb** et **.recru**.")
@@ -78,14 +94,19 @@ if(message.content === prefix + "help"){
     .addField("MAJ 04.06.2018", "Ajout des commandes pour la modération: .kick, .clear mais également .skymaj et skyadd")
     .addField("MAJ 03.06.2018", "Ajout d'une commande pour la modération: .ban")
     .addField("MAJ 02.06.2018", "Ajout des commandes: .skyversion et .statistiques")
-    .addField("MAJ 01.06.2018", "Changement du préfixe * en .")
+    .addField("...")
     .setFooter("Fiche MAJ - SkyBOT")
     message.author.send(help_embed);
     console.log("SKY: Un utilisateur a demander la fiche de MAJ")
   }
-  
 
-  ///Commande .kick
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .MAJ//////////////////////////////////////////////////////////
+  
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
+
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .KICK//////////////////////////////////////////////////////////
     if(message.content.startsWith(prefix + "kick")) {
 
     if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'éxecuter cette commande. (commande éxecutée: .kick)");
@@ -112,8 +133,13 @@ if(message.content === prefix + "help"){
     });
 
   }
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .KICK//////////////////////////////////////////////////////////
 
-  ///Commande .ban
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
+
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .BAN//////////////////////////////////////////////////////////
   if(message.content.startsWith(prefix + "ban")) {
 
     if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'éxecuter cette commande. (commande éxecutée: .ban)");
@@ -141,7 +167,13 @@ if(message.content === prefix + "help"){
 
   }
 
-  ///Commande .clear
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .BAN//////////////////////////////////////////////////////////
+                                                                  
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
+
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .CLEAR//////////////////////////////////////////////////////////
   if(message.content.startsWith(prefix + "clear")) {
     if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'éxecuter cette commande. (commande éxecutée .clear)");
     let args = message.content.split(" ").slice(1);
@@ -156,9 +188,14 @@ if(message.content === prefix + "help"){
 
 });
 
-}
+  }
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .CLEAR//////////////////////////////////////////////////////////
   
-  ///Commande .statistiques
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
+
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .MYSTATS//////////////////////////////////////////////////////////
 if(!message.content.startsWith(prefix)) return;
   var args = message.content.substring(prefix.length).split(" ");
    
@@ -185,8 +222,15 @@ if(!message.content.startsWith(prefix)) return;
       break;
   }
 
-  ///Commande .maintenance
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .MYSTATS//////////////////////////////////////////////////////////
+  
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
+
+/////////////////////////////////////////////////////DEBUT DE LA COMMANDE .MAINTENANCE (OWNER)//////////////////////////////////////////////////////////
   if(message.content === prefix + "maintenance") {
+    if (message.author.id === '382053369059082240') {
     let args = message.content.split(" ").slice(1);
     var embed = new Discord.RichEmbed()
     .setColor("#FF0000")
@@ -195,9 +239,17 @@ if(!message.content.startsWith(prefix)) return;
     .setTimestamp()
     message.guild.channels.find("name", "🛃maintenances").sendEmbed(embed)
   }
+
+}
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .MAINTENANCE (OWNER)//////////////////////////////////////////////////////////
   
-  ///Commande .maintenancefin
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
+
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .MAINTENANCEFIN (OWNER)//////////////////////////////////////////////////////////
   if(message.content === prefix + "maintenancefin") {
+    if (message.author.id === '382053369059082240') {
     let args = message.content.split(" ").slice(1);
     var embed = new Discord.RichEmbed()
     .setColor("#04B404")
@@ -206,9 +258,17 @@ if(!message.content.startsWith(prefix)) return;
     .setTimestamp()
     message.guild.channels.find("name", "🛃maintenances").sendEmbed(embed)
   }
+
+}
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .MAINTENANCE FIN (OWNER)//////////////////////////////////////////////////////////
   
-   ///Commande .nouveautés
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
+
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .NOUVEAUTES (OWNER)//////////////////////////////////////////////////////////
   if(message.content === prefix + "nouveautés") {
+    if (message.author.id === '382053369059082240') {
     let args = message.content.split(" ").slice(1);
     var embed = new Discord.RichEmbed()
     .setColor("#B45F04")
@@ -218,8 +278,14 @@ if(!message.content.startsWith(prefix)) return;
     message.guild.channels.find("name", "📯nouveautés").sendEmbed(embed)
   }
   
+}
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .NOUVEAUTES (OWNER)//////////////////////////////////////////////////////////
   
-  ///Commande .infodiscord
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
+
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .INFODS//////////////////////////////////////////////////////////
   if(message.content === prefix + "infods") {
        var embed = new Discord.RichEmbed()
       .setDescription(":information_source: Information du serveur Discord")
@@ -230,13 +296,20 @@ if(!message.content.startsWith(prefix)) return;
       .addField("Crée le:", message.guild.createdAt)
       .addField("Tu as rejoins le:", message.member.joinedAt)
       .addField("Salon AFK:", message.guild.afkChannel)
-      .addField("Nombre de membres:", message.guild.memberCount)
+      .addField("Nombre de bots:", message.guild.memberCount)
       .addField("Nombre de salons et catégories:", message.guild.channels.size)
 
       .setColor("0x0000FF")
     message.channel.sendEmbed(embed)
 
     }
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .INFODS//////////////////////////////////////////////////////////
+  
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
+
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .PING//////////////////////////////////////////////////////////
 
   ///Commande .skyping
   if(message.content === prefix + "ping"){
@@ -245,9 +318,13 @@ if(!message.content.startsWith(prefix)) return;
     .setColor("#0404B4")
     message.channel.sendMessage(ping_embed)
   }
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .PING//////////////////////////////////////////////////////////
+  
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
 
- 
-    ///Commande .systsondage
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .SYSTSONDAGE//////////////////////////////////////////////////////////
     if (message.content === '.systsondage'){
       if(!message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'éxecuter cette commande. (commande éxecutée: .systsondage)");
       var systbvn_embed = new Discord.RichEmbed()
@@ -257,8 +334,13 @@ if(!message.content.startsWith(prefix)) return;
       message.channel.sendMessage(systbvn_embed).then(msg => msg.delete(5000))
   
      }
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .SYSTSONDAGE//////////////////////////////////////////////////////////
+  
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
 
-      ///Commande .systsondage
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .SYSTVRAIOUFAUX//////////////////////////////////////////////////////////
     if (message.content === '.systvraioufaux'){
       if(!message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'éxecuter cette commande. (commande éxecutée: .systvraioufaux)");
       var systbvn_embed = new Discord.RichEmbed()
@@ -268,8 +350,13 @@ if(!message.content.startsWith(prefix)) return;
       message.channel.sendMessage(systbvn_embed).then(msg => msg.delete(5000))
   
      }
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .SYSTVRAIOUFAUX//////////////////////////////////////////////////////////
   
-     ///Commande .say
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
+
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .SAY//////////////////////////////////////////////////////////
      if (message.content.startsWith(prefix + "say")) {
       if(message.content === '.say') return message.channel.sendMessage(":x: **Erreur** ! Merci d'ajouter un message.").then(msg => msg.delete(7000))
       message.delete()
@@ -282,9 +369,13 @@ if(!message.content.startsWith(prefix)) return;
                 message.channel.sendMessage(sayembed);
 
      }
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .SAY//////////////////////////////////////////////////////////
+  
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
 
-
-     ///Commande .alerteadm
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .ALERTEADM//////////////////////////////////////////////////////////
       if (message.content.startsWith(prefix + "alerteadm")) {
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'éxecuter cette commande. (commande éxecutée: .alerteadm)");
         if(message.content === '.alerteadm') return message.channel.sendMessage(":x: **Erreur** ! Merci d'ajouter un message.").then(msg => msg.delete(7000))
@@ -300,8 +391,13 @@ if(!message.content.startsWith(prefix)) return;
                   message.channel.sendMessage(alerteadmembed)
   
       }
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .ALERTEADM//////////////////////////////////////////////////////////
   
-       ///Commande Mute
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
+
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .MUTE//////////////////////////////////////////////////////////
        if(message.content.startsWith(prefix + "mute")) {
         if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'exécuter cette commande (commande exécutée: .mute)!");
  
@@ -323,8 +419,13 @@ if(!message.content.startsWith(prefix)) return;
             message.channel.send(muteok)
         })
     }
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .MUTE//////////////////////////////////////////////////////////
+  
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
 
-    ///Commande UnMute
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .UNMUTE//////////////////////////////////////////////////////////
     if(message.content.startsWith(prefix + "unmute")) {
       if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'exécuter cette commande (commande exécutée: .unmute)!");
 
@@ -346,9 +447,13 @@ if(!message.content.startsWith(prefix)) return;
           message.channel.send(muteoff)
       })
   }
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .UNMUTE//////////////////////////////////////////////////////////
   
-  
-      ///Commande bvn
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
+
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .BVN//////////////////////////////////////////////////////////
       if (message.content.startsWith(prefix + "bvn")) {
         if(message.content === '.bvn') return message.channel.sendMessage(":x: **Erreur** ! Merci de mentionner un utilisateur pour souhaiter la bienvenue.").then(msg => msg.delete(7000))
         message.delete()
@@ -362,33 +467,52 @@ if(!message.content.startsWith(prefix)) return;
               message.channel.sendMessage(bvnembed)
   
   }
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .BVN//////////////////////////////////////////////////////////
   
-    
-    ///Commande .skydon
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
+
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .DON//////////////////////////////////////////////////////////
     if(message.content === prefix + "don"){
       var skydon_embed = new Discord.RichEmbed()
-      .addField(":gift_heart: Don pour Sky", "Si tu souhaites me faire un don (même des petits), clique ici: https://hebergnity.com/manager/financer?cible=O7RK7DPR ! En me fesant un don, tu as directement le rang: **Sky Donator**, stylé non ? ")
+      .addField(":gift_heart: Don pour Sky", "Si tu souhaites me faire un don (même des petits), clique ici: https://paypal.me/skybotdiscord ! En me fesant un don, tu as directement le rang: **Sky Donator**, stylé non ? ")
       .setColor("#FFFFFF")
       message.channel.sendMessage(skydon_embed)
     }
-    
-    ///Commande .add
-    if(message.content === prefix + "add"){
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .DON//////////////////////////////////////////////////////////
+  
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
+
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .ADD//////////////////////////////////////////////////////////
+    if(message.content === prefix + "invite"){
       var skyadd_embed = new Discord.RichEmbed()
-      .addField(":globe_with_meridians: Ajouter Sky", "Heureux que tu me veux sur ton serveur Discord :robot: ! Clique sur ce lien: https://discordapp.com/oauth2/authorize?client_id=450323683840491530&scope=bot&permissions=2146958551")
+      .addField(":globe_with_meridians: Ajouter Sky", "Heureux que tu me veux sur ton serveur Discord! Clique sur ce lien: https://discordapp.com/oauth2/authorize?client_id=450323683840491530&scope=bot&permissions=2146958551")
       .setColor("#0404B4")
       message.channel.sendMessage(skyadd_embed)
     }
-    
-     ///Commande .discord
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .ADD//////////////////////////////////////////////////////////
+  
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
+
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .DISCORD//////////////////////////////////////////////////////////
     if(message.content === prefix + "discord"){
       var skydiscord_embed = new Discord.RichEmbed()
       .addField(":thought_balloon: Serveur Discord de Sky", 'Heureux que tu souhaites rejoindre mon serveur Discord :robot: ! Tu seras au courant des **maintenances** et autres. Clique sur ce lien: https://discord.gg/YuX9yWD')
       .setColor("#0404B4")
       message.channel.sendMessage(skydiscord_embed)
     }
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .DISCORD//////////////////////////////////////////////////////////
   
-  ///Commande .equipe
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
+
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .EQUIPE//////////////////////////////////////////////////////////
     if(message.content === prefix + "equipe"){
       var skydiscord_embed = new Discord.RichEmbed()
       .setTitle(":necktie: Équipe de Sky")
@@ -397,8 +521,13 @@ if(!message.content.startsWith(prefix)) return;
       .setColor("#0404B4")
       message.channel.sendMessage(skydiscord_embed)
     }
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .EQUIPE//////////////////////////////////////////////////////////
+  
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
 
-    ///Commande .datecrea
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .DATECREA//////////////////////////////////////////////////////////
     if(message.content === prefix + "datecrea"){
       var datecrea_embed = new Discord.RichEmbed()
       .setTitle(":calendar_spiral: Date de création de Sky")
@@ -406,8 +535,13 @@ if(!message.content.startsWith(prefix)) return;
       .setColor("#0404B4")
       message.channel.sendMessage(datecrea_embed)
     }
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .DATECREA//////////////////////////////////////////////////////////
   
-  ///Commande .siteweb
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
+
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .SITEWEB//////////////////////////////////////////////////////////
     if(message.content === prefix + "siteweb"){
       var skydiscord_embed = new Discord.RichEmbed()
       .setTitle(":bookmark_tabs: Site web de Sky")
@@ -415,7 +549,13 @@ if(!message.content.startsWith(prefix)) return;
       .setColor("#0404B4")
       message.channel.sendMessage(skydiscord_embed)
     }
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .SITEWEB//////////////////////////////////////////////////////////
+  
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
 
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .WARN//////////////////////////////////////////////////////////
     if (message.content.startsWith(prefix + "warn")){
  
 if (message.channel.type === "dm") return;
@@ -446,11 +586,11 @@ if(message.mentions.users.size === 0) {
             var warned_embed = new Discord.RichEmbed()
             .setTitle(":warning: AVERTISSEMENT")
             .setColor("#DF0101")
-            .addField('**'+mentionned.tag+' a été averti**', message.guild.name)
+            .addField('**'+mentionned.tag+' a été averti par message privé**', message.guild.name)
             message.channel.sendMessage(warned_embed)
 
             var warnedprivate_embed = new Discord.RichEmbed()
-           .setTitle(":warning: TU AS REÇUS UN AVERTISSEMENT")
+           .setTitle(":warning: AVERTISSEMENT REÇU")
            .setColor("#DF0101")
            .addField(`Depuis le serveur **${message.guild.name}**`, `Donné par **${message.author.username}**\n\n**Raison:** ` + args.slice(1).join(' '))
            message.mentions.users.first().send(warnedprivate_embed)
@@ -483,8 +623,13 @@ if(message.mentions.users.size === 0) {
   }
  
 }
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .WARN//////////////////////////////////////////////////////////
+  
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
 
-///Commande .online
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .ONLINE//////////////////////////////////////////////////////////
 if (message.content === '.online'){
   message.delete();
   const sicon = client.user.displayAvatarURL
@@ -498,7 +643,13 @@ if (message.content === '.online'){
                 .setFooter("Sky")
                 message.channel.send(online_embed)
         }
-    
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .ONLINE//////////////////////////////////////////////////////////
+  
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
+
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .SERVERS//////////////////////////////////////////////////////////
     ///Commande .servers
     if(message.content === prefix + "servers"){
       var statsok_embed = new Discord.RichEmbed()
@@ -506,8 +657,13 @@ if (message.content === '.online'){
         .setColor("#FFFFFF")
         message.channel.sendMessage(statsok_embed)
      }   
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .SERVERS//////////////////////////////////////////////////////////
   
-    ///Commande .myavatar
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
+
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .MYAVATAR//////////////////////////////////////////////////////////
       if (message.content === '.myavatar'){
         var OKMyavatar_embed = new Discord.RichEmbed()
         .addField(":white_check_mark: Succès", "Le lien de ton avatar a été envoyé par message privé !")
@@ -516,8 +672,13 @@ if (message.content === '.online'){
         message.author.send('Voici le lien de ton avatar :arrow_down_small:')
         message.author.send(message.author.avatarURL)
       }
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .MYAVATAR//////////////////////////////////////////////////////////
+  
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
 
-      ///Commande .sondage
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .VRAIOUFAUX//////////////////////////////////////////////////////////
       if (message.content.startsWith(prefix + "vraioufaux")) {
         if(message.content === '.vraioufaux') return message.channel.sendMessage(":x: **Erreur** ! Merci d'ajouter la question.").then(msg => msg.delete(7000))
         if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'éxecuter cette commande. (commande éxecutée: .vraioufaux)");
@@ -542,8 +703,13 @@ if (message.content === '.online'){
                  })
 
                 }
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .VRAIOUFAUX//////////////////////////////////////////////////////////
   
-      ///Commande .sondage
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
+
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .SONDAGE//////////////////////////////////////////////////////////
       if (message.content.startsWith(prefix + "sondage")) {
         if(message.content === '.sondage') return message.channel.sendMessage(":x: **Erreur** ! Merci d'ajouter la question.").then(msg => msg.delete(7000))
         if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'éxecuter cette commande. (commande éxecutée: .sondage)");
@@ -568,5 +734,10 @@ if (message.content === '.online'){
                  })
 
                 }
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .SONDAGE//////////////////////////////////////////////////////////
+  
+                                                       //////////////////////////////
+                                                       ////////FIN DE LA FICHE///////
+                                                       //////////////////////////////
           
 });
