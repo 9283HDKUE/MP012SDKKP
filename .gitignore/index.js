@@ -317,6 +317,7 @@ if(!message.content.startsWith(prefix)) return;
       .addField("Tu as rejoins le:", message.member.joinedAt)
       .addField("Salon AFK:", message.guild.afkChannel)
       .addField("Nombre d'utilisateurs:", message.guild.memberCount)
+      .addField("Nombre de bots:", message.guild.members.filter(members => members.user.bot).size)
       .addField("Nombre de salons et catégories:", message.guild.channels.size)
 
       .setColor("0x0000FF")
