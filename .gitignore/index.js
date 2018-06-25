@@ -371,11 +371,6 @@ if(!message.content.startsWith(prefix)) return;
       .setColor("#FFFFFF")
       message.channel.sendMessage(skydon_embed)
     }
-  
-  client.on("guildMemberAdd", member => {
-let welcomechannel = member.guild.channels.find("name", "🌐bienvenue");
-if (!welcomechannel) return
-welcomechannel.send(`Bienvenue ${member}`);
     
     ///Commande .add
     if(message.content === prefix + "add"){
