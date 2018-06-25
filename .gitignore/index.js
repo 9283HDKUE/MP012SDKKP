@@ -40,7 +40,7 @@ if(message.content === prefix + "help"){
    .setColor("#0174DF")
    .setTitle("Les commandes de Sky")
    .setThumbnail(client.user.avatarURL)
-   .setDescription("\n**________________________________________________**\n**UTILES:**\n\n**.help**\nPermet de voir la liste des commandes\n**.info**\nAffiche les informations sur Sky\n**.version**\nPermet de savoir la version de Sky\n**.invite**\nPour ajouter Sky sur ton serveur Discord\n**.maj**\nVoir les mises à jour effectuées sur Sky\n**.datecrea**\nSavoir la date de création de Sky\n**.myavatar**\nDemander le lien de son avatar\n**.ping**\nVoir le temps de latence entre Sky et le serveur\n**.don**\nFaire un don pour Sky\n**.equipe**\nPermet de voir l'équipe de Sky\n**.siteweb**\nPermet d'obtenir le lien du site web de Sky\n**.say**\nFaire dire quelque chose à Sky\n**.bvn**\nPermet de souhaiter la bienvenue à un utilisateur\n**.servers**\nPermet de voir le nombre de servers ou est Sky\n**.discord**\nSavoir le nombre de serveur dans lequel est Sky\n**.infods**\nVoir les informations du serveur Discord\n**.mystats**\nPermet de voir la liste des commandes\n**.online**\nPermet de savoir depuis combien de temps est en ligne Sky\n**________________________________________________**\n**SYSTEMES:**\n\n**.systsondage**\nPermet d'activer le système de sondage\n**.sondage**\nPermet de crée des sondages __(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des sondages)__\n**.systvraioufaux**\nPermet d'activer le système de Vrai ou Faux\n**.vraioufaux**\nPermet de crée des Vrai ou Faux __(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des Vrai ou Faux)__\n\n**________________________________________________**\n**MODERATION:**\n\n**.kick**\nKick l'utilisateur séléctionné\n**.ban**\nBanne l'utilisateur séléctionné\n**.mute**\nMute l'utilisateur séléctionné d'un salon spécifique\n**.unmute**\nDémute l'utilisateur séléctionné d'un salon spécifique\n**.clear**\nSupprime un nombre de messages\n**.warn**\nPermet d'avertir un utilisateur par MP\n**________________________________________________**\n**ADMINISTRATION:**\n\n**.alerteadm**\nPermet d'envoyer des informations pour les membres\n")
+   .setDescription("\n**________________________________________________**\n**UTILES:**\n\n**.help**\nPermet de voir la liste des commandes\n**.info**\nAffiche les informations sur Sky\n**.version**\nPermet de savoir la version de Sky\n**.invite**\nPour ajouter Sky sur ton serveur Discord\n**.maj**\nVoir les mises à jour effectuées sur Sky\n**.datecrea**\nSavoir la date de création de Sky\n**.myavatar**\nDemander le lien de son avatar\n**.ping**\nVoir le temps de latence entre Sky et le serveur\n**.don**\nFaire un don pour Sky\n**.equipe**\nPermet de voir l'équipe de Sky\n**.siteweb**\nPermet d'obtenir le lien du site web de Sky\n**.servers**\nPermet de voir le nombre de servers ou est Sky\n**.discord**\nSavoir le nombre de serveur dans lequel est Sky\n**.infods**\nVoir les informations du serveur Discord\n**.mystats**\nPermet de voir la liste des commandes\n**.online**\nPermet de savoir depuis combien de temps est en ligne Sky\n**________________________________________________**\n**FUN:**\n\n**.calin**\nPermet de faire un câlin à un utilisateur\n**.bisou**\nPermet de faire un bisou à un utilisateur\n**.tue**\nPermet de tuer un utilisateur\n**.bvn**\nPermet de souhaiter la bienvenue à un utilisateur\n**.say**\nFaire dire quelque chose à Sky\n**________________________________________________**\n**SYSTEMES:**\n\n**.systsondage**\nPermet d'activer le système de sondage\n**.sondage**\nPermet de crée des sondages __(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des sondages)__\n**.systvraioufaux**\nPermet d'activer le système de Vrai ou Faux\n**.vraioufaux**\nPermet de crée des Vrai ou Faux __(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des Vrai ou Faux)__\n\n**________________________________________________**\n**MODERATION:**\n\n**.kick**\nKick l'utilisateur séléctionné\n**.ban**\nBanne l'utilisateur séléctionné\n**.mute**\nMute l'utilisateur séléctionné d'un salon spécifique\n**.unmute**\nDémute l'utilisateur séléctionné d'un salon spécifique\n**.clear**\nSupprime un nombre de messages\n**.warn**\nPermet d'avertir un utilisateur par MP\n**________________________________________________**\n**ADMINISTRATION:**\n\n**.alerteadm**\nPermet d'envoyer des informations pour les membres\n")
    .setFooter("Fiche commande - SkyBOT")
   message.author.send(help_embed);
 }
@@ -79,7 +79,7 @@ if(message.content === prefix + "help"){
     .setColor("#FFFFFF")
     .setTitle("Les mises à jour de Sky")
     .setDescription("Voici les MAJ effectuées jusqu'à maintenant:")
-    .addField("MAJ 25.06.2018", "Amélioration de la vitesse de réponse de Sky, modification du nom de la commande .**add** en **.invite**")
+    .addField("MAJ 25.06.2018", "Amélioration de la vitesse de réponse de Sky, modification du nom de la commande .**add** en **.invite** puis ajout des commandes: **.calin**, **.tue** et **.bisou**")
     .addField("MAJ 24.06.2018", "Ajout de la commande **.warn**, **.online** et dernièrement, corrections de quelques problèmes techniques")
     .addField("MAJ 21.06.2018", "Ajout de la commande: **.unmute** et **.datecrea** suppression de la commande **.recru** car aucune utilité, ajout de la commande **systvraioufaux** pour pouvoir activer le système de vraioufaux, et dernièrement ajout de la commande **.vraioufaux** pour pouvoir crée des Vrai ou Faux.")
     .addField("MAJ 17.06.2018", "Amélioration de la commande **.mute**, ajout des commandes: **.equipe**, **.siteweb** et **.recru**.")
@@ -658,6 +658,62 @@ if (message.content === '.online'){
         message.channel.sendMessage(statsok_embed)
      }   
 ///////////////////////////////////////////////////////////FIN DE LA COMMANDE .SERVERS//////////////////////////////////////////////////////////
+  
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
+  
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .CALIN//////////////////////////////////////////////////////////
+if (message.content.startsWith(prefix + "calin")) {
+  if(message.content === '.calin') return message.channel.sendMessage(":x: **Erreur** ! Merci de mentionner un utilisateur pour lui faire un câlin.").then(msg => msg.delete(7000))
+  message.delete()
+  let args = message.content.split(" ").slice(1);
+  let thingtoEcho = args.join(" ")
+  var bvnembed = new Discord.RichEmbed()
+        .setTitle("OH, UN CALIN !")
+        .addField(message.author.username + " fait un câlin à", thingtoEcho)
+        .setFooter("Que c'est beau !")
+        .setThumbnail("http://www.hey.fr/tools/emoji/fr/ios_emoji_emoticone_coeur_bleu.png")
+        .setColor("#8A0868")
+        message.channel.sendMessage(bvnembed)
+      }
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .TUE//////////////////////////////////////////////////////////
+if (message.content.startsWith(prefix + "tue")) {
+  if(message.content === '.tue') return message.channel.sendMessage(":x: **Erreur** ! Merci de mentionner un utilisateur pour le tuer.").then(msg => msg.delete(7000))
+  message.delete()
+  let args = message.content.split(" ").slice(1);
+  let thingtoEcho = args.join(" ")
+  var tueembed = new Discord.RichEmbed()
+        .setTitle("OH, UN CRIME !")
+        .addField(message.author.username + " tue", thingtoEcho)
+        .setFooter("R.I.P")
+        .setThumbnail("https://cdn180.picsart.com/232043995004212.png?r1024x1024")
+        .setColor("#000000")
+        message.channel.sendMessage(tueembed)
+
+}
+//////////////////////////////////////////////////FIN DE LA COMMANDE .TUE//////////////////////////////////////////////////////////
+  
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
+
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .BISOU//////////////////////////////////////////////////////////
+if (message.content.startsWith(prefix + "bisou")) {
+  if(message.content === '.bisou') return message.channel.sendMessage(":x: **Erreur** ! Merci de mentionner un utilisateur pour lui faire un bisou.").then(msg => msg.delete(7000))
+  message.delete()
+  let args = message.content.split(" ").slice(1);
+  let thingtoEcho = args.join(" ")
+  var bisousembed = new Discord.RichEmbed()
+        .setTitle("OH, UN BISOU !")
+        .addField(message.author.username + " fait un bisous à", thingtoEcho)
+        .setFooter("Ouais, c'est beau mais bientôt ils vont s'exciter...")
+        .setThumbnail("http://s10.favim.com/mini/160918/emoji-emoticon-kiss-lips-Favim.com-4738930.png")
+        .setColor("#8A0868")
+        message.channel.sendMessage(bisousembed)
+
+}
+//////////////////////////////////////////////////FIN DE LA COMMANDE .BISOU//////////////////////////////////////////////////////////
   
                                                             //////////////////////
                                                             ////////SUIVANT///////
