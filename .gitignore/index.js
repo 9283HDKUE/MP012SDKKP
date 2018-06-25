@@ -6,7 +6,7 @@ const client = new Discord.Client();
 var prefix = '.';
 
 ///Connexion du bot
-client.login(#)
+client.login(process.env.TOKEN)
 
 ///Avertissement en marche
 client.on("ready", () => {
