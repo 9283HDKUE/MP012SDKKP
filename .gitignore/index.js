@@ -11,7 +11,7 @@ client.login(process.env.TOKEN)
 ///Avertissement en marche
 client.on("ready", () => {
   console.log("SKY: Je suis prêt")
- client.user.setActivity(".help | .invite | " + `${client.users.size} users`);
+ client.user.setActivity(".help | .invite | SkyBOT);
 });
   
 ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .VERSION//////////////////////////////////////////////////////////
