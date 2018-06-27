@@ -497,7 +497,7 @@ if(!message.content.startsWith(prefix)) return;
 ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .DON//////////////////////////////////////////////////////////
     if(message.content === prefix + "don"){
       var skydon_embed = new Discord.RichEmbed()
-      .addField(":gift_heart: Don pour Sky", "Si tu souhaites me faire un don (même des petits), clique ici: https://paypal.me/skybotdiscord ! En me fesant un don, tu as directement le rang: **Sky Donator**, stylé non ? ")
+      .addField(":gift_heart: Don pour Sky", "Si tu souhaites me faire un don (même des petits), clique ici: https://hebergnity.com/manager/financer?cible=O7RK7DPR ! En me fesant un don, tu as directement le rang: **Sky Donator**, stylé non ? ")
       .setColor("#FFFFFF")
       message.channel.sendMessage(skydon_embed)
     }
@@ -539,6 +539,7 @@ if(!message.content.startsWith(prefix)) return;
       .setTitle(":necktie: Équipe de Sky")
       .addField("Runyard (Runyard#2305)", "Fondateur et Développeur")
       .addField("Swarwerth (Swarwerth#2943)", "Administrateur")
+       .addField("Sumonil (Sumonil#5612)", "Modérateur - Serveur Discord")
       .setColor("#0404B4")
       message.channel.sendMessage(skydiscord_embed)
     }
