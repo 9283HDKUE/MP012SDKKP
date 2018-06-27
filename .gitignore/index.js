@@ -608,7 +608,7 @@ if(message.mentions.users.size === 0) {
             var warned_embed = new Discord.RichEmbed()
             .setTitle(":warning: AVERTISSEMENT")
             .setColor("#DF0101")
-            .addField(+mentionned.tag+' a été averti.', message.guild.name)
+            .addField(+mentionned.tag+' a été averti', message.guild.name)
             message.channel.sendMessage(warned_embed)
 
             var warnedprivate_embed = new Discord.RichEmbed()
