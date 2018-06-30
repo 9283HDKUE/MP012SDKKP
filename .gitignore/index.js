@@ -64,14 +64,6 @@ var help3_embed = new Discord.RichEmbed()
 .setFooter("Fiche commande - SkyBOT")
 message.author.send(help3_embed);
 }
-  
-var help4_embed = new Discord.RichEmbed()
-.setColor("#0174DF")
-.setTitle("Nos partenaires")
-.setDescription("\n**________________________________________________**\n**Nous sommes partenaire avec;**\n\\nAucun partenaire pour le moments...\n")
-.setFooter("Partners- SkyBOT")
-message.author.send(help3_embed);
-}
 ///////////////////////////////////////////////////////////FIN DE LA COMMANDE .HELP//////////////////////////////////////////////////////////
 
                                                             //////////////////////
@@ -826,4 +818,4 @@ if (message.content.startsWith(prefix + "bisou")) {
                                                        ////////FIN DE LA FICHE///////
                                                        //////////////////////////////
           
-}});
+});
