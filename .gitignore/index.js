@@ -826,4 +826,4 @@ if (message.content.startsWith(prefix + "bisou")) {
                                                        ////////FIN DE LA FICHE///////
                                                        //////////////////////////////
           
-});
+}});
