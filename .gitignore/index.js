@@ -47,7 +47,7 @@ if(message.content === prefix + "help"){
    var help_embed = new Discord.RichEmbed()
    .setColor("#0174DF")
    .setTitle("Commandes Utiles")
-   .setDescription("\n**________________________________________________**\n**UTILES:**\n\n**.help**\nPermet de voir la liste des commandes\n**.info**\nAffiche les informations sur Sky\n**.version**\nPermet de savoir la version de Sky\n**.invite**\nPour ajouter Sky sur ton serveur Discord\n**.maj**\nVoir les mises à jour effectuées sur Sky\n**.datecrea**\nSavoir la date de création de Sky\n**.myavatar**\nDemander le lien de son avatar\n**.ping**\nVoir le temps de latence entre Sky et le serveur\n**.don**\nFaire un don pour Sky\n**.equipe**\nPermet de voir l'équipe de Sky\n**.siteweb**\nPermet d'obtenir le lien du site web de Sky\n**.servers**\nPermet de voir le nombre de servers ou est Sky\n**.discord**\nSavoir le nombre de serveur dans lequel est Sky\n**.infods**\nVoir les informations du serveur Discord\n**.mystats**\nPermet de voir la liste des commandes\n**.online**\nPermet de savoir depuis combien de temps est en ligne Sky\n**________________________________________________**\n**SYSTEMES:**\n\n**.systsondage**\nPermet d'activer le système de sondage\n**.sondage**\nPermet de crée des sondages __(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des sondages)__\n**.systvraioufaux**\nPermet d'activer le système de Vrai ou Faux\n**.vraioufaux**\nPermet de crée des Vrai ou Faux __(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des Vrai ou Faux)__\n")
+   .setDescription("\n**________________________________________________**\n**UTILES:**\n\n**.help**\nPermet de voir la liste des commandes\n**.partners**\nVoir les grands partenaires de Sky\n**.info**\nAffiche les informations sur Sky\n**.version**\nPermet de savoir la version de Sky\n**.invite**\nPour ajouter Sky sur ton serveur Discord\n**.maj**\nVoir les mises à jour effectuées sur Sky\n**.datecrea**\nSavoir la date de création de Sky\n**.myavatar**\nDemander le lien de son avatar\n**.ping**\nVoir le temps de latence entre Sky et le serveur\n**.don**\nFaire un don pour Sky\n**.equipe**\nPermet de voir l'équipe de Sky\n**.siteweb**\nPermet d'obtenir le lien du site web de Sky\n**.servers**\nPermet de voir le nombre de servers ou est Sky\n**.discord**\nSavoir le nombre de serveur dans lequel est Sky\n**.infods**\nVoir les informations du serveur Discord\n**.mystats**\nPermet de voir la liste des commandes\n**.online**\nPermet de savoir depuis combien de temps est en ligne Sky\n**________________________________________________**\n**SYSTEMES:**\n\n**.systsondage**\nPermet d'activer le système de sondage\n**.sondage**\nPermet de crée des sondages __(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des sondages)__\n**.systvraioufaux**\nPermet d'activer le système de Vrai ou Faux\n**.vraioufaux**\nPermet de crée des Vrai ou Faux __(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des Vrai ou Faux)__\n")
    .setFooter("Fiche commande - SkyBOT")
   message.author.send(help_embed);
   
@@ -107,6 +107,7 @@ message.author.send(help3_embed);
     .setColor("#FFFFFF")
     .setTitle("Les mises à jour de Sky")
     .setDescription("Voici les MAJ effectuées jusqu'à maintenant:")
+    .addField("MAJ 30.06.2018", "Ajout de la commande **.partners**, amélioration de la stabilité.")
     .addField("MAJ 25.06.2018", "Amélioration de la vitesse de réponse de Sky, modification du nom de la commande .**add** en **.invite** puis ajout des commandes: **.calin**, **.tue** et **.bisou**")
     .addField("MAJ 24.06.2018", "Ajout de la commande **.warn**, **.online** et dernièrement, corrections de quelques problèmes techniques")
     .addField("MAJ 21.06.2018", "Ajout de la commande: **.unmute** et **.datecrea** suppression de la commande **.recru** car aucune utilité, ajout de la commande **systvraioufaux** pour pouvoir activer le système de vraioufaux, et dernièrement ajout de la commande **.vraioufaux** pour pouvoir crée des Vrai ou Faux.")
@@ -121,7 +122,6 @@ message.author.send(help3_embed);
     .addField("MAJ 05.06.2018", "Ajout des commandes: .infodiscord, .skyping, .skydiscord, retour de la commande .skyadd changement de la commande .commandes par .skyh")
     .addField("MAJ 04.06.2018", "Ajout des commandes pour la modération: .kick, .clear mais également .skymaj et skyadd")
     .addField("MAJ 03.06.2018", "Ajout d'une commande pour la modération: .ban")
-    .addField("MAJ 02.06.2018", "Ajout des commandes: .skyversion et .statistiques")
     .addField("...")
     .setFooter("Fiche MAJ - SkyBOT")
     message.author.send(help_embed);
