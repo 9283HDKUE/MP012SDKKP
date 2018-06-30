@@ -26,8 +26,8 @@ client.on('message', message => {
    }
   if(message.content === prefix + "partners"){
     var partners_embed = new Discord.RichEmbed()
-    .setTitle(":handshake: Nos Partenraires:")
-    .addField("Oops...", `Aucun partenaire pour le moments...`)
+    .setTitle(":handshake: Nos grands partenaires:")
+    .addField("Oops", `Aucun grand partenaire pour le moments...`)
     .setColor("#0404B4")
     message.channel.sendMessage(partners_embed)
    }
