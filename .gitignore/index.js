@@ -65,7 +65,7 @@ var help3_embed = new Discord.RichEmbed()
 message.author.send(help3_embed);
 }
   
-var help3_embed = new Discord.RichEmbed()
+var help4_embed = new Discord.RichEmbed()
 .setColor("#0174DF")
 .setTitle("Nos partenaires")
 .setDescription("\n**________________________________________________**\n**Nous sommes partenaire avec;**\n\\nAucun partenaire pour le moments...\n")
