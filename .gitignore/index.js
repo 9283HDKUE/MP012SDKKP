@@ -123,7 +123,7 @@ message.author.send(help3_embed);
     .addField("MAJ 06.06.2018 (1)", "Ajout des commandes: .myavatar, skyprefix, .skydon, .systbienvenue, amélioration complète de tous les commandes, retour de la commande .clear, ajout d'un système de bienvenue, update version: 1.1.0")
     .addField("MAJ 05.06.2018", "Ajout des commandes: .infodiscord, .skyping, .skydiscord, retour de la commande .skyadd changement de la commande .commandes par .skyh")
     .addField("MAJ 04.06.2018", "Ajout des commandes pour la modération: .kick, .clear mais également .skymaj et skyadd")
-    .addField("...")
+    .addField("...", "autres")
     .setFooter("Fiche MAJ - SkyBOT")
     message.author.send(help_embed);
     console.log("SKY: Un utilisateur a demander la fiche de MAJ")
