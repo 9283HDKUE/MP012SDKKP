@@ -20,7 +20,7 @@ client.on('message', message => {
   if(message.content === prefix + "version"){
     var version_embed = new Discord.RichEmbed()
     .setThumbnail(client.user.avatarURL)
-    .addField(":gear: Version", `Ma version est: 1.2.0 BÊTA`)
+    .addField(":gear: Version", `Ma version est: 1.2.1 BÊTA`)
     .setColor("#0404B4")
     message.channel.sendMessage(version_embed)
    }
