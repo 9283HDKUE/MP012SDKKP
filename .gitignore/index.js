@@ -10,7 +10,6 @@ client.login(process.env.TOKEN)
 
 ///Avertissement en marche
 client.on("ready", () => {
-  console.log("SKY: Je suis prêt")
  client.user.setActivity(`.help | .invite | ${client.users.size} users`);
 });
   
@@ -20,14 +19,14 @@ client.on('message', message => {
   if(message.content === prefix + "version"){
     var version_embed = new Discord.RichEmbed()
     .setThumbnail(client.user.avatarURL)
-    .addField(":gear: Version", `Ma version est: 1.2.1 BÊTA`)
+    .addField(":gear: Version", `Ma version est: 2.2.2 BÊTA`)
     .setColor("#0404B4")
     message.channel.sendMessage(version_embed)
    }
   if(message.content === prefix + "partners"){
     var partners_embed = new Discord.RichEmbed()
     .setTitle(":handshake: Nos partenaires:")
-    .setDescription("Bientôt nos partenaires figureront ici")
+    .setDescription("Bientôt nos partenaires figureront ici... **en attente**")
     .setColor("#0404B4")
     message.channel.sendMessage(partners_embed)
    }
@@ -37,43 +36,90 @@ client.on('message', message => {
                                                             ////////SUIVANT///////
                                                             //////////////////////
 
-///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .HELP////////////////////////////////////////////////////////// 
+///////////////////////////////////////////////////////////DEBUT DU SYSTEME .HELP////////////////////////////////////////////////////////// 
+
 if(message.content === prefix + "help"){
   var helpok_embed = new Discord.RichEmbed()
-  .addField("Succès", `La liste des commandes est envoyée par message privé !`)
-  .setThumbnail("https://img.lght.pics/2Dgj.png")
+  .addField("Succès", `La liste des catégories est envoyée par message privé !`)
   .setColor("#00FF00")
   message.channel.sendMessage(helpok_embed)
-   var help_embed = new Discord.RichEmbed()
+  var help_embed = new Discord.RichEmbed()
+  .setColor("#0174DF")
+  .setTitle("Liste des catégories")
+  .addField(":hammer: Permet de voir la liste des commandes **utiles**", "**.utiles**")
+  .addField(":gear: Permet de voir la liste des commandes automatisées", "**.auto**")
+  .addField(":tada: Permet de voir la liste des commandes fun", "**.fun**")
+  .addField(":passport_control: Permet de voir la liste des commandes de modération", "**.mod**")
+  .addField(":necktie: Permet de voir la liste des commandes administrateur", "**.adm**")
+  .setFooter("Liste des catégories")
+ message.author.send(help_embed);
+}
+
+if(message.content === prefix + "utiles"){
+  var helpokutiles_embed = new Discord.RichEmbed()
+  .addField("Succès", `La liste des commandes :hammer: utiles est envoyée par message privé !`)
+  .setColor("#00FF00")
+  message.channel.sendMessage(helpokutiles_embed)
+   var helputiles_embed = new Discord.RichEmbed()
    .setColor("#0174DF")
    .setTitle("Commandes Utiles")
-   .setDescription("\n**________________________________________________**\n**UTILES:**\n\n**.help**\nPermet de voir la liste des commandes\n**.partners**\nVoir les partenaires de Sky\n**.info**\nAffiche les informations sur Sky\n**.version**\nPermet de savoir la version de Sky\n**.invite**\nPour ajouter Sky sur ton serveur Discord\n**.maj**\nVoir les mises à jour effectuées sur Sky\n**.datecrea**\nSavoir la date de création de Sky\n**.myavatar**\nDemander le lien de son avatar\n**.ping**\nVoir le temps de latence entre Sky et le serveur\n**.don**\nFaire un don pour Sky\n**.equipe**\nPermet de voir l'équipe de Sky\n**.siteweb**\nPermet d'obtenir le lien du site web de Sky\n**.servers**\nPermet de voir le nombre de servers ou est Sky\n**.discord**\nSavoir le nombre de serveur dans lequel est Sky\n**.infods**\nVoir les informations du serveur Discord\n**.mystats**\nPermet de voir la liste des commandes\n**.online**\nPermet de savoir depuis combien de temps est en ligne Sky\n**________________________________________________**\n**SYSTEMES:**\n\n**.systsondage**\nPermet d'activer le système de sondage\n**.sondage**\nPermet de crée des sondages __(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des sondages)__\n**.systvraioufaux**\nPermet d'activer le système de Vrai ou Faux\n**.vraioufaux**\nPermet de crée des Vrai ou Faux __(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des Vrai ou Faux)__\n")
-   .setFooter("Fiche commande - SkyBOT")
-  message.author.send(help_embed);
+   .setDescription("\n**________________________________________________**\n**:hammer: UTILES:**\n\n**.partners**\nVoir les grands partenaires de Sky\n**.info**\nAffiche les informations sur Sky\n**.version**\nPermet de savoir la version de Sky\n**.invite**\nPour ajouter Sky sur ton serveur Discord\n**.maj**\nVoir les mises à jour effectuées sur Sky\n**.datecrea**\nSavoir la date de création de Sky\n**.myavatar**\nDemander le lien de son avatar\n**.ping**\nVoir le temps de latence entre Sky et le serveur\n**.don**\nFaire un don pour Sky\n**.equipe**\nPermet de voir l'équipe de Sky\n**.siteweb**\nPermet d'obtenir le lien du site web de Sky\n**.servers**\nPermet de voir le nombre de servers ou est Sky\n**.discord**\nSavoir le nombre de serveur dans lequel est Sky\n**.infods**\nVoir les informations du serveur Discord\n**.mystats**\nPermet de voir la liste des commandes\n**.online**\nPermet de savoir depuis combien de temps est en ligne Sky")
+   .setFooter("Commandes Utiles")
+  message.author.send(helputiles_embed);
+}
   
+  if(message.content === prefix + "fun"){
+    var helpokfun_embed = new Discord.RichEmbed()
+  .addField("Succès", `La liste des commandes :tada: fun est envoyée par message privé !`)
+  .setColor("#00FF00")
+  message.channel.sendMessage(helpokfun_embed)
   var help1_embed = new Discord.RichEmbed()
   .setColor("#0174DF")
   .setTitle("Commandes Fun")
-  .setDescription("\n**________________________________________________**\n**FUN:**\n\n**.calin**\nPermet de faire un câlin à un utilisateur\n**.bisou**\nPermet de faire un bisou à un utilisateur\n**.tue**\nPermet de tuer un utilisateur\n**.bvn**\nPermet de souhaiter la bienvenue à un utilisateur\n**.say**\nFaire dire quelque chose à Sky")
-  .setFooter("Fiche commande - SkyBOT")
+  .setDescription("\n**________________________________________________**\n**:tada: FUN:**\n\n**.calin**\nPermet de faire un câlin à un utilisateur\n**.bisou**\nPermet de faire un bisou à un utilisateur\n**.tue**\nPermet de tuer un utilisateur\n**.bvn**\nPermet de souhaiter la bienvenue à un utilisateur\n**.say**\nFaire dire quelque chose à Sky")
+  .setFooter("Commandes Fun")
  message.author.send(help1_embed);
+  }
 
-var help2_embed = new Discord.RichEmbed()
+  if(message.content === prefix + "mod"){
+    var helpokmod_embed = new Discord.RichEmbed()
+  .addField("Succès", `La liste des commandes :passport_control: modération est envoyée par message privé !`)
+  .setColor("#00FF00")
+  message.channel.sendMessage(helpokmod_embed)
+  var helpmod_embed = new Discord.RichEmbed()
 .setColor("#0174DF")
 .setTitle("Commandes Modération")
-.setDescription("\n**________________________________________________**\n**MODERATION:**\n\n**.kick**\nKick l'utilisateur séléctionné\n**.ban**\nBanne l'utilisateur séléctionné\n**.mute**\nMute l'utilisateur séléctionné d'un salon spécifique\n**.unmute**\nDémute l'utilisateur séléctionné d'un salon spécifique\n**.clear**\nSupprime un nombre de messages\n**.warn**\nPermet d'avertir un utilisateur par MP")
-.setFooter("Fiche commande - SkyBOT")
-message.author.send(help2_embed);
+.setDescription("\n**________________________________________________**\n**:passport_control: MODERATION:**\n\n**.kick**\nKick l'utilisateur séléctionné\n**.ban**\nBanne l'utilisateur séléctionné\n**.mute**\nMute l'utilisateur séléctionné d'un salon spécifique\n**.unmute**\nDémute l'utilisateur séléctionné d'un salon spécifique\n**.clear**\nSupprime un nombre de messages\n**.warn**\nPermet d'avertir un utilisateur par MP")
+.setFooter("Commandes Modération")
+message.author.send(helpmod_embed);
+  }
 
-var help3_embed = new Discord.RichEmbed()
+  if(message.content === prefix + "auto"){
+    var helpokauto_embed = new Discord.RichEmbed()
+  .addField("Succès", `La liste des commandes :gear: systèmes automatiques est envoyée par message privé !`)
+  .setColor("#00FF00")
+  message.channel.sendMessage(helpokauto_embed)
+  var helpauto_embed = new Discord.RichEmbed()
+.setColor("#0174DF")
+.setTitle("Commandes Automatisées")
+.setDescription("\n**________________________________________________**\n**:gear: SYSTEMES AUTOMATIQUES:**\n\n**.systsondage**\nPermet d'activer le système de sondage\n**.sondage**\nPermet de crée des sondages __(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des sondages)__\n**.systvraioufaux**\nPermet d'activer le système de Vrai ou Faux\n**.vraioufaux**\nPermet de crée des Vrai ou Faux __(il faut d'abord exécuter la commande juste au-dessus pour pouvoir crée des Vrai ou Faux)__\n")
+.setFooter("Commandes Automatisées")
+message.author.send(helpauto_embed);
+}
+
+ if(message.content === prefix + "adm"){
+  var helpokadm_embed = new Discord.RichEmbed()
+  .addField("Succès", `La liste des commandes :necktie: administration est envoyée par message privé !`)
+  .setColor("#00FF00")
+  message.channel.sendMessage(helpokadm_embed)
+var helpadm_embed = new Discord.RichEmbed()
 .setColor("#0174DF")
 .setTitle("Commandes Administration")
-.setDescription("\n**________________________________________________**\n**ADMINISTRATION:**\n\n**.alerteadm**\nPermet d'envoyer des informations pour les membres\n")
-.setFooter("Fiche commande - SkyBOT")
-message.author.send(help3_embed);
+.setDescription("\n**________________________________________________**\n**:necktie: ADMINISTRATION:**\n\n**.alerteadm**\nPermet d'envoyer des informations pour les membres\n")
+.setFooter("Commandes Administration")
+message.author.send(helpadm_embed);
 }
 ///////////////////////////////////////////////////////////FIN DE LA COMMANDE .HELP//////////////////////////////////////////////////////////
-
                                                             //////////////////////
                                                             ////////SUIVANT///////
                                                             //////////////////////
@@ -101,13 +147,13 @@ message.author.send(help3_embed);
   if(message.content === prefix + "maj"){
     var helpok_embed = new Discord.RichEmbed()
     .addField("Succès", `La fiche **MAJ** est envoyée par message privé !`)
-    .setThumbnail("https://img.lght.pics/2Dgj.png")
     .setColor("#00FF00")
     message.channel.sendMessage(helpok_embed)
     var help_embed = new Discord.RichEmbed()
     .setColor("#FFFFFF")
     .setTitle("Les mises à jour de Sky")
     .setDescription("Voici les MAJ effectuées jusqu'à maintenant:")
+    .addField("MAJ 08.07.2018", "Amélioration totale de la commande **.help**, amélioration de la stabilité de Sky et dernièrement ajout d'un message d'erreur au cas où **Sky** ne trouve pas le salon apparorié des commandes **.sondage** et **.vraioufaux**. ")
     .addField("MAJ 02.07.2018", "Amélioration de l'apparence de quelques commandes. Amélioration de la stabilité.")
     .addField("MAJ 30.06.2018", "Ajout de la commande **.partners**, amélioration de la stabilité.")
     .addField("MAJ 25.06.2018", "Amélioration de la vitesse de réponse de Sky, modification du nom de la commande .**add** en **.invite** puis ajout des commandes: **.calin**, **.tue** et **.bisou**")
@@ -122,8 +168,7 @@ message.author.send(help3_embed);
     .addField("MAJ 06.06.2018 (2)", "Amélioration du design des commandes et automatisation totale de la commande .systbienvenue et du système bienvenue")
     .addField("MAJ 06.06.2018 (1)", "Ajout des commandes: .myavatar, skyprefix, .skydon, .systbienvenue, amélioration complète de tous les commandes, retour de la commande .clear, ajout d'un système de bienvenue, update version: 1.1.0")
     .addField("MAJ 05.06.2018", "Ajout des commandes: .infodiscord, .skyping, .skydiscord, retour de la commande .skyadd changement de la commande .commandes par .skyh")
-    .addField("MAJ 04.06.2018", "Ajout des commandes pour la modération: .kick, .clear mais également .skymaj et skyadd")
-    .addField("...", "autres")
+    .addField("...")
     .setFooter("Fiche MAJ - SkyBOT")
     message.author.send(help_embed);
     console.log("SKY: Un utilisateur a demander la fiche de MAJ")
@@ -212,7 +257,6 @@ message.author.send(help3_embed);
       
       var clearno_embed = new Discord.RichEmbed()
       .addField(":cyclone: Succès", `${args[0]} messages supprimés du salon`)
-      .setThumbnail("https://img.lght.pics/2Dgj.png")
       .setColor("#00FF00")
       message.channel.sendMessage(clearno_embed).then(msg => msg.delete(5000));
 
@@ -246,7 +290,6 @@ if(!message.content.startsWith(prefix)) return;
       .setThumbnail(message.author.avatarURL)
       var statsok_embed = new Discord.RichEmbed()
       .addField("Succès", "Les statistiques de ton compte ont été envoyés par message privé.")
-      .setThumbnail("https://img.lght.pics/2Dgj.png")
       .setColor("#00FF00")
       message.channel.sendMessage(statsok_embed)
       message.author.send({embed: stats_embed});
@@ -361,7 +404,6 @@ if(!message.content.startsWith(prefix)) return;
       if(!message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'éxecuter cette commande. (commande éxecutée: .systsondage)");
       var systbvn_embed = new Discord.RichEmbed()
       .addField("Succès", "Le salon **📊sondages** a été crée et le système a été activé.")
-      .setThumbnail("https://img.lght.pics/2Dgj.png")
       .setColor("#00FF00")
       message.channel.guild.createChannel("📊sondages");
       message.channel.sendMessage(systbvn_embed)
@@ -378,7 +420,6 @@ if(!message.content.startsWith(prefix)) return;
       if(!message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'éxecuter cette commande. (commande éxecutée: .systvraioufaux)");
       var systbvn_embed = new Discord.RichEmbed()
       .addField("Succès", "Le salon **❓vraioufaux** a été crée et le système a été activé.")
-      .setThumbnail("https://img.lght.pics/2Dgj.png")
       .setColor("#00FF00")
       message.channel.guild.createChannel("❓vraioufaux");
       message.channel.sendMessage(systbvn_embed)
@@ -619,15 +660,14 @@ if(message.mentions.users.size === 0) {
             message.delete()
  
             var warned_embed = new Discord.RichEmbed()
-            .setTitle(":warning: AVERTISSEMENT")
             .setColor("#DF0101")
-            .addField(+mentionned.tag+' a été averti', message.guild.name)
+            .setDescription(':warning: **| Un membre a été averti**', message.guild.name)
             message.channel.sendMessage(warned_embed)
 
             var warnedprivate_embed = new Discord.RichEmbed()
            .setTitle(":warning: AVERTISSEMENT REÇU")
            .setColor("#DF0101")
-           .addField(`Depuis le serveur **${message.guild.name}**`, `Donné par **${message.author.username}**\n\n**Raison:** ` + args.slice(1).join(' '))
+           .addField(`Depuis le serveur **${message.guild.name}**`, ` \n\nRaison: ` + args.slice(1).join(' '))
            message.mentions.users.first().send(warnedprivate_embed)
           
 
@@ -758,7 +798,6 @@ if (message.content.startsWith(prefix + "bisou")) {
       if (message.content === '.myavatar'){
         var OKMyavatar_embed = new Discord.RichEmbed()
         .addField("Succès", "Le lien de ton avatar a été envoyé par message privé !")
-        .setThumbnail("https://img.lght.pics/2Dgj.png")
         .setColor("#00FF00")
         message.channel.sendMessage(OKMyavatar_embed);
         message.author.send('Voici le lien de ton avatar :arrow_down_small:')
@@ -770,15 +809,15 @@ if (message.content.startsWith(prefix + "bisou")) {
                                                             ////////SUIVANT///////
                                                             //////////////////////
 
-///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .VRAIOUFAUX//////////////////////////////////////////////////////////
-      if (message.content.startsWith(prefix + "vraioufaux")) {
+if (message.content.startsWith(prefix + "vraioufaux")) {
         if(message.content === '.vraioufaux') return message.channel.sendMessage(":x: **Erreur** ! Merci d'ajouter la question.").then(msg => msg.delete(7000))
         if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'éxecuter cette commande. (commande éxecutée: .vraioufaux)");
             let args = message.content.split(" ").slice(1);
             let thingtoEcho = args.join(" ")
+            var xo2 = message.guild.channels.find('name', '❓vraioufaux')
+            if (!xo2) return message.channel.sendMessage("Oops, le salon ❓vraioufaux est introuvable ! Merci d'éxecuter **.systvraioufaux** !")
             var vraioufaux_embed = new Discord.RichEmbed()
             .addField("Succès", 'Le vraioufaux a été crée.')
-            .setThumbnail("https://img.lght.pics/2Dgj.png")
             .setColor("#0404B4")
             message.channel.sendMessage(vraioufaux_embed).then(msg => msg.delete(5000))
             message.guild.channels.find("name", "❓vraioufaux").sendMessage("@everyone **Allez ! Est-ce vrai ou bien faux ?** :small_red_triangle_down:")
@@ -809,9 +848,10 @@ if (message.content.startsWith(prefix + "bisou")) {
         if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'éxecuter cette commande. (commande éxecutée: .sondage)");
             let args = message.content.split(" ").slice(1);
             let thingtoEcho = args.join(" ")
+            var xo2 = message.guild.channels.find('name', '📊sondages')
+            if (!xo2) return message.channel.sendMessage("Oops, le salon 📊sondages est introuvable ! Merci d'éxecuter **.systsondage** !")
             var sondageok_embed = new Discord.RichEmbed()
             .addField("Succès", 'Le sondage a été crée.')
-            .setThumbnail("https://img.lght.pics/2Dgj.png")
             .setColor("#0404B4")
             message.channel.sendMessage(sondageok_embed).then(msg => msg.delete(5000))
             message.guild.channels.find("name", "📊sondages").sendMessage("@everyone **Allez ! Votez juste en-dessous** :small_red_triangle_down:")
@@ -834,5 +874,4 @@ if (message.content.startsWith(prefix + "bisou")) {
                                                        //////////////////////////////
                                                        ////////FIN DE LA FICHE///////
                                                        //////////////////////////////
-          
 });
