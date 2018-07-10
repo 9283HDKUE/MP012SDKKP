@@ -153,7 +153,8 @@ client.on("ready", () => {
      .setColor("#FFFFFF")
      .setTitle("Les mises à jour de Sky")
      .setDescription("Voici les MAJ effectuées jusqu'à maintenant:")
-     .addField("MAJ 10.07.2018", "(1) - Ajout de la commande **.question**", "(2) - Amélioration des commandes **.tue**, **.bisou**, **.calin** et ajout d'une nouvelle commande fun: **.gifle**")
+     .addField("MAJ 10.07.2018 (2)", "Amélioration des commandes **.tue**, **.bisou**, **.calin** et ajout d'une nouvelle commande fun: **.gifle**")
+     .addField("MAJ 10.07.2018 (1)", "Ajout de la commande **.question**")
      .addField("MAJ 08.07.2018", "Amélioration totale de la commande **.help**, amélioration de la stabilité de Sky et dernièrement ajout d'un message d'erreur au cas où **Sky** ne trouve pas le salon approprié des commandes **.sondage** et **.vraioufaux**. ")
      .addField("MAJ 02.07.2018", "Amélioration de l'apparence de quelques commandes. Amélioration de la stabilité.")
      .addField("MAJ 30.06.2018", "Ajout de la commande **.partners**, amélioration de la stabilité.")
@@ -167,7 +168,6 @@ client.on("ready", () => {
      .addField("MAJ 09.06.2018 (1)", "Mise en place de l'embed dans tous les commandes, changement des îcones de la commande **.sondage**, ajout des commandes **.say** et **.bvn**, ajout également des messages d'erreur en cas de problème")
      .addField("MAJ 07.06.2018", "Ajout de la commande .systsondage et .sondage (il faut d'abord exécuter la commande .systsondage), suppression de la commande .systbienvenue, le système de bienvenue sera de retour prochainement")
      .addField("MAJ 06.06.2018 (2)", "Amélioration du design des commandes et automatisation totale de la commande .systbienvenue et du système bienvenue")
-     .addField("MAJ 06.06.2018 (1)", "Ajout des commandes: .myavatar, skyprefix, .skydon, .systbienvenue, amélioration complète de tous les commandes, retour de la commande .clear, ajout d'un système de bienvenue, update version: 1.1.0")
      .addField("...", "autres")
      .setFooter("Fiche MAJ - SkyBOT")
      message.author.send(help_embed);
