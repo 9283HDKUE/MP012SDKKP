@@ -76,7 +76,7 @@ client.on("ready", () => {
    var help1_embed = new Discord.RichEmbed()
    .setColor("#0174DF")
    .setTitle("Commandes Fun")
-   .setDescription("\n**________________________________________________**\n**:tada: FUN:**\n\n**.calin**\nPermet de faire un câlin à un utilisateur\n**.bisou**\nPermet de faire un bisou à un utilisateur\n**.tue**\nPermet de tuer un utilisateur\n**.bvn**\nPermet de souhaiter la bienvenue à un utilisateur\n**.say**\nFaire dire quelque chose à Sky\n**.question**\nPermet de poser une question à Sky")
+   .setDescription("\n**________________________________________________**\n**:tada: FUN:**\n\n**.calin**\nPermet de faire un câlin à un utilisateur\n**.bisou**\nPermet de faire un bisou à un utilisateur\n**.tue**\nPermet de tuer un utilisateur\n**.bvn**\nPermet de souhaiter la bienvenue à un utilisateur\n**.gifle**\nPermet de donner un gros gifle à un utilisateur\n**.say**\nFaire dire quelque chose à Sky\n**.question**\nPermet de poser une question à Sky")
    .setFooter("Commandes Fun")
   message.author.send(help1_embed);
    }
@@ -153,7 +153,7 @@ client.on("ready", () => {
      .setColor("#FFFFFF")
      .setTitle("Les mises à jour de Sky")
      .setDescription("Voici les MAJ effectuées jusqu'à maintenant:")
-     .addField("MAJ 10.07.2018", "Ajout de la commande **.question**")
+     .addField("MAJ 10.07.2018", "(1) - Ajout de la commande **.question**", "(2) - Amélioration des commandes **.tue**, **.bisou**, **.calin** et ajout d'une nouvelle commande fun: **.gifle**)
      .addField("MAJ 08.07.2018", "Amélioration totale de la commande **.help**, amélioration de la stabilité de Sky et dernièrement ajout d'un message d'erreur au cas où **Sky** ne trouve pas le salon approprié des commandes **.sondage** et **.vraioufaux**. ")
      .addField("MAJ 02.07.2018", "Amélioration de l'apparence de quelques commandes. Amélioration de la stabilité.")
      .addField("MAJ 30.06.2018", "Ajout de la commande **.partners**, amélioration de la stabilité.")
@@ -745,13 +745,17 @@ client.on("ready", () => {
    let args = message.content.split(" ").slice(1);
    let thingtoEcho = args.join(" ")
    var calinembed = new Discord.RichEmbed()
-         .setTitle("OH, UN CALIN !")
          .addField(message.author.username + " fait un câlin à", thingtoEcho)
          .setFooter("Que c'est beau !")
-         .setThumbnail("http://www.hey.fr/tools/emoji/fr/ios_emoji_emoticone_coeur_bleu.png")
+         .setImage("https://media.giphy.com/media/QbkL9WuorOlgI/giphy.gif")
          .setColor("#8A0868")
          message.channel.sendMessage(calinembed)
        }
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .CALIN//////////////////////////////////////////////////////////
+   
+                                                             //////////////////////
+                                                             ////////SUIVANT///////
+                                                             //////////////////////
  ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .TUE//////////////////////////////////////////////////////////
  if (message.content.startsWith(prefix + "tue")) {
    if(message.content === '.tue') return message.channel.sendMessage(":x: **Erreur** ! Merci de mentionner un utilisateur pour le tuer.").then(msg => msg.delete(7000))
@@ -759,10 +763,9 @@ client.on("ready", () => {
    let args = message.content.split(" ").slice(1);
    let thingtoEcho = args.join(" ")
    var tueembed = new Discord.RichEmbed()
-         .setTitle("OH, UN CRIME !")
          .addField(message.author.username + " tue", thingtoEcho)
          .setFooter("R.I.P")
-         .setThumbnail("https://cdn180.picsart.com/232043995004212.png?r1024x1024")
+         .setImage("https://media.giphy.com/media/26BRPfVkRua8wri0g/giphy.gif")
          .setColor("#000000")
          message.channel.sendMessage(tueembed)
  
@@ -780,10 +783,9 @@ client.on("ready", () => {
    let args = message.content.split(" ").slice(1);
    let thingtoEcho = args.join(" ")
    var bisousembed = new Discord.RichEmbed()
-         .setTitle("OH, UN BISOU !")
          .addField(message.author.username + " fait un bisous à", thingtoEcho)
          .setFooter("Ouais, c'est beau mais bientôt ils vont s'exciter...")
-         .setThumbnail("http://s10.favim.com/mini/160918/emoji-emoticon-kiss-lips-Favim.com-4738930.png")
+         .setImage("https://media.giphy.com/media/5GdhgaBpA3oCA/giphy.gif")
          .setColor("#8A0868")
          message.channel.sendMessage(bisousembed)
  
@@ -793,6 +795,26 @@ client.on("ready", () => {
                                                              //////////////////////
                                                              ////////SUIVANT///////
                                                              //////////////////////
+
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .GIFLE//////////////////////////////////////////////////////////
+if (message.content.startsWith(prefix + "gifle")) {
+  if(message.content === '.gifle') return message.channel.sendMessage(":x: **Erreur** ! Merci de mentionner un utilisateur pour lui donner un gros gifle.").then(msg => msg.delete(7000))
+  message.delete()
+  let args = message.content.split(" ").slice(1);
+  let thingtoEcho = args.join(" ")
+  var gifleembed = new Discord.RichEmbed()
+        .addField(message.author.username + " donne un gros gifle à", thingtoEcho)
+        .setFooter("Aie...")
+        .setImage("https://media.giphy.com/media/3oEduOWVxygmeDIKPu/giphy.gif")
+        .setColor("#FF0000")
+        message.channel.sendMessage(gifleembed)
+
+}
+//////////////////////////////////////////////////FIN DE LA COMMANDE .GIFLE//////////////////////////////////////////////////////////
+  
+                                                            //////////////////////
+                                                            ////////SUIVANT///////
+                                                            //////////////////////
  
  ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .MYAVATAR//////////////////////////////////////////////////////////
        if (message.content === '.myavatar'){
@@ -888,4 +910,5 @@ client.on("ready", () => {
                                                             case 5: message.channel.send ("Pas cette question... :unamused:"); break;
                                                         }}
 ///////////////////////////////////////////////////////////FIN DE LA COMMANDE .QUESTION//////////////////////////////////////////////////////////
+
  });
