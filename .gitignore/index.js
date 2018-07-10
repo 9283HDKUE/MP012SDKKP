@@ -153,7 +153,7 @@ client.on("ready", () => {
      .setColor("#FFFFFF")
      .setTitle("Les mises à jour de Sky")
      .setDescription("Voici les MAJ effectuées jusqu'à maintenant:")
-     .addField("MAJ 10.07.2018", "(1) - Ajout de la commande **.question**", "(2) - Amélioration des commandes **.tue**, **.bisou**, **.calin** et ajout d'une nouvelle commande fun: **.gifle**)
+     .addField("MAJ 10.07.2018", "(1) - Ajout de la commande **.question**", "(2) - Amélioration des commandes **.tue**, **.bisou**, **.calin** et ajout d'une nouvelle commande fun: **.gifle**")
      .addField("MAJ 08.07.2018", "Amélioration totale de la commande **.help**, amélioration de la stabilité de Sky et dernièrement ajout d'un message d'erreur au cas où **Sky** ne trouve pas le salon approprié des commandes **.sondage** et **.vraioufaux**. ")
      .addField("MAJ 02.07.2018", "Amélioration de l'apparence de quelques commandes. Amélioration de la stabilité.")
      .addField("MAJ 30.06.2018", "Ajout de la commande **.partners**, amélioration de la stabilité.")
