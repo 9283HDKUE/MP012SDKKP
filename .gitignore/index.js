@@ -900,14 +900,18 @@ if (message.content.startsWith(prefix + "gifle")) {
  ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .QUESTION//////////////////////////////////////////////////////////
                                                         if (message.content.startsWith (prefix + "question")){
                                                           ballMessage = message.content.slice (9);
-                                                          number = 5;
+                                                          number = 9;
                                                           var random = Math.floor (Math.random() * (number - 1 + 1)) + 1;
                                                           switch (random) {
                                                             case 1: message.channel.send ("Non"); break;
                                                             case 2: message.channel.send ("Oui"); break;
                                                             case 3: message.channel.send ("Peut-être"); break;
-                                                            case 4: message.channel.send ("Vraiment pas ! :unamused:"); break;
-                                                            case 5: message.channel.send ("Pas cette question... :unamused:"); break;
+                                                            case 4: message.channel.send ("Vraiment pas !"); break;
+                                                            case 5: message.channel.send ("Vraiment !"); break;
+                                                            case 6: message.channel.send ("Peut-être pas"); break;
+                                                            case 7: message.channel.send ("Absolument"); break;
+                                                            case 8: message.channel.send ("Absolument pas"); break;
+                                                            case 9: message.channel.send ("Sans doute"); break;
                                                         }}
 ///////////////////////////////////////////////////////////FIN DE LA COMMANDE .QUESTION//////////////////////////////////////////////////////////
 
