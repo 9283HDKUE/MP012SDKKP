@@ -10,7 +10,7 @@ client.login(process.env.TOKEN)
 
 ////Avertissement en marche
 client.on("ready", () => {
-  client.user.setActivity(`.help | .invite | SkyTeam`);
+  client.user.setActivity(`.help | .invite | SkyTeam®`);
  });
    
  ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .VERSION//////////////////////////////////////////////////////////
