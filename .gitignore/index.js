@@ -63,23 +63,23 @@ client.on("ready", () => {
     var helputiles_embed = new Discord.RichEmbed()
     .setColor("#0174DF")
     .setTitle("Commandes Utiles")
-    .setDescription("\n**________________________________________________**\n**:hammer: UTILES:**\n\n**.partners**\nVoir les grands partenaires de Sky\n**.info**\nAffiche les informations sur Sky\n**.version**\nPermet de savoir la version de Sky\n**.invite**\nPour ajouter Sky sur ton serveur Discord\n**.maj**\nVoir les mises à jour effectuées sur Sky\n**.datecrea**\nSavoir la date de création de Sky\n**.myavatar**\nDemander le lien de son avatar\n**.ping**\nVoir le temps de latence entre Sky et le serveur\n**.don**\nFaire un don pour Sky\n**.equipe**\nPermet de voir l'équipe de Sky\n**.siteweb**\nPermet d'obtenir le lien du site web de Sky\n**.servers**\nPermet de voir le nombre de servers ou est Sky\n**.discord**\nSavoir le nombre de serveur dans lequel est Sky\n**.infods**\nVoir les informations du serveur Discord\n**.mystats**\nPermet de voir la liste des commandes\n**.online**\nPermet de savoir depuis combien de temps est en ligne Sky")
+    .setDescription("\n**________________________________________________**\n**:hammer: UTILES:**\n\n**.partners**\nVoir les grands partenaires de Sky\n**.info**\nAffiche les informations sur Sky\n**.version**\nPermet de savoir la version de Sky\n**.invite**\nPour ajouter Sky sur ton serveur Discord\n**.maj**\nVoir les mises à jour effectuées sur Sky\n**.datecrea**\nSavoir la date de création de Sky\n**.myavatar**\nDemander le lien de son avatar\n**.ping**\nVoir le temps de latence entre Sky et le serveur\n**.don**\nFaire un don pour Sky\n**.equipe**\nPermet de voir l'équipe de Sky\n**.siteweb**\nPermet d'obtenir le lien du site web de Sky\n**.servers**\nPermet de voir le nombre de servers ou est Sky\n**.discord**\nSavoir le nombre de serveur dans lequel est Sky\n**.infods**\nVoir les informations du serveur Discord\n**.mystats**\nPermet de voir la liste des commandes\n**.uptime**\nPermet de savoir depuis combien de temps est en ligne Sky")
     .setFooter("Commandes Utiles")
    message.author.send(helputiles_embed);
  }
    
    if(message.content === prefix + "fun"){
-     var helpokfun_embed = new Discord.RichEmbed()
-   .addField("Succès", `La liste des commandes :tada: fun est envoyée par message privé !`)
-   .setColor("#00FF00")
-   message.channel.sendMessage(helpokfun_embed)
-   var help1_embed = new Discord.RichEmbed()
-   .setColor("#0174DF")
-   .setTitle("Commandes Fun")
-   .setDescription("\n**________________________________________________**\n**:tada: FUN:**\n\n**.calin**\nPermet de faire un câlin à un utilisateur\n**.bisou**\nPermet de faire un bisou à un utilisateur\n**.tue**\nPermet de tuer un utilisateur\n**.bvn**\nPermet de souhaiter la bienvenue à un utilisateur\n**.gifle**\nPermet de donner un gros gifle à un utilisateur\n**.say**\nFaire dire quelque chose à Sky\n**.question**\nPermet de poser une question à Sky")
-   .setFooter("Commandes Fun")
-  message.author.send(help1_embed);
-   }
+ var helpokfun_embed = new Discord.RichEmbed()
+.addField("Succès", `La liste des commandes :tada: fun est envoyée par message privé !`)
+.setColor("#00FF00")
+message.channel.sendMessage(helpokfun_embed)
+var help1_embed = new Discord.RichEmbed()
+.setColor("#0174DF")
+.setTitle("Commandes Fun")
+.setDescription("\n**________________________________________________**\n**:tada: FUN:**\n\n**.calin**\nPermet de faire un câlin à un utilisateur\n**.bisou**\nPermet de faire un bisou à un utilisateur\n**.tue**\nPermet de tuer un utilisateur\n**.bvn**\nPermet de souhaiter la bienvenue à un utilisateur\n**.gifle**\nPermet de donner un gros gifle à un utilisateur\n**.say**\nFaire dire quelque chose à Sky\n**.fumer**\nPermet de fumer une cigarette\n**.question**\nPermet de poser une question à Sky")
+.setFooter("Commandes Fun")
+message.author.send(help1_embed);
+}
  
    if(message.content === prefix + "mod"){
      var helpokmod_embed = new Discord.RichEmbed()
@@ -145,34 +145,33 @@ client.on("ready", () => {
  
  ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .MAJ//////////////////////////////////////////////////////////
    if(message.content === prefix + "maj"){
-     var helpok_embed = new Discord.RichEmbed()
-     .addField("Succès", `La fiche **MAJ** est envoyée par message privé !`)
-     .setColor("#00FF00")
-     message.channel.sendMessage(helpok_embed)
-     var help_embed = new Discord.RichEmbed()
-     .setColor("#FFFFFF")
-     .setTitle("Les mises à jour de Sky")
-     .setDescription("Voici les MAJ effectuées jusqu'à maintenant:")
-     .addField("MAJ 10.07.2018 (2)", "Amélioration des commandes **.tue**, **.bisou**, **.calin** et ajout d'une nouvelle commande fun: **.gifle**")
-     .addField("MAJ 10.07.2018 (1)", "Ajout de la commande **.question**")
-     .addField("MAJ 08.07.2018", "Amélioration totale de la commande **.help**, amélioration de la stabilité de Sky et dernièrement ajout d'un message d'erreur au cas où **Sky** ne trouve pas le salon approprié des commandes **.sondage** et **.vraioufaux**. ")
-     .addField("MAJ 02.07.2018", "Amélioration de l'apparence de quelques commandes. Amélioration de la stabilité.")
-     .addField("MAJ 30.06.2018", "Ajout de la commande **.partners**, amélioration de la stabilité.")
-     .addField("MAJ 25.06.2018", "Amélioration de la vitesse de réponse de Sky, modification du nom de la commande .**add** en **.invite** puis ajout des commandes: **.calin**, **.tue** et **.bisou**")
-     .addField("MAJ 24.06.2018", "Ajout de la commande **.warn**, **.online** et dernièrement, corrections de quelques problèmes techniques")
-     .addField("MAJ 21.06.2018", "Ajout de la commande: **.unmute** et **.datecrea** suppression de la commande **.recru** car aucune utilité, ajout de la commande **systvraioufaux** pour pouvoir activer le système de vraioufaux, et dernièrement ajout de la commande **.vraioufaux** pour pouvoir crée des Vrai ou Faux.")
-     .addField("MAJ 17.06.2018", "Amélioration de la commande **.mute**, ajout des commandes: **.equipe**, **.siteweb** et **.recru**.")
-     .addField("MAJ 14.06.2018", "Ajout de la commande **.mute**, optimisation de **Sky**")
-     .addField("MAJ 10.06.2018", "Ajout de la commande **.alerteadm**, amélioration des commandes **.infods** et **.info**")
-     .addField("MAJ 09.06.2018 (2)", "Modification du nom de quasiment toutes les commmandes, enlèvement du mot **Sky** des commandes, optimisation de Sky. Désormais la nouvelle commande pour voir la liste des commandes est **.help**.")
-     .addField("MAJ 09.06.2018 (1)", "Mise en place de l'embed dans tous les commandes, changement des îcones de la commande **.sondage**, ajout des commandes **.say** et **.bvn**, ajout également des messages d'erreur en cas de problème")
-     .addField("MAJ 07.06.2018", "Ajout de la commande .systsondage et .sondage (il faut d'abord exécuter la commande .systsondage), suppression de la commande .systbienvenue, le système de bienvenue sera de retour prochainement")
-     .addField("MAJ 06.06.2018 (2)", "Amélioration du design des commandes et automatisation totale de la commande .systbienvenue et du système bienvenue")
-     .addField("...", "autres")
-     .setFooter("Fiche MAJ - SkyBOT")
-     message.author.send(help_embed);
-     console.log("SKY: Un utilisateur a demander la fiche de MAJ")
-   }
+ var helpok_embed = new Discord.RichEmbed()
+ .addField("Succès", `La fiche **MAJ** est envoyée par message privé !`)
+ .setColor("#00FF00")
+ message.channel.sendMessage(helpok_embed)
+ var help_embed = new Discord.RichEmbed()
+ .setColor("#FFFFFF")
+ .setTitle("Les mises à jour de Sky")
+ .setDescription("Voici les MAJ effectuées jusqu'à maintenant:")
+ .addField("MAJ 14.07.2018", "Ajout d'une commande fun: **.fumer**, changement du nom de la commande **.online** par **.uptime** et amélioration de la stabilité de Sky")
+ .addField("MAJ 10.07.2018 (2)", "Amélioration des commandes **.tue**, **.bisou**, **.calin** et ajout d'une nouvelle commande fun: **.gifle**")
+ .addField("MAJ 10.07.2018 (1)", "Ajout de la commande **.question**")
+ .addField("MAJ 08.07.2018", "Amélioration totale de la commande **.help**, amélioration de la stabilité de Sky et dernièrement ajout d'un message d'erreur au cas où **Sky** ne trouve pas le salon approprié des commandes **.sondage** et **.vraioufaux**. ")
+ .addField("MAJ 02.07.2018", "Amélioration de l'apparence de quelques commandes. Amélioration de la stabilité.")
+ .addField("MAJ 30.06.2018", "Ajout de la commande **.partners**, amélioration de la stabilité.")
+ .addField("MAJ 25.06.2018", "Amélioration de la vitesse de réponse de Sky, modification du nom de la commande .**add** en **.invite** puis ajout des commandes: **.calin**, **.tue** et **.bisou**")
+ .addField("MAJ 24.06.2018", "Ajout de la commande **.warn**, **.online** et dernièrement, corrections de quelques problèmes techniques")
+ .addField("MAJ 21.06.2018", "Ajout de la commande: **.unmute** et **.datecrea** suppression de la commande **.recru** car aucune utilité, ajout de la commande **systvraioufaux** pour pouvoir activer le système de vraioufaux, et dernièrement ajout de la commande **.vraioufaux** pour pouvoir crée des Vrai ou Faux.")
+ .addField("MAJ 17.06.2018", "Amélioration de la commande **.mute**, ajout des commandes: **.equipe**, **.siteweb** et **.recru**.")
+ .addField("MAJ 14.06.2018", "Ajout de la commande **.mute**, optimisation de **Sky**")
+ .addField("MAJ 10.06.2018", "Ajout de la commande **.alerteadm**, amélioration des commandes **.infods** et **.info**")
+ .addField("MAJ 09.06.2018 (2)", "Modification du nom de quasiment toutes les commmandes, enlèvement du mot **Sky** des commandes, optimisation de Sky. Désormais la nouvelle commande pour voir la liste des commandes est **.help**.")
+ .addField("MAJ 09.06.2018 (1)", "Mise en place de l'embed dans tous les commandes, changement des îcones de la commande **.sondage**, ajout des commandes **.say** et **.bvn**, ajout également des messages d'erreur en cas de problème")
+ .addField("MAJ 07.06.2018", "Ajout de la commande .systsondage et .sondage (il faut d'abord exécuter la commande .systsondage), suppression de la commande .systbienvenue, le système de bienvenue sera de retour prochainement")
+ .addField("...", "autres")
+ .setFooter("Fiche MAJ - SkyBOT")
+ message.author.send(help_embed);
+}
  
  ///////////////////////////////////////////////////////////FIN DE LA COMMANDE .MAJ//////////////////////////////////////////////////////////
    
@@ -705,7 +704,7 @@ client.on("ready", () => {
                                                              //////////////////////
  
  ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .ONLINE//////////////////////////////////////////////////////////
- if (message.content === '.online'){
+ if (message.content === '.uptime'){
    message.delete();
    const sicon = client.user.displayAvatarURL
    
@@ -756,6 +755,7 @@ client.on("ready", () => {
                                                              //////////////////////
                                                              ////////SUIVANT///////
                                                              //////////////////////
+   
  ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .TUE//////////////////////////////////////////////////////////
  if (message.content.startsWith(prefix + "tue")) {
    if(message.content === '.tue') return message.channel.sendMessage(":x: **Erreur** ! Merci de mentionner un utilisateur pour le tuer.").then(msg => msg.delete(7000))
@@ -771,7 +771,24 @@ client.on("ready", () => {
  
  }
  //////////////////////////////////////////////////FIN DE LA COMMANDE .TUE//////////////////////////////////////////////////////////
-   
+  
+                                                         //////////////////////
+                                                         ////////SUIVANT///////
+                                                         //////////////////////
+
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .FUMER//////////////////////////////////////////////////////////
+if (message.content.startsWith(prefix + "fumer")) {
+  message.delete()
+  var fumerembed = new Discord.RichEmbed()
+      .addField(message.author.username + " est entrain de fumer une cigarette !", "Ow, cette fumée !")
+      .setFooter("Attention: Sky vous déconseille de fumer. Fumer nuit gravement à votre santé et à celle de votre entourage.")
+      .setImage("https://media.giphy.com/media/26gJAaPZKuQutL1mg/giphy.gif")
+      .setColor("#FF0000")
+      message.channel.sendMessage(fumerembed)
+  
+  }
+  //////////////////////////////////////////////////FIN DE LA COMMANDE .FUMER//////////////////////////////////////////////////////////
+  
                                                              //////////////////////
                                                              ////////SUIVANT///////
                                                              //////////////////////
