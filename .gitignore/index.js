@@ -10,7 +10,7 @@ client.login(process.env.TOKEN)
 
 ////Avertissement en marche
 client.on("ready", () => {
-  client.user.setActivity(`.help | Allez la France !`);
+  client.user.setActivity(`.help | VIVE LA FRANCE !`);
  });
    
  ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .VERSION//////////////////////////////////////////////////////////
