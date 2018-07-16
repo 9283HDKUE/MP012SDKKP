@@ -76,7 +76,7 @@ message.channel.sendMessage(helpokfun_embed)
 var help1_embed = new Discord.RichEmbed()
 .setColor("#0174DF")
 .setTitle("Commandes Fun")
-.setDescription("\n**________________________________________________**\n**:tada: FUN:**\n\n**.calin**\nPermet de faire un câlin à un utilisateur\n**.bisou**\nPermet de faire un bisou à un utilisateur\n**.tue**\nPermet de tuer un utilisateur\n**.bvn**\nPermet de souhaiter la bienvenue à un utilisateur\n**.gifle**\nPermet de donner un gros gifle à un utilisateur\n**.poing**n\Permet de donner un gros coup de poing à un utilisateur\n**.say**\nFaire dire quelque chose à Sky\n**.fumer**\nPermet de fumer une cigarette\n**.question**\nPermet de poser une question à Sky")
+.setDescription("\n**________________________________________________**\n**:tada: FUN:**\n\n**.calin**\nPermet de faire un câlin à un utilisateur\n**.bisou**\nPermet de faire un bisou à un utilisateur\n**.tue**\nPermet de tuer un utilisateur\n**.bvn**\nPermet de souhaiter la bienvenue à un utilisateur\n**.gifle**\nPermet de donner un gros gifle à un utilisateur\n**.poing**\nPermet de donner un gros coup de poing à un utilisateur\n**.say**\nFaire dire quelque chose à Sky\n**.fumer**\nPermet de fumer une cigarette\n**.question**\nPermet de poser une question à Sky")
 .setFooter("Commandes Fun")
 message.author.send(help1_embed);
 }
