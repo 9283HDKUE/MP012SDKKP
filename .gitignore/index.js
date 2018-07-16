@@ -824,7 +824,7 @@ if (message.content.startsWith(prefix + "fumer")) {
          .addField(message.author.username + " donne un gros coup de poing à", thingtoEcho)
          .setFooter("Oula ! ")
          .setImage("https://media.giphy.com/media/nq0qLlrcdahiw/giphy.gif")
-         .setColor("#8A0868")
+         .setColor("#FF0000")
          message.channel.sendMessage(poingembed)
  
  }
