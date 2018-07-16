@@ -10,7 +10,7 @@ client.login(process.env.TOKEN)
 
 ////Avertissement en marche
 client.on("ready", () => {
-  client.user.setActivity(`.help | VIVE LA FRANCE !`);
+  client.user.setActivity(`.help | .invite | SkyTeam ®`);
  });
    
  ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .VERSION//////////////////////////////////////////////////////////
@@ -19,7 +19,7 @@ client.on("ready", () => {
    if(message.content === prefix + "version"){
      var version_embed = new Discord.RichEmbed()
      .setThumbnail(client.user.avatarURL)
-     .addField(":gear: Version", `Ma version est: 2.2.2 BÊTA`)
+     .addField(":gear: Version", `Ma version est: 2.2.3 BÊTA`)
      .setColor("#0404B4")
      message.channel.sendMessage(version_embed)
     }
@@ -76,7 +76,7 @@ message.channel.sendMessage(helpokfun_embed)
 var help1_embed = new Discord.RichEmbed()
 .setColor("#0174DF")
 .setTitle("Commandes Fun")
-.setDescription("\n**________________________________________________**\n**:tada: FUN:**\n\n**.calin**\nPermet de faire un câlin à un utilisateur\n**.bisou**\nPermet de faire un bisou à un utilisateur\n**.tue**\nPermet de tuer un utilisateur\n**.bvn**\nPermet de souhaiter la bienvenue à un utilisateur\n**.gifle**\nPermet de donner un gros gifle à un utilisateur\n**.say**\nFaire dire quelque chose à Sky\n**.fumer**\nPermet de fumer une cigarette\n**.question**\nPermet de poser une question à Sky")
+.setDescription("\n**________________________________________________**\n**:tada: FUN:**\n\n**.calin**\nPermet de faire un câlin à un utilisateur\n**.bisou**\nPermet de faire un bisou à un utilisateur\n**.tue**\nPermet de tuer un utilisateur\n**.bvn**\nPermet de souhaiter la bienvenue à un utilisateur\n**.gifle**\nPermet de donner un gros gifle à un utilisateur\n**.poing**n\Permet de donner un gros coup de poing à un utilisateur\n**.say**\nFaire dire quelque chose à Sky\n**.fumer**\nPermet de fumer une cigarette\n**.question**\nPermet de poser une question à Sky")
 .setFooter("Commandes Fun")
 message.author.send(help1_embed);
 }
@@ -153,6 +153,7 @@ message.author.send(help1_embed);
  .setColor("#FFFFFF")
  .setTitle("Les mises à jour de Sky")
  .setDescription("Voici les MAJ effectuées jusqu'à maintenant:")
+  .addField("MAJ 07.06.2018", "Ajour d'une commande fun: **.poing**, amélioration de la fluidité de Sky")
  .addField("MAJ 14.07.2018", "Ajout d'une commande fun: **.fumer**, changement du nom de la commande **.online** par **.uptime** et amélioration de la stabilité de Sky")
  .addField("MAJ 10.07.2018 (2)", "Amélioration des commandes **.tue**, **.bisou**, **.calin** et ajout d'une nouvelle commande fun: **.gifle**")
  .addField("MAJ 10.07.2018 (1)", "Ajout de la commande **.question**")
@@ -167,7 +168,6 @@ message.author.send(help1_embed);
  .addField("MAJ 10.06.2018", "Ajout de la commande **.alerteadm**, amélioration des commandes **.infods** et **.info**")
  .addField("MAJ 09.06.2018 (2)", "Modification du nom de quasiment toutes les commmandes, enlèvement du mot **Sky** des commandes, optimisation de Sky. Désormais la nouvelle commande pour voir la liste des commandes est **.help**.")
  .addField("MAJ 09.06.2018 (1)", "Mise en place de l'embed dans tous les commandes, changement des îcones de la commande **.sondage**, ajout des commandes **.say** et **.bvn**, ajout également des messages d'erreur en cas de problème")
- .addField("MAJ 07.06.2018", "Ajout de la commande .systsondage et .sondage (il faut d'abord exécuter la commande .systsondage), suppression de la commande .systbienvenue, le système de bienvenue sera de retour prochainement")
  .addField("...", "autres")
  .setFooter("Fiche MAJ - SkyBOT")
  message.author.send(help_embed);
@@ -808,6 +808,27 @@ if (message.content.startsWith(prefix + "fumer")) {
  
  }
  //////////////////////////////////////////////////FIN DE LA COMMANDE .BISOU//////////////////////////////////////////////////////////
+   
+   
+                                                             //////////////////////
+                                                             ////////SUIVANT///////
+                                                             //////////////////////
+ 
+ ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .POING//////////////////////////////////////////////////////////
+ if (message.content.startsWith(prefix + "poing")) {
+   if(message.content === '.poing') return message.channel.sendMessage(":x: **Erreur** ! Merci de mentionner un utilisateur pour lui donner un coup de poing.").then(msg => msg.delete(7000))
+   message.delete()
+   let args = message.content.split(" ").slice(1);
+   let thingtoEcho = args.join(" ")
+   var poingembed = new Discord.RichEmbed()
+         .addField(message.author.username + " donne un gros coup de poing à", thingtoEcho)
+         .setFooter("Oula ! ")
+         .setImage("https://media.giphy.com/media/nq0qLlrcdahiw/giphy.gif")
+         .setColor("#8A0868")
+         message.channel.sendMessage(poingembed)
+ 
+ }
+ //////////////////////////////////////////////////FIN DE LA COMMANDE .POING//////////////////////////////////////////////////////////
    
                                                              //////////////////////
                                                              ////////SUIVANT///////
