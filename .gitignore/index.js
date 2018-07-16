@@ -153,7 +153,7 @@ message.author.send(help1_embed);
  .setColor("#FFFFFF")
  .setTitle("Les mises à jour de Sky")
  .setDescription("Voici les MAJ effectuées jusqu'à maintenant:")
-  .addField("MAJ 07.06.2018", "Ajour d'une commande fun: **.poing**, amélioration de la fluidité de Sky")
+ .addField("MAJ 16.07.2018", "Ajout d'une commande fun: **.poing**, amélioration de la fluidité de **Sky**")
  .addField("MAJ 14.07.2018", "Ajout d'une commande fun: **.fumer**, changement du nom de la commande **.online** par **.uptime** et amélioration de la stabilité de Sky")
  .addField("MAJ 10.07.2018 (2)", "Amélioration des commandes **.tue**, **.bisou**, **.calin** et ajout d'une nouvelle commande fun: **.gifle**")
  .addField("MAJ 10.07.2018 (1)", "Ajout de la commande **.question**")
