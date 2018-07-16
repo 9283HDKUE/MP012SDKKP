@@ -823,7 +823,7 @@ if (message.content.startsWith(prefix + "fumer")) {
    var poingembed = new Discord.RichEmbed()
          .addField(message.author.username + " donne un gros coup de poing à", thingtoEcho)
          .setFooter("Oula ! ")
-         .setImage("https://media.giphy.com/media/nq0qLlrcdahiw/giphy.gif")
+         .setImage("https://media.giphy.com/media/3oEhn4mIrTuCf0bn1u/giphy.gif")
          .setColor("#FF0000")
          message.channel.sendMessage(poingembed)
  
