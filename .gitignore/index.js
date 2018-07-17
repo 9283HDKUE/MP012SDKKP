@@ -47,7 +47,6 @@ client.on("ready", () => {
    .setColor("#0174DF")
    .setTitle("Liste des catégories")
    .addField(":hammer: | Permet de voir la liste des commandes **utiles**", "**.utiles**")
-   .addField("")
    .addField(":gear: | Permet de voir la liste des commandes automatisées", "**.auto**")
    .addField(":tada: | Permet de voir la liste des commandes fun", "**.fun**")
    .addField(":passport_control: | Permet de voir la liste des commandes de modération", "**.mod**")
