@@ -46,18 +46,18 @@ client.on("ready", () => {
    var help_embed = new Discord.RichEmbed()
    .setColor("#0174DF")
    .setTitle("Liste des catégories")
-   .addField(":hammer: Permet de voir la liste des commandes **utiles**", "**.utiles**")
-   .addField(":gear: Permet de voir la liste des commandes automatisées", "**.auto**")
-   .addField(":tada: Permet de voir la liste des commandes fun", "**.fun**")
-   .addField(":passport_control: Permet de voir la liste des commandes de modération", "**.mod**")
-   .addField(":necktie: Permet de voir la liste des commandes administrateur", "**.adm**")
-   .setFooter("Liste des catégories")
+   .addField(":hammer: | Permet de voir la liste des commandes **utiles**", "**.utiles**")
+   .addField("")
+   .addField(":gear: | Permet de voir la liste des commandes automatisées", "**.auto**")
+   .addField(":tada: | Permet de voir la liste des commandes fun", "**.fun**")
+   .addField(":passport_control: | Permet de voir la liste des commandes de modération", "**.mod**")
+   .addField(":necktie: | Permet de voir la liste des commandes administrateur", "**.adm**")
   message.author.send(help_embed);
  }
  
  if(message.content === prefix + "utiles"){
    var helpokutiles_embed = new Discord.RichEmbed()
-   .addField("Succès", `La liste des commandes :hammer: utiles est envoyée par message privé !`)
+   .addField("Succès", `La liste des commandes **utiles** est envoyée par message privé !`)
    .setColor("#00FF00")
    message.channel.sendMessage(helpokutiles_embed)
     var helputiles_embed = new Discord.RichEmbed()
@@ -70,7 +70,7 @@ client.on("ready", () => {
    
    if(message.content === prefix + "fun"){
  var helpokfun_embed = new Discord.RichEmbed()
-.addField("Succès", `La liste des commandes :tada: fun est envoyée par message privé !`)
+.addField("Succès", `La liste des commandes **fun** est envoyée par message privé !`)
 .setColor("#00FF00")
 message.channel.sendMessage(helpokfun_embed)
 var help1_embed = new Discord.RichEmbed()
@@ -83,7 +83,7 @@ message.author.send(help1_embed);
  
    if(message.content === prefix + "mod"){
      var helpokmod_embed = new Discord.RichEmbed()
-   .addField("Succès", `La liste des commandes :passport_control: modération est envoyée par message privé !`)
+   .addField("Succès", `La liste des commandes **modération** est envoyée par message privé !`)
    .setColor("#00FF00")
    message.channel.sendMessage(helpokmod_embed)
    var helpmod_embed = new Discord.RichEmbed()
@@ -96,7 +96,7 @@ message.author.send(help1_embed);
  
    if(message.content === prefix + "auto"){
      var helpokauto_embed = new Discord.RichEmbed()
-   .addField("Succès", `La liste des commandes :gear: systèmes automatiques est envoyée par message privé !`)
+   .addField("Succès", `La liste des commandes **systèmes automatiques** est envoyée par message privé !`)
    .setColor("#00FF00")
    message.channel.sendMessage(helpokauto_embed)
    var helpauto_embed = new Discord.RichEmbed()
@@ -109,7 +109,7 @@ message.author.send(help1_embed);
  
   if(message.content === prefix + "adm"){
    var helpokadm_embed = new Discord.RichEmbed()
-   .addField("Succès", `La liste des commandes :necktie: administration est envoyée par message privé !`)
+   .addField("Succès", `La liste des commandes **administration** est envoyée par message privé !`)
    .setColor("#00FF00")
    message.channel.sendMessage(helpokadm_embed)
  var helpadm_embed = new Discord.RichEmbed()
