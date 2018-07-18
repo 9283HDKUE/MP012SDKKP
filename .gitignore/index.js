@@ -90,7 +90,7 @@ var helpmusic_embed = new Discord.RichEmbed()
 .setColor("#0174DF")
 .setTitle("Commandes Music")
 .setDescription("\n**________________________________________________**\n**:musical_note: MUSIC:**\n\n**.play**\nPermet de démarrer une musique\n**.skip**\nPermet de passer à la musique suivante\n**.stop**\nPermet d'arrêter la musique en cours et déconnecte le bot du salon")
-.setFooter(":warning: | Cette fonctionnalité est en cours de développement, elle sera disponible prochainement.")
+.setFooter("⚠ | Cette fonctionnalité est en cours de développement, elle sera disponible prochainement.")
 message.author.send(helpmusic_embed);
 }
  
