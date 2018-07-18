@@ -6,7 +6,7 @@ const client = new Discord.Client();
 var prefix = '.';
 
 ///Connexion du bot
-client.login(maintenance)
+client.login(process.env.TOKEN)
 
 ////Avertissement en marche
 client.on("ready", () => {
@@ -49,6 +49,7 @@ client.on("ready", () => {
    .addField(":hammer: | Permet de voir la liste des commandes **utiles**", "**.utiles**")
    .addField(":gear: | Permet de voir la liste des commandes automatisées", "**.auto**")
    .addField(":tada: | Permet de voir la liste des commandes fun", "**.fun**")
+   .addField(":musical_note: | Permet de voir la liste des commandes music", "**.music**")
    .addField(":passport_control: | Permet de voir la liste des commandes de modération", "**.mod**")
    .addField(":necktie: | Permet de voir la liste des commandes administrateur", "**.adm**")
   message.author.send(help_embed);
@@ -78,6 +79,19 @@ var help1_embed = new Discord.RichEmbed()
 .setDescription("\n**________________________________________________**\n**:tada: FUN:**\n\n**.calin**\nPermet de faire un câlin à un utilisateur\n**.bisou**\nPermet de faire un bisou à un utilisateur\n**.tue**\nPermet de tuer un utilisateur\n**.clap**n\Permet d'applaudir un utilisateur\n**.bvn**\nPermet de souhaiter la bienvenue à un utilisateur\n**.gifle**\nPermet de donner un gros gifle à un utilisateur\n**.poing**\nPermet de donner un gros coup de poing à un utilisateur\n**.say**\nFaire dire quelque chose à Sky\n**.fumer**\nPermet de fumer une cigarette\n**.question**\nPermet de poser une question à Sky")
 .setFooter("Commandes Fun")
 message.author.send(help1_embed);
+}
+   
+    if(message.content === prefix + "music"){
+ var helpokmusic_embed = new Discord.RichEmbed()
+.addField("Succès", `La liste des commandes **music** est envoyée par message privé !`)
+.setColor("#00FF00")
+message.channel.sendMessage(helpokmusic_embed)
+var helpmusic_embed = new Discord.RichEmbed()
+.setColor("#0174DF")
+.setTitle("Commandes Music")
+.setDescription("\n**________________________________________________**\n**:musical_note: MUSIC:**\n\n**.play**\nPermet de démarrer une musique\n**.skip**\nPermet de passer à la musique suivante\n**.stop**\nPermet d'arrêter la musique en cours et déconnecte le bot du salon")
+.setFooter(":warning: | Cette fonctionnalité est en cours de développement, elle sera disponible prochainement.")
+message.author.send(helpmusic_embed);
 }
  
    if(message.content === prefix + "mod"){
@@ -152,7 +166,7 @@ message.author.send(help1_embed);
  .setColor("#FFFFFF")
  .setTitle("Les mises à jour de Sky")
  .setDescription("Voici les MAJ effectuées jusqu'à maintenant:")
-  .addField("MAJ 10.07.2018 (2)", "Ajout d'une commande fun: **.clap**")
+ .addField("MAJ 18.07.2018", "Ajout d'une commande fun: **.clap**, amélioration de la commande **.clear**, ajout de la catégorie **musique**")
  .addField("MAJ 16.07.2018", "Ajout d'une commande fun: **.poing**, amélioration de la fluidité de **Sky**")
  .addField("MAJ 14.07.2018", "Ajout d'une commande fun: **.fumer**, changement du nom de la commande **.online** par **.uptime** et amélioration de la stabilité de Sky")
  .addField("MAJ 10.07.2018 (2)", "Amélioration des commandes **.tue**, **.bisou**, **.calin** et ajout d'une nouvelle commande fun: **.gifle**")
@@ -248,19 +262,14 @@ message.author.send(help1_embed);
  ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .CLEAR//////////////////////////////////////////////////////////
    if(message.content.startsWith(prefix + "clear")) {
      if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.author.send(":negative_squared_cross_mark: Vous n'avez pas la permission d'éxecuter cette commande. (commande éxecutée .clear)");
-     let args = message.content.split(" ").slice(1);
      
-     if(!args[0]) return message.channel.send(":negative_squared_cross_mark: Merci de préciser un nombre de messages à supprimer.")
-     message.channel.bulkDelete(args[0]).then(() => {
-       
-       var clearno_embed = new Discord.RichEmbed()
-       .addField(":cyclone: Succès", `${args[0]} messages supprimés du salon`)
-       .setColor("#00FF00")
-       message.channel.sendMessage(clearno_embed).then(msg => msg.delete(5000));
- 
- });
- 
-   }
+        let args = message.content.split(" ").slice(1);
+
+        if(!args[0]) return message.channel.send("**ERREUR** Merci de préciser un nombre de message à supprimer.")
+        message.channel.bulkDelete(args[0]).then(() => {
+            message.channel.send(`***OK: ${args[0]} messages supprimés !***`).then(msg => msg.delete(5000))
+        });
+}
  ///////////////////////////////////////////////////////////FIN DE LA COMMANDE .CLEAR//////////////////////////////////////////////////////////
    
                                                              //////////////////////
@@ -755,6 +764,24 @@ message.author.send(help1_embed);
                                                              ////////SUIVANT///////
                                                              //////////////////////
    
+  ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .CLAP//////////////////////////////////////////////////////////
+ if (message.content.startsWith(prefix + "clap")) {
+   if(message.content === '.clap') return message.channel.sendMessage(":x: **Erreur** ! Merci de mentionner un utilisateur pour applaudir.").then(msg => msg.delete(7000))
+   message.delete()
+   let args = message.content.split(" ").slice(1);
+   let thingtoEcho = args.join(" ")
+   var clapembed = new Discord.RichEmbed()
+         .addField(message.author.username + " est entrain d'applaudir", thingtoEcho)
+         .setImage("https://media.giphy.com/media/l0IyjvPvBs0oYEwZW/giphy.gif")
+         .setFooter("Wouhouuuuu !")
+         .setColor("#FFFFFF")
+         message.channel.sendMessage(clapembed)
+       }
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .CALIN//////////////////////////////////////////////////////////
+   
+                                                             //////////////////////
+                                                             ////////SUIVANT///////
+                                                             //////////////////////
  ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .TUE//////////////////////////////////////////////////////////
  if (message.content.startsWith(prefix + "tue")) {
    if(message.content === '.tue') return message.channel.sendMessage(":x: **Erreur** ! Merci de mentionner un utilisateur pour le tuer.").then(msg => msg.delete(7000))
