@@ -267,7 +267,7 @@ message.author.send(helpmusic_embed);
 
         if(!args[0]) return message.channel.send("**ERREUR** Merci de préciser un nombre de message à supprimer.")
         message.channel.bulkDelete(args[0]).then(() => {
-            message.channel.send(`***OK: ${args[0]} messages supprimés !***`).then(msg => msg.delete(5000))
+            message.channel.send(`***:white_check_mark: OK | ${args[0]} messages supprimés du salon !***`).then(msg => msg.delete(5000))
         });
 }
  ///////////////////////////////////////////////////////////FIN DE LA COMMANDE .CLEAR//////////////////////////////////////////////////////////
@@ -380,7 +380,6 @@ message.author.send(helpmusic_embed);
        .addField("Nombre d'utilisateurs:", message.guild.memberCount)
        .addField("Nombre de bots:", message.guild.members.filter(members => members.user.bot).size)
        .addField("Nombre de salons et catégories:", message.guild.channels.size)
- 
        .setColor("0x0000FF")
      message.channel.sendEmbed(embed)
  
@@ -766,18 +765,17 @@ message.author.send(helpmusic_embed);
    
   ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .CLAP//////////////////////////////////////////////////////////
  if (message.content.startsWith(prefix + "clap")) {
-   if(message.content === '.clap') return message.channel.sendMessage(":x: **Erreur** ! Merci de mentionner un utilisateur pour applaudir.").then(msg => msg.delete(7000))
+   if(message.content === '.clap') return message.channel.sendMessage(":x: **Erreur** ! Merci de mentionner un utilisateur pour l'applaudir.").then(msg => msg.delete(7000))
    message.delete()
    let args = message.content.split(" ").slice(1);
    let thingtoEcho = args.join(" ")
    var clapembed = new Discord.RichEmbed()
          .addField(message.author.username + " est entrain d'applaudir", thingtoEcho)
          .setImage("https://media.giphy.com/media/l0IyjvPvBs0oYEwZW/giphy.gif")
-         .setFooter("Wouhouuuuu !")
-         .setColor("#FFFFFF")
+         .setColor("#8A0868")
          message.channel.sendMessage(clapembed)
        }
-///////////////////////////////////////////////////////////FIN DE LA COMMANDE .CALIN//////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////FIN DE LA COMMANDE .CLAP//////////////////////////////////////////////////////////
    
                                                              //////////////////////
                                                              ////////SUIVANT///////
