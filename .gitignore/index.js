@@ -265,9 +265,9 @@ message.author.send(helpmusic_embed);
      
         let args = message.content.split(" ").slice(1);
 
-        if(!args[0]) return message.channel.send("**ERREUR** Merci de préciser un nombre de message à supprimer.")
+        if(!args[0]) return message.channel.send("**ERREUR** | Merci de préciser un nombre de message à supprimer.")
         message.channel.bulkDelete(args[0]).then(() => {
-            message.channel.send(`:white_check_mark: ***OK | ${args[0]} messages supprimés du salon !***`).then(msg => msg.delete(5000))
+            message.channel.send(`**OK | ${args[0]} messages supprimés du salon !**`).then(msg => msg.delete(5000))
         });
 }
  ///////////////////////////////////////////////////////////FIN DE LA COMMANDE .CLEAR//////////////////////////////////////////////////////////
