@@ -76,7 +76,7 @@ message.channel.sendMessage(helpokfun_embed)
 var help1_embed = new Discord.RichEmbed()
 .setColor("#0174DF")
 .setTitle("Commandes Fun")
-.setDescription("\n**________________________________________________**\n**:tada: FUN:**\n\n**.calin**\nPermet de faire un câlin à un utilisateur\n**.bisou**\nPermet de faire un bisou à un utilisateur\n**.tue**\nPermet de tuer un utilisateur\n**.clap**\nPermet d'applaudir un utilisateur\n**.bvn**\nPermet de souhaiter la bienvenue à un utilisateur\n**.gifle**\nPermet de donner un gros gifle à un utilisateur\n**.poing**\nPermet de donner un gros coup de poing à un utilisateur\n**.say**\nFaire dire quelque chose à Sky\n**.fumer**\nPermet de fumer une cigarette\n**.question**\nPermet de poser une question à Sky")
+.setDescription("\n**________________________________________________**\n**:tada: FUN:**\n\n**.calin**\nPermet de faire un câlin à un utilisateur\n**.bisou**\nPermet de faire un bisou à un utilisateur\n**.tue**\nPermet de tuer un utilisateur\n**.clap**\nPermet d'applaudir un utilisateur\n**.bvn**\nPermet de souhaiter la bienvenue à un utilisateur\n**.gifle**\nPermet de donner un gros gifle à un utilisateur\n**.poing**\nPermet de donner un gros coup de poing à un utilisateur\n**.say**\nFaire dire quelque chose à Sky\n**.fumer**\nPermet de fumer une cigarette\n**.question**\nPermet de poser une question à Sky\n**.flip**\nPermet de jouer à **pile** ou **face**")
 .setFooter("Commandes Fun")
 message.author.send(help1_embed);
 }
@@ -166,6 +166,7 @@ message.author.send(helpmusic_embed);
  .setColor("#FFFFFF")
  .setTitle("Les mises à jour de Sky")
  .setDescription("Voici les MAJ effectuées jusqu'à maintenant:")
+ .addField("MAJ 19.07.2018", "Ajout d'une commande fun: **.flip**")
  .addField("MAJ 18.07.2018", "Ajout d'une commande fun: **.clap**, amélioration de la commande **.clear**, ajout de la catégorie **musique**")
  .addField("MAJ 16.07.2018", "Ajout d'une commande fun: **.poing**, amélioration de la fluidité de **Sky**")
  .addField("MAJ 14.07.2018", "Ajout d'une commande fun: **.fumer**, changement du nom de la commande **.online** par **.uptime** et amélioration de la stabilité de Sky")
@@ -180,7 +181,6 @@ message.author.send(helpmusic_embed);
  .addField("MAJ 17.06.2018", "Amélioration de la commande **.mute**, ajout des commandes: **.equipe**, **.siteweb** et **.recru**.")
  .addField("MAJ 14.06.2018", "Ajout de la commande **.mute**, optimisation de **Sky**")
  .addField("MAJ 10.06.2018", "Ajout de la commande **.alerteadm**, amélioration des commandes **.infods** et **.info**")
- .addField("MAJ 09.06.2018 (2)", "Modification du nom de quasiment toutes les commmandes, enlèvement du mot **Sky** des commandes, optimisation de Sky. Désormais la nouvelle commande pour voir la liste des commandes est **.help**.")
  .addField("...", "autres")
  .setFooter("Fiche MAJ - SkyBOT")
  message.author.send(help_embed);
@@ -977,4 +977,8 @@ if (message.content.startsWith(prefix + "gifle")) {
                                                         }}
 ///////////////////////////////////////////////////////////FIN DE LA COMMANDE .QUESTION//////////////////////////////////////////////////////////
 
+if(message == `${prefix}flip`) {
+  message.channel.send(`:money_with_wings: | Résultat: **${Math.floor(Math.random() * 2) == 0 ? "pile" : "face"}** !`);
+}
+   
  });
