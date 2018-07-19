@@ -456,7 +456,7 @@ message.author.send(helpmusic_embed);
        message.delete()
            let args = message.content.split(" ").slice(1);
            let thingtoEcho = args.join(" ")
-           message.channel.send("thingtoEcho")
+           message.channel.send(thingtoEcho)
  
       }
      
