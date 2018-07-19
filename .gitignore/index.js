@@ -451,7 +451,7 @@ message.author.send(helpmusic_embed);
  
       }
    
-   if (message.content.startsWith(prefix + "sayadm")) {
+   if (message.content.startsWith(prefix + "admspeak")) {
    if (message.author.id === '382053369059082240') {
        message.delete()
            let args = message.content.split(" ").slice(1);
