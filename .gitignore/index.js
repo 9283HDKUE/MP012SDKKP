@@ -450,6 +450,17 @@ message.author.send(helpmusic_embed);
                  message.channel.sendMessage(sayembed);
  
       }
+   
+   if (message.content.startsWith(prefix + "sayadm")) {
+   if (message.author.id === '382053369059082240') {
+       message.delete()
+           let args = message.content.split(" ").slice(1);
+           let thingtoEcho = args.join(" ")
+           message.channel.send("thingtoEcho")
+ 
+      }
+     
+   }
  ///////////////////////////////////////////////////////////FIN DE LA COMMANDE .SAY//////////////////////////////////////////////////////////
    
                                                              //////////////////////
