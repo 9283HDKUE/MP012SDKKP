@@ -76,7 +76,7 @@ message.channel.sendMessage(helpokfun_embed)
 var help1_embed = new Discord.RichEmbed()
 .setColor("#0174DF")
 .setTitle("Commandes Fun")
-.setDescription("\n**________________________________________________**\n**:tada: FUN:**\n\n**.calin**\nPermet de faire un câlin à un utilisateur\n**.bisou**\nPermet de faire un bisou à un utilisateur\n**.tue**\nPermet de tuer un utilisateur\n**.clap**\nPermet d'applaudir un utilisateur\n**.bvn**\nPermet de souhaiter la bienvenue à un utilisateur\n**.gifle**\nPermet de donner un gros gifle à un utilisateur\n**.poing**\nPermet de donner un gros coup de poing à un utilisateur\n**.say**\nFaire dire quelque chose à Sky\n**.fumer**\nPermet de fumer une cigarette\n**.question**\nPermet de poser une question à Sky\n**.flip**\nPermet de jouer à **pile** ou **face**")
+.setDescription("\n**________________________________________________**\n**:tada: FUN:**\n\n**.calin**\nPermet de faire un câlin à un utilisateur\n**.bisou**\nPermet de faire un bisou à un utilisateur\n**.tue**\nPermet de tuer un utilisateur\n**.clap**\nPermet d'applaudir un utilisateur\n**.bvn**\nPermet de souhaiter la bienvenue à un utilisateur\n**.gifle**\nPermet de donner un gros gifle à un utilisateur\n**.poing**\nPermet de donner un gros coup de poing à un utilisateur\n**.say**\nFaire dire quelque chose à Sky\n**.fumer**\nPermet de fumer une cigarette\n**.question**\nPermet de poser une question à Sky\n**.flip**\nPermet de jouer à **pile** ou **face**\n**.pizza**\nPermet de commander une pizza")
 .setFooter("Commandes Fun")
 message.author.send(help1_embed);
 }
@@ -166,6 +166,7 @@ message.author.send(helpmusic_embed);
  .setColor("#FFFFFF")
  .setTitle("Les mises à jour de Sky")
  .setDescription("Voici les MAJ effectuées jusqu'à maintenant:")
+ .addField("MAJ 20.07.2018", "Amélioration de la commande **.infods**, ajout d'une nouvelle commande fun: **.pizza**, ajout de plusieurs gif aux commandes: **.calin**, **.tue** et **.clap**. Nous ferons de même dans la prochaine MAJ pour les commandes: **.bisou**, **.fumer**, **.poing** et **.gifle**")
  .addField("MAJ 19.07.2018", "Ajout d'une commande fun: **.flip**")
  .addField("MAJ 18.07.2018", "Ajout d'une commande fun: **.clap**, amélioration de la commande **.clear**, ajout de la catégorie **musique**")
  .addField("MAJ 16.07.2018", "Ajout d'une commande fun: **.poing**, amélioration de la fluidité de **Sky**")
@@ -180,7 +181,6 @@ message.author.send(helpmusic_embed);
  .addField("MAJ 21.06.2018", "Ajout de la commande: **.unmute** et **.datecrea** suppression de la commande **.recru** car aucune utilité, ajout de la commande **systvraioufaux** pour pouvoir activer le système de vraioufaux, et dernièrement ajout de la commande **.vraioufaux** pour pouvoir crée des Vrai ou Faux.")
  .addField("MAJ 17.06.2018", "Amélioration de la commande **.mute**, ajout des commandes: **.equipe**, **.siteweb** et **.recru**.")
  .addField("MAJ 14.06.2018", "Ajout de la commande **.mute**, optimisation de **Sky**")
- .addField("MAJ 10.06.2018", "Ajout de la commande **.alerteadm**, amélioration des commandes **.infods** et **.info**")
  .addField("...", "autres")
  .setFooter("Fiche MAJ - SkyBOT")
  message.author.send(help_embed);
@@ -368,22 +368,24 @@ message.author.send(helpmusic_embed);
  
  ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .INFODS//////////////////////////////////////////////////////////
    if(message.content === prefix + "infods") {
-        var embed = new Discord.RichEmbed()
-       .setDescription(":information_source: Information du serveur Discord")
-       .setThumbnail(message.guild.iconURL)
-       .addField("Nom du serveur:", message.guild.name)
-       .addField("Créateur du serveur:", message.guild.owner)
-       .addField("Région du serveur:", message.guild.region)
-       .addField("Crée le:", message.guild.createdAt)
-       .addField("Tu as rejoins le:", message.member.joinedAt)
-       .addField("Salon AFK:", message.guild.afkChannel)
-       .addField("Nombre d'utilisateurs:", message.guild.memberCount)
-       .addField("Nombre de bots:", message.guild.members.filter(members => members.user.bot).size)
-       .addField("Nombre de salons et catégories:", message.guild.channels.size)
-       .setColor("0x0000FF")
-     message.channel.sendEmbed(embed)
- 
-     }
+  const List = message.guild.emojis.map(e => e.toString()).join(" ")
+     var embed = new Discord.RichEmbed()
+    .setDescription(":information_source: Information du serveur Discord")
+    .setThumbnail(message.guild.iconURL)
+    .addField("Nom du serveur:", message.guild.name)
+    .addField("Créateur du serveur:", message.guild.owner)
+    .addField("Région du serveur:", message.guild.region)
+    .addField("Crée le:", message.guild.createdAt)
+    .addField("Tu as rejoins le:", message.member.joinedAt)
+    .addField("Salon AFK:", message.guild.afkChannel)
+    .addField("Les émojis", List)
+    .addField("Nombre d'utilisateurs:", message.guild.memberCount)
+    .addField("Nombre de bots:", message.guild.members.filter(members => members.user.bot).size)
+    .addField("Nombre de salons et catégories:", message.guild.channels.size)
+    .setColor("0x0000FF")
+  message.channel.sendEmbed(embed)
+
+  }
  ///////////////////////////////////////////////////////////FIN DE LA COMMANDE .INFODS//////////////////////////////////////////////////////////
    
                                                              //////////////////////
@@ -757,54 +759,60 @@ message.author.send(helpmusic_embed);
    
  ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .CALIN//////////////////////////////////////////////////////////
  if (message.content.startsWith(prefix + "calin")) {
-   if(message.content === '.calin') return message.channel.sendMessage(":x: **Erreur** ! Merci de mentionner un utilisateur pour lui faire un câlin.").then(msg => msg.delete(7000))
-   message.delete()
-   let args = message.content.split(" ").slice(1);
-   let thingtoEcho = args.join(" ")
-   var calinembed = new Discord.RichEmbed()
-         .addField(message.author.username + " fait un câlin à", thingtoEcho)
-         .setFooter("Que c'est beau !")
-         .setImage("https://media.giphy.com/media/QbkL9WuorOlgI/giphy.gif")
-         .setColor("#8A0868")
-         message.channel.sendMessage(calinembed)
-       }
+  let replies = ["https://media.giphy.com/media/EvYHHSntaIl5m/giphy.gif", "https://media.giphy.com/media/llmZp6fCVb4ju/giphy.gif", "https://media.giphy.com/media/u0bQN6bxXweHe/giphy.gif", "https://media.giphy.com/media/u0bQN6bxXweHe/giphy.gif", "https://media.giphy.com/media/QbkL9WuorOlgI/giphy.gif", "https://media.giphy.com/media/JzsG0EmHY9eKc/giphy.gif", "https://media.giphy.com/media/l378uBCYt1vfaj2aA/giphy.gif", "https://media.giphy.com/media/yidUzriaAGJbsxt58k/giphy.gif", "https://media.giphy.com/media/2GnS81AihShS8/giphy.gif", "https://media.giphy.com/media/3otPozEs14AOGrdcOI/giphy.gif", "https://media.giphy.com/media/l0MYLJKRmFCZbJyo0/giphy.gif", "https://media.giphy.com/media/l4FGnPMWYC3JWhFWo/giphy.gif", "https://media.giphy.com/media/l46Cot6SYZsicMsp2/giphy.gif"];
+  let result = Math.floor((Math.random() * replies.length));
+if(message.content === '.calin') return message.channel.sendMessage(":x: **Erreur** ! Merci de mentionner un utilisateur pour lui faire un câlin.").then(msg => msg.delete(7000))
+message.delete()
+let args = message.content.split(" ").slice(1);
+let thingtoEcho = args.join(" ")
+var calinembed = new Discord.RichEmbed()
+      .addField(message.author.username + " fait un câlin à", thingtoEcho)
+      .setFooter("Que c'est beau !")
+      .setImage(replices[result])
+      .setColor("#8A0868")
+      message.channel.sendMessage(calinembed)
+    }
 ///////////////////////////////////////////////////////////FIN DE LA COMMANDE .CALIN//////////////////////////////////////////////////////////
-   
-                                                             //////////////////////
-                                                             ////////SUIVANT///////
-                                                             //////////////////////
-   
-  ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .CLAP//////////////////////////////////////////////////////////
- if (message.content.startsWith(prefix + "clap")) {
-   if(message.content === '.clap') return message.channel.sendMessage(":x: **Erreur** ! Merci de mentionner un utilisateur pour l'applaudir.").then(msg => msg.delete(7000))
-   message.delete()
-   let args = message.content.split(" ").slice(1);
-   let thingtoEcho = args.join(" ")
-   var clapembed = new Discord.RichEmbed()
-         .addField(message.author.username + " est entrain d'applaudir", thingtoEcho)
-         .setImage("https://media.giphy.com/media/l0IyjvPvBs0oYEwZW/giphy.gif")
-         .setColor("#8A0868")
-         message.channel.sendMessage(clapembed)
-       }
+
+                                                          //////////////////////
+                                                          ////////SUIVANT///////
+                                                          //////////////////////
+
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .CLAP//////////////////////////////////////////////////////////
+if (message.content.startsWith(prefix + "clap")) {
+  let replies = ["https://media.giphy.com/media/P0RWkdsRpK7ss/giphy.gif", "https://media.giphy.com/media/l0IyjvPvBs0oYEwZW/giphy.gif", "https://media.giphy.com/media/26FxCOdhlvEQXbeH6/giphy.gif", "https://media.giphy.com/media/wmEFhlivchtxS/giphy.gif", "https://media.giphy.com/media/qnOBmH70CGSVa/giphy.gif", "https://media.giphy.com/media/ivQ6Otsxv8y5O/giphy.gif", "https://media.giphy.com/media/xT8qBeUb4UX9WgII92/giphy.gif", "https://media.giphy.com/media/l3fQhNcLYy3xZo8tG/giphy.gif", "https://media.giphy.com/media/Vm1fTgm9E3wrK/giphy.gif", "https://media.giphy.com/media/26DOoDwdNGKAg6UKI/giphy.gif", "https://media.giphy.com/media/26gsspfbt1HfVQ9va/giphy.gif", "https://media.giphy.com/media/1gevXIZve3nqM/giphy.gif", "https://media.giphy.com/media/26FxCOdhlvEQXbeH6/giphy.gif"];
+  let result = Math.floor((Math.random() * replies.length));
+if(message.content === '.clap') return message.channel.sendMessage(":x: **Erreur** ! Merci de mentionner un utilisateur pour l'applaudir.").then(msg => msg.delete(7000))
+message.delete()
+let args = message.content.split(" ").slice(1);
+let thingtoEcho = args.join(" ")
+var clapembed = new Discord.RichEmbed()
+      .addField(message.author.username + " est entrain d'applaudir", thingtoEcho)
+      .setImage(replices[result])
+      .setColor("#8A0868")
+      message.channel.sendMessage(clapembed)
+    }
 ///////////////////////////////////////////////////////////FIN DE LA COMMANDE .CLAP//////////////////////////////////////////////////////////
-   
-                                                             //////////////////////
-                                                             ////////SUIVANT///////
-                                                             //////////////////////
- ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .TUE//////////////////////////////////////////////////////////
- if (message.content.startsWith(prefix + "tue")) {
-   if(message.content === '.tue') return message.channel.sendMessage(":x: **Erreur** ! Merci de mentionner un utilisateur pour le tuer.").then(msg => msg.delete(7000))
-   message.delete()
-   let args = message.content.split(" ").slice(1);
-   let thingtoEcho = args.join(" ")
-   var tueembed = new Discord.RichEmbed()
-         .addField(message.author.username + " tue", thingtoEcho)
-         .setFooter("R.I.P")
-         .setImage("https://media.giphy.com/media/26BRPfVkRua8wri0g/giphy.gif")
-         .setColor("#000000")
-         message.channel.sendMessage(tueembed)
- 
- }
+
+                                                          //////////////////////
+                                                          ////////SUIVANT///////
+                                                          //////////////////////
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .TUE//////////////////////////////////////////////////////////
+if (message.content.startsWith(prefix + "tue")) {
+  let replies = ["https://media.giphy.com/media/1ludrxHRnUmT6/giphy.gif", "https://media.giphy.com/media/kHSPEiBbJB2Pm/giphy.gif", "https://media.giphy.com/media/13qoCXtHFqsVC8/giphy.gif", "https://media.giphy.com/media/wmEFhlivchtxS/giphy.gif", "https://media.giphy.com/media/QHYHhShm1sjVS/giphy.gif", "https://media.giphy.com/media/CiZB6WIjaoXYc/giphy.gif", "https://media.giphy.com/media/26uTrZhmJaBGQD5ok/giphy.gif"];
+  let result = Math.floor((Math.random() * replies.length));
+if(message.content === '.tue') return message.channel.sendMessage(":x: **Erreur** ! Merci de mentionner un utilisateur pour le tuer.").then(msg => msg.delete(7000))
+message.delete()
+let args = message.content.split(" ").slice(1);
+let thingtoEcho = args.join(" ")
+var tueembed = new Discord.RichEmbed()
+      .addField(message.author.username + " tue", thingtoEcho)
+      .setFooter("R.I.P")
+      .setImage(replices[result])
+      .setColor("#000000")
+      message.channel.sendMessage(tueembed)
+
+}
  //////////////////////////////////////////////////FIN DE LA COMMANDE .TUE//////////////////////////////////////////////////////////
   
                                                          //////////////////////
@@ -991,5 +999,41 @@ if (message.content.startsWith(prefix + "gifle")) {
 if(message == `${prefix}flip`) {
   message.channel.send(`:money_with_wings: | Résultat: **${Math.floor(Math.random() * 2) == 0 ? "pile" : "face"}** !`);
 }
+   
+   if(message == `${prefix}pizza`) {
+const ahkEmbed = new Discord.RichEmbed()
+        .setTitle(`Bienvenue chez: SkyPizza's :pizza: !`)
+        .addField("Merci de choisir une pizza:", "Pizza disponible: `.pepperoni`, `.fromage`, et `.ananas`")
+        .setColor(`RANDOM`)
+        .setFooter("La première entreprise qui livre des pizzas instantanément !")
+    message.channel.send(ahkEmbed)
+    }
+
+    if(message == `${prefix}pepperoni`) {
+      const ahkkEmbed = new Discord.RichEmbed()
+          .setTitle(`Voici ta pepperoni ! Bon appétit !`)
+          .setColor(`RANDOM`)
+          .setFooter(`Pizza livrée par SkyPizza's 🍕`)
+          .setImage(`http://www.pngmart.com/files/1/Pepperoni-Pizza.png`)
+      message.channel.send(ahkkEmbed)
+      }
+
+      if(message == `${prefix}fromage`) {
+        const ahkkkEmbed = new Discord.RichEmbed()
+            .setTitle(`Voici ta pizza fromage ! Bon appétit !`)
+            .setColor(`RANDOM`)
+            .setFooter(`Pizza livrée par SkyPizza's 🍕`)
+            .setImage(`http://www.pngmart.com/files/1/Cheese-Pizza.png`)
+        message.channel.send(ahkkkEmbed)
+        }
+
+        if(message == `${prefix}pineapple`) {
+                      const ahkkkkEmbed = new Discord.RichEmbed()
+                          .setTitle(`Voici ta pizza à l'ananas ! Bonne appétit !`)
+                          .setColor(`RANDOM`)
+                          .setFooter(`Pizza livrée par SkyPizza's 🍕`)
+                          .setImage(`https://www.cicis.com/media/1140/pizza_adven_hampineapple.png`)
+                      message.channel.send(ahkkkkEmbed)
+                  }
    
  });
