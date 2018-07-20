@@ -166,7 +166,7 @@ message.author.send(helpmusic_embed);
  .setColor("#FFFFFF")
  .setTitle("Les mises à jour de Sky")
  .setDescription("Voici les MAJ effectuées jusqu'à maintenant:")
- .addField("MAJ 20.07.2018", "Amélioration de la commande **.infods**, ajout d'une nouvelle commande fun: **.pizza**, ajout de plusieurs gif aux commandes: **.calin**, **.tue** et **.clap**. Nous ferons de même dans la prochaine MAJ pour les commandes: **.bisou**, **.fumer**, **.poing** et **.gifle**, correction de quelques bugs et amélioraton de la stabilité de Sky.")
+ .addField("MAJ 20.07.2018", "Amélioration de la commande **.infods**, ajout d'une nouvelle commande fun: **.pizza**, ajout de plusieurs gif aux commandes: **.calin**, **.tue** et **.clap**. Nous ferons de même dans la prochaine MAJ pour les commandes: **.bisou**, **.fumer**, **.poing** et **.gifle**, correction de quelques bugs et amélioration de la stabilité de Sky.")
  .addField("MAJ 19.07.2018", "Ajout d'une commande fun: **.flip**")
  .addField("MAJ 18.07.2018", "Ajout d'une commande fun: **.clap**, amélioration de la commande **.clear**, ajout de la catégorie **musique**")
  .addField("MAJ 16.07.2018", "Ajout d'une commande fun: **.poing**, amélioration de la fluidité de **Sky**")
