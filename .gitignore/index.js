@@ -166,7 +166,7 @@ message.author.send(helpmusic_embed);
  .setColor("#FFFFFF")
  .setTitle("Les mises à jour de Sky")
  .setDescription("Voici les MAJ effectuées jusqu'à maintenant:")
- .addField("MAJ 20.07.2018", "Amélioration de la commande **.infods**, ajout d'une nouvelle commande fun: **.pizza**, ajout de plusieurs gif aux commandes: **.calin**, **.tue** et **.clap**. Nous ferons de même dans la prochaine MAJ pour les commandes: **.bisou**, **.fumer**, **.poing** et **.gifle**, correction de quelques bugs et amélioration de la stabilité de Sky.")
+ .addField("MAJ 20.07.2018", "Ajout d'une nouvelle commande fun: **.pizza**, ajout de plusieurs gif aux commandes: **.calin**, **.tue** et **.clap**. Nous ferons de même dans la prochaine MAJ pour les commandes: **.bisou**, **.fumer**, **.poing** et **.gifle**, correction de quelques bugs et amélioration de la stabilité de Sky.")
  .addField("MAJ 19.07.2018", "Ajout d'une commande fun: **.flip**")
  .addField("MAJ 18.07.2018", "Ajout d'une commande fun: **.clap**, amélioration de la commande **.clear**, ajout de la catégorie **musique**")
  .addField("MAJ 16.07.2018", "Ajout d'une commande fun: **.poing**, amélioration de la fluidité de **Sky**")
@@ -368,7 +368,6 @@ message.author.send(helpmusic_embed);
  
  ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .INFODS//////////////////////////////////////////////////////////
    if(message.content === prefix + "infods") {
-  const List = message.guild.emojis.map(e => e.toString()).join(" ")
      var embed = new Discord.RichEmbed()
     .setDescription(":information_source: Information du serveur Discord")
     .setThumbnail(message.guild.iconURL)
@@ -378,7 +377,6 @@ message.author.send(helpmusic_embed);
     .addField("Crée le:", message.guild.createdAt)
     .addField("Tu as rejoins le:", message.member.joinedAt)
     .addField("Salon AFK:", message.guild.afkChannel)
-    .addField("Les émojis", List)
     .addField("Nombre d'utilisateurs:", message.guild.memberCount)
     .addField("Nombre de bots:", message.guild.members.filter(members => members.user.bot).size)
     .addField("Nombre de salons et catégories:", message.guild.channels.size)
