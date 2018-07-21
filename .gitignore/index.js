@@ -1025,7 +1025,7 @@ const ahkEmbed = new Discord.RichEmbed()
         message.channel.send(ahkkkEmbed)
         }
 
-        if(message == `${prefix}pineapple`) {
+        if(message == `${prefix}ananas`) {
                       const ahkkkkEmbed = new Discord.RichEmbed()
                           .setTitle(`Voici ta pizza à l'ananas ! Bonne appétit !`)
                           .setColor(`RANDOM`)
