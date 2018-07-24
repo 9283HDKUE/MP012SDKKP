@@ -568,7 +568,7 @@ message.author.send(helpmusic_embed);
  ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .DON//////////////////////////////////////////////////////////
      if(message.content === prefix + "don"){
        var skydon_embed = new Discord.RichEmbed()
-       .addField(":gift_heart: Don pour Sky", "Si tu souhaites me faire un don (même des petits), clique ici: https://hebergnity.com/manager/financer?cible=O7RK7DPR ! En me fesant un don, tu as directement le rang: **Sky Donator**, stylé non ? ")
+       .addField(":gift_heart: Don pour Sky", "Si tu souhaites me faire un don (même des petits), clique ici: https://hebergnity.com/manager/financer?cible=O7RK7DPR ! En me fesant un don, tu as directement le rang: **Donator**, stylé non ? ")
        .setColor("#FFFFFF")
        message.channel.sendMessage(skydon_embed)
      }
