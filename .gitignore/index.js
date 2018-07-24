@@ -797,7 +797,7 @@ var clapembed = new Discord.RichEmbed()
                                                           //////////////////////
 ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .TUE//////////////////////////////////////////////////////////
 if (message.content.startsWith(prefix + "tue")) {
-  let replies = ["https://media.giphy.com/media/1ludrxHRnUmT6/giphy.gif", "https://media.giphy.com/media/kHSPEiBbJB2Pm/giphy.gif", "https://media.giphy.com/media/13qoCXtHFqsVC8/giphy.gif", "https://media.giphy.com/media/wmEFhlivchtxS/giphy.gif", "https://media.giphy.com/media/QHYHhShm1sjVS/giphy.gif", "https://media.giphy.com/media/CiZB6WIjaoXYc/giphy.gif", "https://media.giphy.com/media/26uTrZhmJaBGQD5ok/giphy.gif"];
+  let replies = ["https://media.giphy.com/media/1ludrxHRnUmT6/giphy.gif", "https://media.giphy.com/media/kHSPEiBbJB2Pm/giphy.gif", "https://media.giphy.com/media/13qoCXtHFqsVC8/giphy.gif", "https://media.giphy.com/media/QHYHhShm1sjVS/giphy.gif", "https://media.giphy.com/media/CiZB6WIjaoXYc/giphy.gif", "https://media.giphy.com/media/26uTrZhmJaBGQD5ok/giphy.gif"];
   let result = Math.floor((Math.random() * replies.length));
 if(message.content === '.tue') return message.channel.sendMessage(":x: **Erreur** ! Merci de mentionner un utilisateur pour le tuer.").then(msg => msg.delete(7000))
 message.delete()
