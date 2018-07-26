@@ -26,7 +26,7 @@ client.on("ready", () => {
    if(message.content === prefix + "partners"){
      var partners_embed = new Discord.RichEmbed()
      .setTitle(":handshake: Nos partenaires:")
-     .setDescription("Bientôt nos partenaires figureront ici... **en attente**")
+     .setDescription("**En attente**")
      .setColor("#0404B4")
      message.channel.sendMessage(partners_embed)
     }
@@ -59,6 +59,7 @@ client.on("ready", () => {
    var helpokutiles_embed = new Discord.RichEmbed()
    .addField("Succès", `La liste des commandes **utiles** est envoyée par message privé !`)
    .setColor("#00FF00")
+   .setFooter("Demandée par " + message.author.username)
    message.channel.sendMessage(helpokutiles_embed)
     var helputiles_embed = new Discord.RichEmbed()
     .setColor("#0174DF")
@@ -72,6 +73,7 @@ client.on("ready", () => {
  var helpokfun_embed = new Discord.RichEmbed()
 .addField("Succès", `La liste des commandes **fun** est envoyée par message privé !`)
 .setColor("#00FF00")
+.setFooter("Demandée par " + message.author.username)
 message.channel.sendMessage(helpokfun_embed)
 var help1_embed = new Discord.RichEmbed()
 .setColor("#0174DF")
@@ -85,6 +87,7 @@ message.author.send(help1_embed);
  var helpokmusic_embed = new Discord.RichEmbed()
 .addField("Succès", `La liste des commandes **music** est envoyée par message privé !`)
 .setColor("#00FF00")
+.setFooter("Demandée par " + message.author.username)
 message.channel.sendMessage(helpokmusic_embed)
 var helpmusic_embed = new Discord.RichEmbed()
 .setColor("#0174DF")
@@ -98,6 +101,7 @@ message.author.send(helpmusic_embed);
      var helpokmod_embed = new Discord.RichEmbed()
    .addField("Succès", `La liste des commandes **modération** est envoyée par message privé !`)
    .setColor("#00FF00")
+   .setFooter("Demandée par " + message.author.username)
    message.channel.sendMessage(helpokmod_embed)
    var helpmod_embed = new Discord.RichEmbed()
  .setColor("#0174DF")
@@ -111,6 +115,7 @@ message.author.send(helpmusic_embed);
      var helpokauto_embed = new Discord.RichEmbed()
    .addField("Succès", `La liste des commandes **systèmes automatiques** est envoyée par message privé !`)
    .setColor("#00FF00")
+   .setFooter("Demandée par " + message.author.username)
    message.channel.sendMessage(helpokauto_embed)
    var helpauto_embed = new Discord.RichEmbed()
  .setColor("#0174DF")
@@ -124,6 +129,7 @@ message.author.send(helpmusic_embed);
    var helpokadm_embed = new Discord.RichEmbed()
    .addField("Succès", `La liste des commandes **administration** est envoyée par message privé !`)
    .setColor("#00FF00")
+   .setFooter("Demandée par " + message.author.username)
    message.channel.sendMessage(helpokadm_embed)
  var helpadm_embed = new Discord.RichEmbed()
  .setColor("#0174DF")
@@ -161,11 +167,13 @@ message.author.send(helpmusic_embed);
  var helpok_embed = new Discord.RichEmbed()
  .addField("Succès", `La fiche **MAJ** est envoyée par message privé !`)
  .setColor("#00FF00")
+ .setFooter("Demandée par " + message.author.username)
  message.channel.sendMessage(helpok_embed)
  var help_embed = new Discord.RichEmbed()
  .setColor("#FFFFFF")
  .setTitle("Les mises à jour de Sky")
  .setDescription("Voici les MAJ effectuées jusqu'à maintenant:")
+ .addField("MAJ 26.07.2018", "Ajout de plusieurs gif dans la commande **.fumer** et **.poing** d'autres gif arriveront dans la commande **.gifle**, modification des textes dans les commandes, amélioration de la stabilité de **Sky**")
  .addField("MAJ 20.07.2018", "Ajout d'une nouvelle commande fun: **.pizza**, ajout de plusieurs gif aux commandes: **.calin**, **.tue** et **.clap**. Nous ferons de même dans la prochaine MAJ pour les commandes: **.bisou**, **.fumer**, **.poing** et **.gifle**, correction de quelques bugs et amélioration de la stabilité de Sky.")
  .addField("MAJ 19.07.2018", "Ajout d'une commande fun: **.flip**")
  .addField("MAJ 18.07.2018", "Ajout d'une commande fun: **.clap**, amélioration de la commande **.clear**, ajout de la catégorie **musique**")
@@ -180,7 +188,6 @@ message.author.send(helpmusic_embed);
  .addField("MAJ 24.06.2018", "Ajout de la commande **.warn**, **.online** et dernièrement, corrections de quelques problèmes techniques")
  .addField("MAJ 21.06.2018", "Ajout de la commande: **.unmute** et **.datecrea** suppression de la commande **.recru** car aucune utilité, ajout de la commande **systvraioufaux** pour pouvoir activer le système de vraioufaux, et dernièrement ajout de la commande **.vraioufaux** pour pouvoir crée des Vrai ou Faux.")
  .addField("MAJ 17.06.2018", "Amélioration de la commande **.mute**, ajout des commandes: **.equipe**, **.siteweb** et **.recru**.")
- .addField("MAJ 14.06.2018", "Ajout de la commande **.mute**, optimisation de **Sky**")
  .addField("...", "autres")
  .setFooter("Fiche MAJ - SkyBOT")
  message.author.send(help_embed);
@@ -298,6 +305,7 @@ message.author.send(helpmusic_embed);
        var statsok_embed = new Discord.RichEmbed()
        .addField("Succès", "Les statistiques de ton compte ont été envoyés par message privé.")
        .setColor("#00FF00")
+       .setFooter("Pour " + message.author.username)
        message.channel.sendMessage(statsok_embed)
        message.author.send({embed: stats_embed});
        break;
@@ -391,8 +399,6 @@ message.author.send(helpmusic_embed);
                                                              //////////////////////
  
  ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .PING//////////////////////////////////////////////////////////
- 
-   ///Commande .skyping
    if(message.content === prefix + "ping"){
      var ping_embed = new Discord.RichEmbed()
      .addField(":satellite_orbital: Ping", 'Temps de latence avec le serveur: `' + `${message.createdTimestamp - Date.now()}` + ' ms`')
@@ -568,7 +574,7 @@ message.author.send(helpmusic_embed);
  ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .DON//////////////////////////////////////////////////////////
      if(message.content === prefix + "don"){
        var skydon_embed = new Discord.RichEmbed()
-       .addField(":gift_heart: Don pour Sky", "Si tu souhaites me faire un don (même des petits), clique ici: https://hebergnity.com/manager/financer?cible=O7RK7DPR ! En me fesant un don, tu as directement le rang: **Donator**, stylé non ? ")
+       .addField(":gift_heart: Don pour Sky", "Clique ici: https://hebergnity.com/manager/financer?cible=O7RK7DPR ! Avec le don, tu as directement le rang: **Donator** ! ")
        .setColor("#FFFFFF")
        message.channel.sendMessage(skydon_embed)
      }
@@ -581,7 +587,7 @@ message.author.send(helpmusic_embed);
  ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .ADD//////////////////////////////////////////////////////////
      if(message.content === prefix + "invite"){
        var skyadd_embed = new Discord.RichEmbed()
-       .addField(":globe_with_meridians: Ajouter Sky", "Heureux que tu me veux sur ton serveur Discord! Clique sur ce lien: https://discordapp.com/oauth2/authorize?client_id=450323683840491530&scope=bot&permissions=2146958551")
+       .addField(":globe_with_meridians: Add", "Un seul lien: https://discordapp.com/oauth2/authorize?client_id=450323683840491530&scope=bot&permissions=2146958551")
        .setColor("#0404B4")
        message.channel.sendMessage(skyadd_embed)
      }
@@ -594,7 +600,7 @@ message.author.send(helpmusic_embed);
  ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .DISCORD//////////////////////////////////////////////////////////
      if(message.content === prefix + "discord"){
        var skydiscord_embed = new Discord.RichEmbed()
-       .addField(":thought_balloon: Serveur Discord", 'Heureux que tu souhaites rejoindre mon serveur Discord :robot: ! Pleins de surprises dans le serveur Discord, rejoins-nous ! https://discord.gg/YuX9yWD ')
+       .addField(":thought_balloon: Serveur Discord", 'Rejoins les autres utilisateurs: https://discord.gg/YuX9yWD ')
        .setColor("#0404B4")
        message.channel.sendMessage(skydiscord_embed)
      }
@@ -610,7 +616,8 @@ message.author.send(helpmusic_embed);
        .setTitle(":necktie: Équipe de Sky")
        .addField("Runyard (Runyard#2305)", "Fondateur et Développeur")
        .addField("Swarwerth (Swarwerth#2943)", "Administrateur")
-        .addField("Sumonil (Sumonil#5612)", "Modérateur - Serveur Discord")
+       .addField("Sumonil (Sumonil#5612)", "Modérateur - Serveur Discord")
+       .addField("SkyPro (SkyPro#9607)", "Modérateur - Serveur Discord"
        .setColor("#0404B4")
        message.channel.sendMessage(skydiscord_embed)
      }
@@ -638,7 +645,7 @@ message.author.send(helpmusic_embed);
      if(message.content === prefix + "siteweb"){
        var skydiscord_embed = new Discord.RichEmbed()
        .setTitle(":bookmark_tabs: Site web de Sky")
-       .addField("Site web en cours de création...", "Il sera disponible prochainement")
+       .addField("**EN COURS - 3%**", "Disponible prochainement")
        .setColor("#0404B4")
        message.channel.sendMessage(skydiscord_embed)
      }
@@ -730,7 +737,7 @@ message.author.send(helpmusic_embed);
              
                  .setTitle(":clock9: TOUJOURS EN LIGNE")
                  .setThumbnail(client.user.avatarURL)
-                 .addField("Je suis là depuis", (Math.round(client.uptime / (1000 * 60 * 60))) + ' heures ' + (Math.round(client.uptime / (1000 * 60)) % 60) + ' minutes et ' + (Math.round(client.uptime / 1000) % 60) + ' secondes')
+                 .addField("En ligne depuis:", (Math.round(client.uptime / (1000 * 60 * 60))) + ' heure(s) ' + (Math.round(client.uptime / (1000 * 60)) % 60) + ' minute(s) et ' + (Math.round(client.uptime / 1000) % 60) + ' seconde(s)')
                  .setColor("#389aea")
                  .setFooter("Sky")
                  message.channel.send(online_embed)
@@ -745,7 +752,7 @@ message.author.send(helpmusic_embed);
      ///Commande .servers
      if(message.content === prefix + "servers"){
        var statsok_embed = new Discord.RichEmbed()
-         .addField(":file_cabinet: Serveurs", `Pfiou, je suis actuellement en marche dans ${client.guilds.size} serveurs avec ${client.users.size} utilisateurs !`)
+         .addField(":file_cabinet: Serveurs", `Je suis actuellement en service dans ${client.guilds.size} serveurs avec ${client.users.size} utilisateurs !`)
          .setColor("#FFFFFF")
          message.channel.sendMessage(statsok_embed)
       }   
@@ -819,11 +826,13 @@ var tueembed = new Discord.RichEmbed()
 
 ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .FUMER//////////////////////////////////////////////////////////
 if (message.content.startsWith(prefix + "fumer")) {
+  let replies = ["https://media.giphy.com/media/dZBa6EQnbnsHe/giphy.gif", "https://media.giphy.com/media/9dhgKatYHfEuA/giphy.gif", "https://media.giphy.com/media/26gJAaPZKuQutL1mg/giphy.gif", "https://media.giphy.com/media/9daj9smgZ362Q/giphy.gif", "https://media.giphy.com/media/JrsSbPzICaRKU/giphy.gif", "https://media.giphy.com/media/KpAPQVW9lWnWU/giphy.gif", "https://media.giphy.com/media/TJufnSz934AnK/giphy.gif", "https://media.giphy.com/media/14qIliCMe87BwA/giphy.gif", "https://media.giphy.com/media/a0SwTAKWzj0Oc/giphy.gif", "https://media.giphy.com/media/31o9GlUYA8Odi/giphy.gif", "https://media.giphy.com/media/Ejw31fJJkDfQ4/giphy.gif", "https://media.giphy.com/media/tgphOt7wYGIM0/giphy.gif"];
+  let result = Math.floor((Math.random() * replies.length));
   message.delete()
   var fumerembed = new Discord.RichEmbed()
       .addField(message.author.username + " est entrain de fumer une cigarette !", "Ow, cette fumée !")
       .setFooter("Attention: Sky vous déconseille de fumer. Fumer nuit gravement à votre santé et à celle de votre entourage.")
-      .setImage("https://media.giphy.com/media/26gJAaPZKuQutL1mg/giphy.gif")
+      .setImage(replies[result])
       .setColor("#FF0000")
       message.channel.sendMessage(fumerembed)
   
@@ -858,13 +867,15 @@ if (message.content.startsWith(prefix + "fumer")) {
  ///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .POING//////////////////////////////////////////////////////////
  if (message.content.startsWith(prefix + "poing")) {
    if(message.content === '.poing') return message.channel.sendMessage(":x: **Erreur** ! Merci de mentionner un utilisateur pour lui donner un coup de poing.").then(msg => msg.delete(7000))
+  let replies = ["https://media.giphy.com/media/xUNemWOzznJDZpRDZm/giphy.gif", "https://media.giphy.com/media/3o6Zt2wf1yKWucbkqY/giphy.gif", "https://media.giphy.com/media/EYD7OzuuTfRVC/giphy.gif", "https://media.giphy.com/media/BOm1dvdWh3vRS/giphy.gif", "https://media.giphy.com/media/HJ0fBL6B1ZJYY/giphy.gif", "https://media.giphy.com/media/l0IyhZ1ZPnuTsNy0w/giphy.gif", "https://media.giphy.com/media/l0Iyey3m9aNlZs5i0/giphy.gif", "https://media.giphy.com/media/GoN89WuFFqb2U/giphy.gif", "https://media.giphy.com/media/xT9KVGie0lvAr1gjNC/giphy.gif", "https://media.giphy.com/media/3oEhn4mIrTuCf0bn1u/giphy.gif"];
+  let result = Math.floor((Math.random() * replies.length));
    message.delete()
    let args = message.content.split(" ").slice(1);
    let thingtoEcho = args.join(" ")
    var poingembed = new Discord.RichEmbed()
          .addField(message.author.username + " donne un gros coup de poing à", thingtoEcho)
          .setFooter("Oula ! ")
-         .setImage("https://media.giphy.com/media/3oEhn4mIrTuCf0bn1u/giphy.gif")
+         .setImage(replies[result])
          .setColor("#FF0000")
          message.channel.sendMessage(poingembed)
  
@@ -900,6 +911,7 @@ if (message.content.startsWith(prefix + "gifle")) {
          var OKMyavatar_embed = new Discord.RichEmbed()
          .addField("Succès", "Le lien de ton avatar a été envoyé par message privé !")
          .setColor("#00FF00")
+         .setFooter("Demandé par " + message.author.username)
          message.channel.sendMessage(OKMyavatar_embed);
          message.author.send('Voici le lien de ton avatar :arrow_down_small:')
          message.author.send(message.author.avatarURL)
