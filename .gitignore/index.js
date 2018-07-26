@@ -42,6 +42,7 @@ client.on("ready", () => {
    var helpok_embed = new Discord.RichEmbed()
    .addField("Succès", `La liste des catégories est envoyée par message privé !`)
    .setColor("#00FF00")
+   .setFooter("Demandée par " + message.author.username)
    message.channel.sendMessage(helpok_embed)
    var help_embed = new Discord.RichEmbed()
    .setColor("#0174DF")
