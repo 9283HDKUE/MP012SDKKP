@@ -617,7 +617,7 @@ message.author.send(helpmusic_embed);
        .addField("Runyard (Runyard#2305)", "Fondateur et Développeur")
        .addField("Swarwerth (Swarwerth#2943)", "Administrateur")
        .addField("Sumonil (Sumonil#5612)", "Modérateur - Serveur Discord")
-       .addField("SkyPro (SkyPro#9607)", "Modérateur - Serveur Discord"
+       .addField("SkyPro (SkyPro#9607)", "Modérateur - Serveur Discord")
        .setColor("#0404B4")
        message.channel.sendMessage(skydiscord_embed)
      }
