@@ -79,7 +79,7 @@ message.channel.sendMessage(helpokfun_embed)
 var help1_embed = new Discord.RichEmbed()
 .setColor("#0174DF")
 .setTitle("Commandes Fun")
-.setDescription("\n**________________________________________________**\n**:tada: FUN:**\n\n**.calin**\nPermet de faire un câlin à un utilisateur\n**.bisou**\nPermet de faire un bisou à un utilisateur\n**.tue**\nPermet de tuer un utilisateur\n**.clap**\nPermet d'applaudir un utilisateur\n**.bvn**\nPermet de souhaiter la bienvenue à un utilisateur\n**.gifle**\nPermet de donner un gros gifle à un utilisateur\n**.poing**\nPermet de donner un gros coup de poing à un utilisateur\n**.say**\nFaire dire quelque chose à Sky\n**.fumer**\nPermet de fumer une cigarette\n**.question**\nPermet de poser une question à Sky\n**.flip**\nPermet de jouer à **pile** ou **face**\n**.pizza**\nPermet de commander une pizza")
+.setDescription("\n**________________________________________________**\n**:tada: FUN:**\n\n**.calin**\nPermet de faire un câlin à un utilisateur\n**.bisou**\nPermet de faire un bisou à un utilisateur\n**.tue**\nPermet de tuer un utilisateur\n**.clap**\nPermet d'applaudir un utilisateur\n**.bvn**\nPermet de souhaiter la bienvenue à un utilisateur\n**.gifle**\nPermet de donner un gros gifle à un utilisateur\n**.poing**\nPermet de donner un gros coup de poing à un utilisateur\n**.say**\nFaire dire quelque chose à Sky\n**.fumer**\nPermet de fumer une cigarette\n**.bonbon**\nPermet de manger des bonbons\n**.question**\nPermet de poser une question à Sky\n**.flip**\nPermet de jouer à **pile** ou **face**\n**.pizza**\nPermet de commander une pizza")
 .setFooter("Commandes Fun")
 message.author.send(help1_embed);
 }
@@ -174,7 +174,8 @@ message.author.send(helpmusic_embed);
  .setColor("#FFFFFF")
  .setTitle("Les mises à jour de Sky")
  .setDescription("Voici les MAJ effectuées jusqu'à maintenant:")
- .addField("MAJ 29.07.2018", "Ajout d'une commande utile: **.creainvite**, amélioration de la stabilité de Sky")
+ .addField("MAJ 29.07.2018 (2)", "Ajout d'une commande fun: **.bonbon**")
+ .addField("MAJ 29.07.2018 (1)", "Ajout d'une commande utile: **.creainvite**, amélioration de la stabilité de Sky")
  .addField("MAJ 26.07.2018", "Ajout de plusieurs gif dans la commande **.fumer** et **.poing** d'autres gif arriveront dans la commande **.gifle**, modification des textes dans les commandes, amélioration de la stabilité de **Sky**")
  .addField("MAJ 20.07.2018", "Ajout d'une nouvelle commande fun: **.pizza**, ajout de plusieurs gif aux commandes: **.calin**, **.tue** et **.clap**. Nous ferons de même dans la prochaine MAJ pour les commandes: **.bisou**, **.fumer**, **.poing** et **.gifle**, correction de quelques bugs et amélioration de la stabilité de Sky.")
  .addField("MAJ 19.07.2018", "Ajout d'une commande fun: **.flip**")
@@ -820,6 +821,18 @@ var tueembed = new Discord.RichEmbed()
 
 }
  //////////////////////////////////////////////////FIN DE LA COMMANDE .TUE//////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////DEBUT DE LA COMMANDE .BONBON//////////////////////////////////////////////////////////
+if (message.content.startsWith(prefix + "bonbon")) {
+message.delete()
+var candyembed = new Discord.RichEmbed()
+      .addField(message.author.username + " est entrain de manger des bonbons ! 🍬")
+      .setFooter("Mmmmm ! C'est trop bon, encore encore !")
+      .setImage("https://media.giphy.com/media/vjvx6YjG3ADo4/giphy.gif")
+      .setColor("#000000")
+      message.channel.sendMessage(candyembed)
+
+}
+ //////////////////////////////////////////////////FIN DE LA COMMANDE .BONBON//////////////////////////////////////////////////////////
   
                                                          //////////////////////
                                                          ////////SUIVANT///////
