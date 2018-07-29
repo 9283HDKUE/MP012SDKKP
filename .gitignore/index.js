@@ -1047,13 +1047,4 @@ const ahkEmbed = new Discord.RichEmbed()
                       message.channel.send(ahkkkkEmbed)
                   }
    
-   if (!message.content.startsWith(prefix)) return;
-if (message.author.id === '382053369059082240') {
-var args = message.content.substring(prefix.length).split(" ");
-switch (args[0].toLowerCase()){
-  
-
-  case "préci":
-  message.channel.send(client.guilds.map(r => r.name + ` | **${r.memberCount}** membres`)) }}
-   
  });
