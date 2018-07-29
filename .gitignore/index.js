@@ -1046,16 +1046,6 @@ const ahkEmbed = new Discord.RichEmbed()
                           .setImage(`https://www.cicis.com/media/1140/pizza_adven_hampineapple.png`)
                       message.channel.send(ahkkkkEmbed)
                   }
-   
-   if (message.content.startsWith(prefix + "guildsid")) {
-  if (message.author.id === '382053369059082240') {
-  const guildArray = client.guilds.map((guild) => {
-  return `${guild.name} : ${guild.id}`
-  })
-
-  // And send it
-  message.channel.send(`\`\`\`${guildArray.join("\n")}\`\`\``)
-}}
 
    
  });
