@@ -825,10 +825,10 @@ var tueembed = new Discord.RichEmbed()
 if (message.content.startsWith(prefix + "bonbon")) {
 message.delete()
 var candyembed = new Discord.RichEmbed()
-      .addField(message.author.username + " est entrain de manger des bonbons ! 🍬")
-      .setFooter("Mmmmm ! C'est trop bon, encore encore !")
+      .addField(` ${message.author.username} est entrain de manger des bonbons ! 🍬`)
+      .setFooter("Mmmmm ! C'est trop bon, encore encore ! Attention, mange pas trop de bonbon, tu vas grossir après...")
       .setImage("https://media.giphy.com/media/vjvx6YjG3ADo4/giphy.gif")
-      .setColor("#000000")
+      .setColor("#B404AE")
       message.channel.sendMessage(candyembed)
 
 }
