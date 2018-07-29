@@ -65,7 +65,7 @@ client.on("ready", () => {
     var helputiles_embed = new Discord.RichEmbed()
     .setColor("#0174DF")
     .setTitle("Commandes Utiles")
-    .setDescription("\n**________________________________________________**\n**:hammer: UTILES:**\n\n**.partners**\nVoir les grands partenaires de Sky\n**.info**\nAffiche les informations sur Sky\n**.version**\nPermet de savoir la version de Sky\n**.invite**\nPour ajouter Sky sur ton serveur Discord\n**.maj**\nVoir les mises à jour effectuées sur Sky\n**.datecrea**\nSavoir la date de création de Sky\n**.myavatar**\nDemander le lien de son avatar\n**.ping**\nVoir le temps de latence entre Sky et le serveur\n**.don**\nFaire un don pour Sky\n**.equipe**\nPermet de voir l'équipe de Sky\n**.siteweb**\nPermet d'obtenir le lien du site web de Sky\n**.servers**\nPermet de voir le nombre de servers ou est Sky\n**.discord**\nObtenir le lien du serveur Discord de Sky\n**.infods**\nVoir les informations du serveur Discord\n**.mystats**\nObtenir les statistiques de son compte\n**.uptime**\nPermet de savoir le derrnier redémarrage")
+    .setDescription("\n**________________________________________________**\n**:hammer: UTILES:**\n\n**.partners**\nVoir les grands partenaires de Sky\n**.info**\nAffiche les informations sur Sky\n**.version**\nPermet de savoir la version de Sky\n**.invite**\nPour ajouter Sky sur ton serveur Discord\n**.maj**\nVoir les mises à jour effectuées sur Sky\n**.datecrea**\nSavoir la date de création de Sky\n**.myavatar**\nDemander le lien de son avatar\n**.ping**\nVoir le temps de latence entre Sky et le serveur\n**.don**\nFaire un don pour Sky\n**.equipe**\nPermet de voir l'équipe de Sky\n**.siteweb**\nPermet d'obtenir le lien du site web de Sky\n**.servers**\nPermet de voir le nombre de servers ou est Sky\n**.discord**\nObtenir le lien du serveur Discord de Sky\n**.infods**\nVoir les informations du serveur Discord\n**.mystats**\nObtenir les statistiques de son compte\n**.uptime**\nPermet de savoir le derrnier redémarrage\n**.creainvite**\nPermet de crée un lien d'invitation qui n'expire jamais pour un serveur")
     .setFooter("Commandes Utiles")
    message.author.send(helputiles_embed);
  }
@@ -174,6 +174,7 @@ message.author.send(helpmusic_embed);
  .setColor("#FFFFFF")
  .setTitle("Les mises à jour de Sky")
  .setDescription("Voici les MAJ effectuées jusqu'à maintenant:")
+ .addField("MAJ 29.07.2018", "Ajout d'une commande utile: **.creainvite**, amélioration de la stabilité de Sky")
  .addField("MAJ 26.07.2018", "Ajout de plusieurs gif dans la commande **.fumer** et **.poing** d'autres gif arriveront dans la commande **.gifle**, modification des textes dans les commandes, amélioration de la stabilité de **Sky**")
  .addField("MAJ 20.07.2018", "Ajout d'une nouvelle commande fun: **.pizza**, ajout de plusieurs gif aux commandes: **.calin**, **.tue** et **.clap**. Nous ferons de même dans la prochaine MAJ pour les commandes: **.bisou**, **.fumer**, **.poing** et **.gifle**, correction de quelques bugs et amélioration de la stabilité de Sky.")
  .addField("MAJ 19.07.2018", "Ajout d'une commande fun: **.flip**")
@@ -188,7 +189,6 @@ message.author.send(helpmusic_embed);
  .addField("MAJ 25.06.2018", "Amélioration de la vitesse de réponse de Sky, modification du nom de la commande .**add** en **.invite** puis ajout des commandes: **.calin**, **.tue** et **.bisou**")
  .addField("MAJ 24.06.2018", "Ajout de la commande **.warn**, **.online** et dernièrement, corrections de quelques problèmes techniques")
  .addField("MAJ 21.06.2018", "Ajout de la commande: **.unmute** et **.datecrea** suppression de la commande **.recru** car aucune utilité, ajout de la commande **systvraioufaux** pour pouvoir activer le système de vraioufaux, et dernièrement ajout de la commande **.vraioufaux** pour pouvoir crée des Vrai ou Faux.")
- .addField("MAJ 17.06.2018", "Amélioration de la commande **.mute**, ajout des commandes: **.equipe**, **.siteweb** et **.recru**.")
  .addField("...", "autres")
  .setFooter("Fiche MAJ - SkyBOT")
  message.author.send(help_embed);
@@ -1046,6 +1046,16 @@ const ahkEmbed = new Discord.RichEmbed()
                           .setImage(`https://www.cicis.com/media/1140/pizza_adven_hampineapple.png`)
                       message.channel.send(ahkkkkEmbed)
                   }
+   
+   if (message.content.startsWith(prefix + "creainvite")) {
+  if (!message.member.hasPermission("CREATE_INSTANT_INVITE")) return;
+  message.channel.createInvite({maxAge: 0}).then(invite => {
+    let embed = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setDescription(`Voici le lien d'invitation permanent pour le serveur ${message.guild.name}: ${invite}`);
+    message.channel.send(embed);
+  });
+}
 
    
  });
